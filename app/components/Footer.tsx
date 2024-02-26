@@ -2,27 +2,23 @@ import {AiFillInstagram , AiFillTwitterSquare}from "react-icons/ai";
 import {FaFacebookSquare  } from "react-icons/fa";
 import logo from "../images/logo.png"
 import Link from "next/link"
+import Map from './Map';
 
 
 const Footer = () => {
-  const quickshopitems = [
+  const quickLinks = [
     "Quick Links",
-    "about",
-    "services",
-    "f&q",
-    "contact",
-    "Fertilizers/Pesticides",
+    "about", 
+    "services", 
+    "work", 
+    "contact"
   ];
 
-  const informationitems = [
-    "Information",
-    "Introduction",
-    "Policies",
-    "Terms & Conditions",
-    "Social",
-    "Contact Us",
+  const location = [
+    "New Jersey",
+    
   ];
-  const ourservicesitem = [
+  const ourserviceList = [
     " Our Services",
     "All Nursery Products",
     "Gardening",
@@ -34,7 +30,7 @@ const Footer = () => {
 
   return (
     <footer className=" divide-y ">
-	<div className="md:w-10/12 flex  flex-col justify-between py-8 p-2 mx-auto space-y-8 lg:flex-row lg:space-y-0">
+	<div className="md:w-9/12 flex  flex-col justify-between py-8 p-2 mx-auto space-y-8 lg:flex-row lg:space-y-0">
 		<div className="lg:w-1/3">
 				<div className="flex items-center justify-center w-48 h-16 ">
 			<Link  href="/" className="flex justify-center space-x-3 lg:justify-start">
@@ -46,25 +42,29 @@ const Footer = () => {
 		<div className="grid grid-cols-2 text-sm gap-x-3 gap-y-8 lg:w-2/3 sm:grid-cols-4">
 			<div className="space-y-3">
       <ul>
-        {quickshopitems.map((item, index) => (
-          <li className="mb-4" key={item} ><span  className={`text-sm truncate  ${index === 0?"font-bold": "hover:text-primary cursor-pointer "}`} key={index}>{item}</span></li>
+        {quickLinks.map((item, index) => (
+          <li className="mb-4" key={item} ><span  className={`text-sm truncate  capitalize  ${index === 0?"font-bold": "hover:text-primary cursor-pointer "}`} key={index}>{item}</span></li>
         ))}
         </ul>
 			</div>
 			<div className="space-y-3">
       <ul>
-          {informationitems.map((item, index) => (
-            <li className="mb-4" key={item}  ><span  className={`text-sm truncate   ${index === 0?"font-bold":"hover:text-primary cursor-pointer "}`} key={index}>{item}</span></li>
+          {ourserviceList.map((item, index) => (
+            <li className="mb-4" key={item}  ><span  className={`text-sm truncate capitalize   ${index === 0?"font-bold":"hover:text-primary cursor-pointer "}`} key={index}>{item}</span></li>
             
           ))}
         </ul>
 			</div>
 			<div className="space-y-3">
+    <p className=" font-bold"> Location We Work</p>
+    <div className="space-y-3">
       <ul>
-          {ourservicesitem.map((item, index) => (
-            <li  key={item} ><span  className={`text-sm truncate  ${index === 0?"font-bold":"hover:text-primary cursor-pointer "}`} key={index}>{item}</span></li>
+          {location.map((item, index) => (
+            <li className="mb-4" key={item}  ><span  className={`text-sm truncate capitalize   `} key={index}>{item}</span></li>
+            
           ))}
         </ul>
+			</div>
 			</div>
 			<div >
 				<div className="uppercase  text-lg  ">Get in Touch</div>

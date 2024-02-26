@@ -3,8 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 
 //context
-
-
+import ServiceProvider from "../app/context/ServiceProvider";
 
 //components
 import NavBar from "./components/NavBar"
@@ -24,11 +23,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body   className={inter.className}>
-            <NavBar />
+        {/* <ServiceProvider> */}
+        <NavBar />
         <SocialNav/>
         <main >{children}</main>
         <NewsLetter/>
         <Footer />
+        {/* </ServiceProvider> */}
       </body>
     </html>
   );

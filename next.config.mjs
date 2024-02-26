@@ -1,8 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    images: {
-        domains: ['img.lovepik.com'],
-      },
+  images: {
+    domains: ["www.onlineoptimism.com","plus.unsplash.com","images.unsplash.com","img.freepik.com", 'img.lovepik.com' ], // Add the hostname(s) here
+  },
+
     
 };
 

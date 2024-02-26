@@ -1,14 +1,13 @@
-'use client'
-import React , {useEffect, useState} from "react";
 
-//firebase
-// import { ref, onValue, get, child, remove } from "firebase/database";
-// import { database } from "../../config/app";
+import Image from "next/image";
+
+
+
 
 
 
 const Services = () => {
-  const [serviceDetails, setServiceDetails] = useState({});
+//   const [serviceDetails, setServiceDetails] = useState({});
 
   // useEffect(() => {
   //   const fetchData = async () => {
@@ -38,22 +37,25 @@ const Services = () => {
 
 
   return (
-    <div className=" md:w-10/12  mx-auto justify-center z-10">
+    <div className=" md:w-9/12  mx-auto justify-center z-10">
     <div className="relative  flex flex-col items-center justify-center text-center text-white " style={{height:"60vh"}}>
     <div className="video-docker absolute top-0 left-0 w-full h-full overflow-hidden">
-        <img className="min-w-full min-h-full absolute object-cover"
+        <Image
+        height={1400}
+        width={1400}
+        className="min-w-full min-h-full absolute object-cover"
             src="https://images.unsplash.com/photo-1573497620053-ea5300f94f21?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
            alt="service" />
     </div>
     <div className="video-content space-y-2 z-10">
     <span className=" cursor-pointer  bg-white text-primary  p-6 text-4xl text-center  border-4 border-black font-extrabold shadow-buttonShadow shadow-black     ">
-       Services
+    Our services
       </span>
     </div>
 </div>
 <div className="pt-8 mt-4">
-<span className="bg-primary text-4xl font-bold p-4 text-white  uppercase">Core Capabilities</span>
-<p className="mt-8 w-10/12"> Capable Service stands as a beacon of reliability and excellence in the HVAC industry, serving as a trusted partner for residents  Service stands as a beacon of reliability and excellence in the HVAC industry, serving as a trusted partner for reside across New Jersey. With a mantra centered on</p>
+<span className="bg-primary md:text-4xl sm:text-xl text-base sm:font-bold font-normal p-4 uppercase text-white">Core Capabilities</span>
+<p className="mt-8 p-2 lg:p-0 lg:w-10/12"> Capable Service stands as a beacon of reliability and excellence in the HVAC industry, serving as a trusted partner for residents  Service stands as a beacon of reliability and excellence in the HVAC industry, serving as a trusted partner for reside across New Jersey. With a mantra centered on</p>
 </div>
 {/* cards  */}
 <div className="max-w-screen-xl mx-auto p-5 sm:p-10 md:p-16">
@@ -63,9 +65,12 @@ const Services = () => {
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
 
         {/* <!-- CARD 1 --> */}
-        <div className=" overflow-hidden flex flex-col">
+        <div className=" overflow-hidden flex flex-col  cursor-pointer">
             <div>
-            <img className="w-full"
+            <Image 
+            height={300}
+            width={300}
+            className="w-full hover:scale-105 ease-in-out duration-300"
                         src="https://plus.unsplash.com/premium_photo-1682088024868-09d8cbc8659f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                         alt="Sunset in the mountains"/>
             </div>
@@ -74,7 +79,10 @@ const Services = () => {
 
         <div className=" overflow-hidden flex flex-col">
             <div>
-            <img className="w-full"
+            <Image
+            height={300}
+            width={300}
+            className="w-full"
                         src="https://plus.unsplash.com/premium_photo-1682088024868-09d8cbc8659f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                         alt="Sunset in the mountains"/>
             </div>
@@ -83,7 +91,10 @@ const Services = () => {
 
         <div className=" overflow-hidden flex flex-col">
             <div>
-            <img className="w-full"
+            <Image 
+            height={300}
+            width={300}
+            className="w-full"
                         src="https://plus.unsplash.com/premium_photo-1682088024868-09d8cbc8659f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                         alt="Sunset in the mountains"/>
             </div>
@@ -93,7 +104,10 @@ const Services = () => {
 
         <div className=" overflow-hidden flex flex-col">
             <div>
-            <img className="w-full"
+            <Image 
+            height={300}
+            width={300}
+            className="w-full"
                         src="https://plus.unsplash.com/premium_photo-1682088024868-09d8cbc8659f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                         alt="Sunset in the mountains"/>
             </div>
@@ -103,7 +117,10 @@ const Services = () => {
 
         <div className=" overflow-hidden flex flex-col">
             <div>
-            <img className="w-full"
+            <Image 
+            height={300}
+            width={300}
+            className="w-full"
                         src="https://plus.unsplash.com/premium_photo-1682088024868-09d8cbc8659f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                         alt="Sunset in the mountains"/>
             </div>

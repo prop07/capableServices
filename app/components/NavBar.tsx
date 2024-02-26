@@ -1,48 +1,91 @@
-import React from "react";
+"use client";
+import React, { useState, useEffect } from "react";
 import { FaPhoneAlt } from "react-icons/fa";
+import { IoMdMenu } from "react-icons/io";
+import { IoMdClose } from "react-icons/io";
 import Link from "next/link";
-const navLink = ["about", "services", "work",  "contact"];
-
+const navLink = ["about", "services", "work", "contact"];
 
 const Navbar = () => {
-  return (
-
+  const [humBurgerMenu, setHumBurgerMenu] = useState(false);
   
-  <div className="fixed   w-full   z-20"> 
-   <div className=" md:hidden flex justify-center items-center  p-2 text-white  bg-primary ">
-            <span className=" flex items-center justify-center gap-1">
-           Call Now:   <FaPhoneAlt />
-              in order to save all your progress!
-            </span>
-          </div>
-    <div className="flex  w-full bg-white font-bold   md:px-16 px-4 h-16">
-      
-      <div className="flex justify-start items-center w-3/12">
-        <Link  href={"/"}>
-          Logo
-        </Link>
-      </div>
-      <div className="flex md:gap-8 sm:gap-4 gap-2 md:w-6/12 w-full justify-center items-center">
-        {navLink.map((item) => (
-          <div key={item}>
-            <Link  href={`/${item}`}>
-              <p
-                className="mb-2  cursor-pointer font-bold  capitalize  hover:text-primary" 
-              >
-                {item}
-              </p>
-            </Link>
-          </div>
-        ))}
-      </div>
-      <div className=" justify-end items-center  md:w-3/12 w-full md:flex hidden">
-        <span className="flex items-center cursor-pointer  bg-secondary  py-1  px-2 text-white text-medium  text-center ">
-          <FaPhoneAlt className="mr-2" /> Call now
+
+  return (
+    <div className="fixed w-full  justify-center  z-20">
+      <div className=" md:hidden flex justify-center items-center  p-2 text-white  bg-primary ">
+        <span className=" flex text-sm items-center justify-center gap-1">
+          Call Now: <FaPhoneAlt />
+          in order to save all your progress!
         </span>
       </div>
-    </div> 
-  </div>
-  
+      <div className="flex  w-full bg-white font-bold   md:px-16 px-4 h-16">
+        <div className="flex justify-start items-center w-3/12">
+          <Link href={"/"}>Logo</Link>
+        </div>
+        <div className="md:flex hidden md:gap-8 sm:gap-4 gap-2 md:w-6/12 w-full justify-center items-center">
+        <div key={'home'}>
+              <Link href={`/`} >
+                <p className="mb-2  cursor-pointer font-bold  capitalize  hover:text-primary">
+                  home
+                </p>
+              </Link>
+            </div>
+          {navLink.map((item) => (
+            <div key={item}>
+              <Link  href={`/${item}`}>
+                <p className="mb-2  cursor-pointer font-bold  capitalize  hover:text-primary">
+                  {item}
+                </p>
+              </Link>
+            </div>
+          ))}
+        </div>
+        <div className="md:hidden flex relative w-full justify-end items-center ">
+          <IoMdMenu
+            onClick={() => setHumBurgerMenu(!humBurgerMenu)}
+            className={` cursor-pointer ${humBurgerMenu ? "hidden":"block"}`}
+            size={30}
+          />
+          <IoMdClose
+            onClick={() => setHumBurgerMenu(!humBurgerMenu)}
+            className={` cursor-pointer ${humBurgerMenu ? "block":"hidden"}`}
+            size={30}
+          />
+          <div className={`  bg-white  px-4 shadow-buttonShadow shadow-black    absolute top-20   ${humBurgerMenu ? "block":"hidden"}  `}>
+          <div key={'mbHome'} className="flex flex-col justify-center items-center">
+                <div >
+                  <Link href={`/`} onClick={() => setHumBurgerMenu(!humBurgerMenu)}>
+                    <p className="mb-2 p-1  cursor-pointer   font-medium  text-base capitalize">
+                      Home
+                    </p>
+                  </Link>
+                </div>
+                <hr className=" text-gray-400 w-3/4 mx-auto " />
+              </div>
+            {humBurgerMenu
+            ? navLink.map((item) => (
+              <div key={item} className="flex flex-col justify-center items-center">
+                <div >
+                  <Link href={`/${item}`} onClick={() => setHumBurgerMenu(!humBurgerMenu)}>
+                    <p className="mb-2 p-1  cursor-pointer   font-medium  text-base capitalize">
+                      {item}
+                    </p>
+                  </Link>
+                </div>
+                <hr className=" text-gray-400 w-3/4 mx-auto " />
+              </div>
+                
+              ))
+            : null}
+          </div>
+        </div>
+        <div className=" justify-end items-center  md:w-3/12 w-full md:flex hidden">
+          <span className="flex items-center cursor-pointer  bg-secondary  py-1  px-2 text-white text-medium  text-center ">
+            <FaPhoneAlt className="mr-2" /> Call now
+          </span>
+        </div>
+      </div>
+    </div>
   );
 };
 

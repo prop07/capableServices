@@ -1,141 +1,92 @@
-"use client"
-import React , {useEffect} from 'react'
-
-
-
-
-
-
+import Image from "next/image";
 
 const Contact = () => {
-
-
-  return (
-    <section className="py-16 bg-gray-100 ">
-    <div className="max-w-6xl px-4 mx-auto">
-        <div className="p-6   rounded-lg   ">
-            <div className="pb-6   ">
-                <h2 className="text-xl font-bold text-gray-800 md:text-3xl ">
-                    Contact us
-                </h2>
-                <p className="text-xs font-medium text-gray-500">
-                    Lorem ipsum dor amet set ispicuous
-                </p>
-            </div>
-            <div className="py-6 border-b border-gray-100 ">
-                <div className="w-full md:w-9/12">
-                    <div className="flex flex-wrap -m-3">
-                        <div className="w-full p-3 md:w-1/3">
-                            <p className="text-base font-semibold text-gray-700 ">
-                                Name
-                            </p>
-                        </div>
-                        <div className="w-full p-3 md:w-1/3">
-                        
-                            <input
-                                className="w-full px-4  py-2.5 text-base text-gray-900 rounded-lg font-normal border border-gray-200"
-                                type="text" placeholder="Web Designer"/>
-                      
-                        </div>
-                        <div className="w-full p-3 md:w-1/3">
-                       
-                            <input
-                                className="w-full px-4  py-2.5 text-base text-gray-900 rounded-lg font-normal border border-gray-200"
-                                type="text" placeholder="Web Designer"/>
-                        
-                        </div>
-                    </div>
+    return (
+        <div className=" md:w-9/12  mx-auto justify-center z-20">
+            <div className="flex flex-col items-center justify-center ">
+                <div>
+                    <Image
+                        width={600}
+                        height={600}
+                        className="mt-18"
+                        src="https://www.onlineoptimism.com/wp-content/uploads/2021/05/hello-contact--600x298.png"
+                        alt="hello"
+                    />
                 </div>
-            </div>
-            <div className="py-6 border-b border-gray-100 ">
-                <div className="w-full md:w-9/12">
-                    <div className="flex flex-wrap -m-3">
-                        <div className="w-full p-3 md:w-1/3">
-                            <p className="text-base font-semibold text-gray-700 ">
-                                Email address
-                            </p>
+                <h1 className=" text-3xl md:w-1/2 text-center text-gray-800 p-4">
+                    The quickest way to get in touch is to give us a call at
+                    <span className="text-green-500 hover:text-primary hover:underline  cursor-pointer px-2">
+                        504.324.0073
+                    </span>{" "}
+                    we&apos;ll pick up!
+                </h1>
+                <div className=" h-0.5 w-5/6 bg-gray-700 mb-4"></div>
+                {/* form  */}
+                <div className="bg-gray-100 md:w-1/2 p-10">
+                    <h1 className=" uppercase text-xl font-semibold">
+                        Fill out the form below and we&apos;ll get in touch.
+                    </h1>
+                    <p className=" text-lg py-2">
+                        &ldquo;<span className="text-red-500">*</span>&ldquo; indicates
+                        required fields
+                    </p>
+                    <form>
+                        <div className="flex md:flex-row flex-col gap-2">
+                            <div className="md:w-1/2">
+                                <label
+                                    htmlFor="name"
+                                    className="block  font-normal text-lg mb-2"
+                                >
+                                    Name<span className="text-red-500">*</span>
+                                </label>
+                                <input
+                                    type="text"
+                                    id="name"
+                                    name="name"
+                                    className=" border-2  border-gray-400   p-2 w-full focus:outline-none focus:border-primary "
+                                    required
+                                />
+                            </div>
+                            <div className="md:w-1/2">
+                                <label
+                                    htmlFor="email"
+                                    className="block  font-normal text-lg mb-2"
+                                >
+                                    Email<span className="text-red-500">*</span>
+                                </label>
+                                <input
+                                    type="email"
+                                    id="email"
+                                    name="email"
+                                    className="border-2  border-gray-400   p-2 w-full focus:outline-none focus:border-primary"
+                                    required
+                                />
+                            </div>
                         </div>
-                        <div className="w-full p-3 md:flex-1">
-                            <input
-                                className="w-full px-4 py-2.5  text-base text-gray-900 rounded-lg font-normal border border-gray-200"
-                                type="email" placeholder="adam@gmail.com"/>
+                        <div className="mb-4">
+                            <label
+                                htmlFor="message"
+                                className="block  font-normal text-lg mb-2"
+                            >
+                                Message<span className="text-red-500">*</span>
+                            </label>
+                            <textarea
+                                id="message"
+                                name="message"
+                                className="border-2  border-gray-400   p-2 w-full focus:outline-none focus:border-primary"
+                                rows={5}
+                            ></textarea>
                         </div>
-                    </div>
-                </div>
-            </div>
-            <div className="py-6 border-b border-gray-100 ">
-                <div className="w-full md:w-9/12">
-                    <div className="flex flex-wrap -m-3">
-                        <div className="w-full p-3 md:w-1/3">
-                            <p className="text-base font-semibold text-gray-700 ">
-                                Country
-                            </p>
+                        <div>
+                            <button className=" cursor-pointer  bg-green-700 hover:bg-primary  py-4 lg:px-8 px-4 text-white hover:text-black text-medium text-center  border-4 border-black  font-extrabold duration-300 ease-in-out   ">
+                                Submit
+                            </button>
                         </div>
-                        <div className="w-full p-3 md:flex-1">
-                            <select
-                                className="appearence-none   w-full py-2.5 px-4 text-gray-700 text-base font-normal border border-gray-200 rounded-lg "
-                                name="" id="">
-                                <option>US</option>
-                                <option>Canada</option>
-                                <option>Portugal</option>
-                                <option>Nepal</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div className="py-6 border-b border-gray-100 ">
-                <div className="w-full md:w-9/12">
-                    <div className="flex flex-wrap -m-3">
-                        <div className="w-full p-3 md:w-1/3">
-                            <p className="text-sm font-semibold text-gray-800 ">Title</p>
-                        </div>
-                        <div className="w-full p-3 md:flex-1">
-                        <div className="w-full p-3 md:flex-1">
-                            <input
-                                className="w-full px-4  py-2.5 text-base text-gray-900 rounded-lg font-normal border border-gray-200"
-                                type="text" placeholder="Web Designer"/>
-                        </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div className="py-6 border-b border-gray-100 ">
-                <div className="w-full md:w-9/12">
-                    <div className="flex flex-wrap -m-3">
-                        <div className="w-full p-3 md:w-1/3">
-                            <p className="text-sm font-semibold text-gray-800 ">Message</p>
-                        </div>
-                        <div className="w-full p-3 md:flex-1">
-                            <textarea rows="4" type="message" placeholder="your text here.." required
-                                className="block w-full px-4 py-4 leading-tight placeholder-gray-400 border rounded  "></textarea>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div className="py-6 border-b border-gray-100 ">
-                <div className="w-full md:w-9/12">
-                    <div className="flex flex-wrap -m-3">
-                        <div className="w-full p-3 md:w-1/3">
-                            <p className="text-sm font-semibold text-gray-800 ">Role</p>
-                        </div>
-                        <div className="w-full p-3 md:flex-1">
-                            <input
-                                className="w-full px-4  py-2.5 text-base text-gray-900 rounded-lg font-normal border border-gray-200"
-                                type="text" placeholder="Web Designer"/>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div className="flex pt-6 flex-wrap -m-1.5">
-                <div className="w-full md:w-auto ">
-                <p className="flex flex-row py-4 px-8  hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 border border-gray-800 rounded  cursor-pointer text-center">Submit</p>
+                    </form>
                 </div>
             </div>
         </div>
-    </div>
-</section>
-  )
-}
+    );
+};
 
-export default Contact
+export default Contact;

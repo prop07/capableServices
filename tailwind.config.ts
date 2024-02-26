@@ -21,8 +21,8 @@ const config: Config = {
         instagramPurple: '#C13584',
       },
       boxShadow:{
-        "16Shadow": '16px 16px',
-        '8Shadow':'8px 8px',
+        "16Shadow": '-16px 16px',
+        '8Shadow':'-8px 8px',
         'buttonShadow': ' -6px 6px'
       },
     },
