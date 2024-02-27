@@ -1,9 +1,10 @@
+'use client'
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 
 //context
-import ServiceProvider from "../app/context/ServiceProvider";
+import ServiceProvider from "../context/ServiceProvider";
 
 //components
 import NavBar from "./components/NavBar"
@@ -23,13 +24,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body   className={inter.className}>
-        {/* <ServiceProvider> */}
+        <ServiceProvider>
         <NavBar />
         <SocialNav/>
         <main >{children}</main>
         <NewsLetter/>
         <Footer />
-        {/* </ServiceProvider> */}
+        </ServiceProvider>
       </body>
     </html>
   );

@@ -1,11 +1,16 @@
+'use client'
+import {useContext} from 'react';
 import {AiFillInstagram , AiFillTwitterSquare}from "react-icons/ai";
 import {FaFacebookSquare  } from "react-icons/fa";
-import logo from "../images/logo.png"
 import Link from "next/link"
-import Map from './Map';
+
+//context
+import { ServiceContext } from "../../context/ServiceProvider";
 
 
 const Footer = () => {
+  const serviceDetails = useContext(ServiceContext);
+
   const quickLinks = [
     "Quick Links",
     "about", 
@@ -16,16 +21,6 @@ const Footer = () => {
 
   const location = [
     "New Jersey",
-    
-  ];
-  const ourserviceList = [
-    " Our Services",
-    "All Nursery Products",
-    "Gardening",
-    "Timely Visit",
-    "Routine Services",
-    "Request for Plant",
-    "Gardener",
   ];
 
   return (
@@ -42,15 +37,18 @@ const Footer = () => {
 		<div className="grid grid-cols-2 text-sm gap-x-3 gap-y-8 lg:w-2/3 sm:grid-cols-4">
 			<div className="space-y-3">
       <ul>
+
         {quickLinks.map((item, index) => (
-          <li className="mb-4" key={item} ><span  className={`text-sm truncate  capitalize  ${index === 0?"font-bold": "hover:text-primary cursor-pointer "}`} key={index}>{item}</span></li>
+          <li className="mb-4" key={item} > <Link href={`/${item}`} > <span  className={`text-sm truncate  capitalize  ${index === 0?"font-bold": "hover:text-primary cursor-pointer "}`} key={index}>{item}</span></Link></li>
         ))}
         </ul>
 			</div>
 			<div className="space-y-3">
       <ul>
-          {ourserviceList.map((item, index) => (
-            <li className="mb-4" key={item}  ><span  className={`text-sm truncate capitalize   ${index === 0?"font-bold":"hover:text-primary cursor-pointer "}`} key={index}>{item}</span></li>
+      <li className="mb-4"   ><span  className={`text-sm truncate capitalize  font-bold `} >Our services</span></li>
+
+          { Object.keys(serviceDetails).map((key) => (
+            <li className="mb-4" key={key}  > <Link href={`/services/${serviceDetails[key].serviceTitle.replace(/\s/g, "-").replace("/", ".")}`} ><span  className={`text-sm truncate capitalize  hover:text-primary cursor-pointer `} >{serviceDetails[key].serviceTitle}</span> </Link></li>
             
           ))}
         </ul>

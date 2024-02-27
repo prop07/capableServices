@@ -30,9 +30,9 @@ const Contact = () => {
                         &ldquo;<span className="text-red-500">*</span>&ldquo; indicates
                         required fields
                     </p>
-                    <form>
+                    <form >
                         <div className="flex md:flex-row flex-col gap-2">
-                            <div className="md:w-1/2">
+                            <div className="md:w-1/2  ">
                                 <label
                                     htmlFor="name"
                                     className="block  font-normal text-lg mb-2"

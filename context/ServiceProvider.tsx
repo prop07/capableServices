@@ -1,11 +1,11 @@
 'use client'
 import { createContext, useState, useEffect } from "react";
 
-export const ProductContext = createContext();
 //firebase
-import { ref} from "firebase/database";
-import { database } from "../../config/app";
+import { database } from "../config/app";
+import { ref, onValue } from "firebase/database";
 
+export const ServiceContext = createContext({});
 
 const ServiceProvider = ({ children }) => {
   const [serviceDetails, setServiceDetails] = useState({});
@@ -13,10 +13,11 @@ const ServiceProvider = ({ children }) => {
   useEffect(() => {
       const fetchData = async () => {
             try {
-              const userRef = ref(database, "services/");
-              onValue(userRef, (snapshot) => {
+              const reference = ref(database, "services/");
+              onValue(reference, (snapshot) => {
                 const data = snapshot.val();
                 setServiceDetails(data);
+                console.log( data)
                 
               });
             } catch (error) {
@@ -24,13 +25,12 @@ const ServiceProvider = ({ children }) => {
             }
           };
           fetchData();
-          console.log(serviceDetails)
   }, []);
 
   return (
-    <ProductContext.Provider value={serviceDetails}>
+    <ServiceContext.Provider value={serviceDetails}>
       {children}
-    </ProductContext.Provider>
+    </ServiceContext.Provider>
   );
 };
 

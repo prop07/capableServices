@@ -1,14 +1,31 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState, useContext } from "react";
 import { FaPhoneAlt } from "react-icons/fa";
 import { IoMdMenu } from "react-icons/io";
 import { IoMdClose } from "react-icons/io";
+import { IoIosArrowDown } from "react-icons/io";
 import Link from "next/link";
-const navLink = ["about", "services", "work", "contact"];
+
+
+//context
+import { ServiceContext } from "../../context/ServiceProvider";
+const navLink = ["about", "work", "contact"];
+
+
+
 
 const Navbar = () => {
+  const serviceDetails= useContext(ServiceContext);
   const [humBurgerMenu, setHumBurgerMenu] = useState(false);
-  
+  const [isDropdownVisible, setDropdownVisible] = useState(false);
+
+  const handleMouseEnter = () => {
+    setDropdownVisible(true);
+  };
+
+  const handleMouseLeave = () => {
+    setDropdownVisible(false);
+  };
 
   return (
     <div className="fixed w-full  justify-center  z-20">
@@ -29,6 +46,35 @@ const Navbar = () => {
                   home
                 </p>
               </Link>
+            </div>
+            <div onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} className=" relative" key={'services'}>
+              <Link href={`/services`} >
+                <p className="group mb-2 flex gap-1 justify-center items-center cursor-pointer font-bold  capitalize  hover:text-primary">
+              <span>services</span> 
+                <IoIosArrowDown className=" group-hover:rotate-90 duration-500 ease-in-out" size={15}/>
+                </p>
+              </Link>
+              { isDropdownVisible && 
+              <div onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} className=" absolute bg-white  w-60  shadow-buttonShadow shadow-black">
+                <div  className="flex flex-col  ">
+              {
+                Object.keys(serviceDetails).map((key)=>(
+                    <Link key={key} href={`/services/${serviceDetails[key].serviceTitle.replace(/\s/g, "-").replace("/", ".")}`} >
+                  <div className=" cursor-pointer">
+                      <p className="p-2  hover:bg-gray-200  font-medium text-base capitalize">
+                        {serviceDetails[key].serviceTitle}
+                      </p>
+                  <hr className=" text-gray-400  mx-auto " />
+                  </div>
+                    </Link>
+                    
+                    
+                ))
+              }
+              </div>
+              </div>
+              }
+            
             </div>
           {navLink.map((item) => (
             <div key={item}>

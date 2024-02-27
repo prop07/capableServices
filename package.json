@@ -11,7 +11,6 @@
   "dependencies": {
     "@firebase/database": "^1.0.3",
     "firebase": "^10.8.0",
-    "locomotive-scroll": "^4.1.4",
     "next": "14.1.0",
     "react": "^18",
     "react-countup": "^6.5.0",
