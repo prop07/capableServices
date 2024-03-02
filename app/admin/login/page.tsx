@@ -63,8 +63,8 @@ const Register = () => {
         </div>
       ) : null}
       <section className="  pt-32 p-4 flex items-center justify-center">
-        <div className="bg-gray-200 flex shadow-8Shadow shadow-black  max-w-3xl  items-center">
-          <div className="md:block hidden w-1/2">
+        <div className=" flex   max-w-3xl  items-center">
+          <div className="md:block hidden w-1/2 shadow-buttonShadow shadow-black ">
             <Image
               height={600}
               width={500}
@@ -73,8 +73,8 @@ const Register = () => {
             />
           </div>
           <div className="md:w-1/2 px-8 md:px-16 p-4">
-            <h2 className="font-bold text-2xl text-[#002D74]">Admin Login</h2>
-            <p className="text-xs mt-4 text-[#002D74]">
+            <h2 className="font-bold text-2xl text-black">Admin Login</h2>
+            <p className="text-xs mt-4 text-black">
               For admin member, easily log in.
             </p>
             <form
@@ -82,7 +82,7 @@ const Register = () => {
               className="flex flex-col gap-2"
             >
               <input
-                className="p-2 mt-8 rounded-xl border"
+                className="p-2 mt-8 rounded-xl border border-gray-500"
                 {...register("email", {
                   required: "Email required !",
                 })}
@@ -96,7 +96,7 @@ const Register = () => {
               <div>
                 <span className="flex items-center gap-2">
                   <input
-                    className="p-2 rounded-xl border w-full"
+                    className="p-2 rounded-xl border border-gray-500 w-full"
                     {...register("password", {
                       required: "Password required !",
                     })}

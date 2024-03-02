@@ -12,7 +12,6 @@ const Footer = () => {
   const serviceDetails = useContext(ServiceContext);
 
   const quickLinks = [
-    "Quick Links",
     "about", 
     "services", 
     "work", 
@@ -37,9 +36,10 @@ const Footer = () => {
 		<div className="grid grid-cols-2 text-sm gap-x-3 gap-y-8 lg:w-2/3 sm:grid-cols-4">
 			<div className="space-y-3">
       <ul>
+      <li className="mb-4" key={"quick link"} >  <span  className={`text-sm truncate  capitalize font-bold `} >Quick Link</span></li>
 
         {quickLinks.map((item, index) => (
-          <li className="mb-4" key={item} > <Link href={`/${item}`} > <span  className={`text-sm truncate  capitalize  ${index === 0?"font-bold": "hover:text-primary cursor-pointer "}`} key={index}>{item}</span></Link></li>
+          <li className="mb-4" key={item} > <Link href={`/${item}`} > <span  className={`text-sm truncate  capitalize cursor-pointer `} key={index}>{item}</span></Link></li>
         ))}
         </ul>
 			</div>

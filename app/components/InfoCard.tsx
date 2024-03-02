@@ -4,7 +4,7 @@ import { TiTick } from "react-icons/ti";
 
 const InfoCard = () => {
   return (
-    <div className="flex md:gap-0 gap-4 flex-col md:flex-row bg-secondary text-white px-4 py-8 md:justify-around justify-center items-center">
+    <div className="flex md:gap-0 gap-4 flex-col lg:flex-row bg-secondary text-white px-4 py-8 md:justify-around justify-center items-center">
     <div className="flex gap-3 ">
       <div className=" border-2 border-white h-12 w-12 flex justify-center items-center rounded-full">
         <TiTick size={25} />

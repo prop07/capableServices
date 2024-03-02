@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const NotFound = () => {
     return (
-        <div className="h-screen w-screen bg-gray-100 flex items-center justify-center">
+        <div className="h-screen w-screen  flex items-center justify-center">
             <div className="container flex flex-col md:flex-row items-center justify-center px-5 text-gray-700 gap-1">
                 <div className="max-w-md">
                     <div className="text-5xl font-dark font-bold">404</div>

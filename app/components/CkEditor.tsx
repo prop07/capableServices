@@ -12,7 +12,7 @@ const CkEditor = (props: Props) => {
 
     return (
         <div className="App">
-            <h2>Service Details <span className="text-red-500">*</span></h2>
+            <h2 className="py-2">Rich Text <span className="text-red-500">*</span></h2>
             <CKEditor
                 editor={ClassicEditor}
                 data="<p>Enter Description Here</p>"
