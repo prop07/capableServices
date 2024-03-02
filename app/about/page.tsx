@@ -1,10 +1,8 @@
-import React, { Suspense } from "react";
+import React from "react";
 import Image from "next/image";
 
-interface Props {
-  searchParams: { sortOrder: string };
-}
-const usersPage = async ({ searchParams: { sortOrder } }: Props) => {
+
+const Page = async () => {
   return (
     <div className=" md:w-9/12  mx-auto justify-center z-10">
     <div className="relative  flex flex-col items-center justify-center text-center text-white " style={{height:"60vh"}}>
@@ -46,4 +44,4 @@ const usersPage = async ({ searchParams: { sortOrder } }: Props) => {
   );
 };
 
-export default usersPage;
+export default Page;

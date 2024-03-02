@@ -7,9 +7,16 @@ import Link from "next/link"
 //context
 import { ServiceContext } from "../../context/ServiceProvider";
 
+type Services = {
+  [id: string]: {
+    serviceDescription: string;
+    serviceTitle: string;
+  };
+};
+
 
 const Footer = () => {
-  const serviceDetails = useContext(ServiceContext);
+  const serviceDetails = useContext<Services>(ServiceContext);
 
   const quickLinks = [
     "about", 
@@ -37,16 +44,14 @@ const Footer = () => {
 			<div className="space-y-3">
       <ul>
       <li className="mb-4" key={"quick link"} >  <span  className={`text-sm truncate  capitalize font-bold `} >Quick Link</span></li>
-
         {quickLinks.map((item, index) => (
-          <li className="mb-4" key={item} > <Link href={`/${item}`} > <span  className={`text-sm truncate  capitalize cursor-pointer `} key={index}>{item}</span></Link></li>
+          <li className="mb-4" key={item} > <Link href={`/${item}`} > <span  className={`text-sm truncate  capitalize  hover:text-primary cursor-pointer  `} key={index}>{item}</span></Link></li>
         ))}
         </ul>
 			</div>
 			<div className="space-y-3">
       <ul>
       <li className="mb-4"   ><span  className={`text-sm truncate capitalize  font-bold `} >Our services</span></li>
-
           { Object.keys(serviceDetails).map((key) => (
             <li className="mb-4" key={key}  > <Link href={`/services/${serviceDetails[key].serviceTitle.replace(/\s/g, "-").replace("/", ".")}`} ><span  className={`text-sm truncate capitalize  hover:text-primary cursor-pointer `} >{serviceDetails[key].serviceTitle}</span> </Link></li>
             
@@ -58,7 +63,7 @@ const Footer = () => {
     <div className="space-y-3">
       <ul>
           {location.map((item, index) => (
-            <li className="mb-4" key={item}  ><span  className={`text-sm truncate capitalize   `} key={index}>{item}</span></li>
+            <li className="mb-4" key={item}  ><span  className={`text-sm truncate capitalize    `} key={index}>{item}</span></li>
             
           ))}
         </ul>

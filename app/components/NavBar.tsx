@@ -11,11 +11,15 @@ import Link from "next/link";
 import { ServiceContext } from "../../context/ServiceProvider";
 const navLink = ["about", "work", "contact"];
 
-
-
+type Services = {
+  [id: string]: {
+    serviceDescription: string;
+    serviceTitle: string;
+  };
+};
 
 const Navbar = () => {
-  const serviceDetails= useContext(ServiceContext);
+  const serviceDetails= useContext<Services>(ServiceContext);
   const [humBurgerMenu, setHumBurgerMenu] = useState(false);
   const [isDropdownVisible, setDropdownVisible] = useState(false);
 
@@ -136,3 +140,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
+

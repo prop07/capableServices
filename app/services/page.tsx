@@ -6,8 +6,15 @@ import Link from "next/link";
 //context
 import { ServiceContext } from "../../context/ServiceProvider";
 
+type Services = {
+    [id: string]: {
+      serviceDescription: string;
+      serviceTitle: string;
+    };
+  };
+
 const Services = () => {
-    const serviceDetails = useContext(ServiceContext);
+    const serviceDetails = useContext<Services>(ServiceContext);
 
     // if ( Object.keys(serviceDetails).length === 0) {
     //   return (
@@ -25,7 +32,7 @@ const Services = () => {
                 className="relative  flex flex-col items-center justify-center text-center text-white "
                 style={{ height: "60vh" }}
             >
-                <div className="video-docker absolute top-0 left-0 w-full h-full overflow-hidden">
+                <div className="absolute top-0 left-0 w-full h-full overflow-hidden">
                     <Image
                         height={1400}
                         width={1400}
@@ -35,7 +42,7 @@ const Services = () => {
                     />
                 </div>
                 <div className="video-content space-y-2 z-10">
-                    <span className=" cursor-pointer  bg-white text-primary  p-6 text-4xl text-center  border-4 border-black font-extrabold shadow-buttonShadow shadow-black     ">
+                    <span className=" bg-white text-primary  p-6 text-4xl text-center  border-4 border-black font-extrabold shadow-buttonShadow shadow-black     ">
                         Our services
                     </span>
                 </div>

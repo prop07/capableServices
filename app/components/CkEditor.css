@@ -1,0 +1,14 @@
+ .rendered-form ul {
+    list-style:disc;
+}  
+.rendered-form ol {
+    list-style:decimal;
+}  
+
+
+
+
+.ck .ck-content .ck-editor__editable .ck-rounded-corners .ck-editor__editable_inline .ck-blurred {
+    padding: 0 1rem;
+
+}

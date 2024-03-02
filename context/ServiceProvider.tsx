@@ -7,7 +7,7 @@ import { ref, onValue } from "firebase/database";
 
 export const ServiceContext = createContext({});
 
-const ServiceProvider = ({ children }) => {
+const ServiceProvider = ({ children}:{children: any}) => {
   const [serviceDetails, setServiceDetails] = useState({});
 
   useEffect(() => {
@@ -18,7 +18,6 @@ const ServiceProvider = ({ children }) => {
                 const data = snapshot.val();
                 setServiceDetails(data);
                 console.log( data)
-                
               });
             } catch (error) {
               console.error("Error fetching order data:", error);

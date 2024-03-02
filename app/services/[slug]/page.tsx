@@ -27,7 +27,7 @@ const page = ({ params }: { params: { slug: string } }) => {
                 className="relative  flex flex-col items-center justify-center text-center text-white "
                 style={{ height: "60vh" }}
             >
-                <div className="video-docker absolute top-0 left-0 w-full h-full overflow-hidden">
+                <div className="absolute top-0 left-0 w-full h-full overflow-hidden">
                     <Image
                         height={1400}
                         width={1400}
@@ -37,7 +37,7 @@ const page = ({ params }: { params: { slug: string } }) => {
                     />
                 </div>
                 <div className="space-y-2 z-10">
-                    <span className=" cursor-pointer  bg-white text-primary  p-6 text-4xl text-center  border-4 border-black font-extrabold shadow-buttonShadow shadow-black     ">
+                    <span className="  bg-white text-primary  p-6 text-4xl text-center  border-4 border-black font-extrabold shadow-buttonShadow shadow-black     ">
                         {params.slug}
                     </span>
                 </div>

@@ -1,16 +1,17 @@
 "use client";
 import React, { useState } from "react";
-import CkEditor from "../../components/CkEditor";
+import CkEditor from "@/app/components/CkEditor";
 
 const AdminHomePage = () => {
-    const [editorValue, setEditorValue] = useState();
+    const [editorValue, setEditorValue] = useState<string | undefined>();
 
     return (
         <div className=" pt-24 w-9/12 mx-auto justify-center ">
             <div className=" m-4  bg-white text-primary  p-6 text-xl text-center  border-4 border-black font-extrabold shadow-buttonShadow shadow-black     ">
                 Add Service
             </div>
-            <div className="flex  flex-col gap-2">
+            {/* <div className="flex gap-2">
+            <div className="flex w-1/2 flex-col gap-2">
                 <div className="w-full ">
                     <label htmlFor="title" className="block  font-normal text-lg mb-2">
                         Service Title<span className="text-red-500">*</span>
@@ -19,7 +20,7 @@ const AdminHomePage = () => {
                         type="text"
                         id="title"
                         name="title"
-                        className=" border-2  border-gray-400   p-2 w-full focus:outline-none focus:border-primary "
+                        className=" border-b-2  border-gray-400   p-2 w-full focus:outline-none focus:border-primary "
                         required
                     />
                 </div>
@@ -31,14 +32,15 @@ const AdminHomePage = () => {
                         type="text"
                         id="imageUrl"
                         name="imageUrl"
-                        className="border-2  border-gray-400   p-2 w-full focus:outline-none focus:border-primary"
+                        className="border-b-2   border-gray-400   p-2 w-full focus:outline-none focus:border-primary"
                     />
                 </div>
+            </div>  
+            <div className="w-1/2">
+            <CkEditor editorValue={editorValue ? editorValue : ""} setEditorValue={setEditorValue} />
             </div>
-            <div>
-                <CkEditor editorValue={editorValue} setEditorValue={setEditorValue} />
+            </div> */}
             </div>
-        </div>
     );
 };
 
