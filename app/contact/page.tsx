@@ -1,4 +1,6 @@
 import Image from "next/image";
+import helloImage from "../../image/hello.png";
+
 
 const Contact = () => {
     return (
@@ -6,23 +8,23 @@ const Contact = () => {
             <div className="flex flex-col items-center justify-center ">
                 <div>
                     <Image
-                        width={600}
-                        height={600}
-                        className="mt-18"
-                        src="https://www.onlineoptimism.com/wp-content/uploads/2021/05/hello-contact--600x298.png"
-                        alt="hello"
+                        width={700}
+                        height={400}
+                        className="mt-20"
+                        src={helloImage}
+                        alt="helloImage"
                     />
                 </div>
                 <h1 className=" text-3xl md:w-1/2 text-center text-gray-800 p-4">
-                    The quickest way to get in touch is to give us a call at
-                    <span className="text-green-500 hover:text-primary hover:underline  cursor-pointer px-2">
-                        504.324.0073
-                    </span>{" "}
+                    The quickest way to get in touch is to give us a
+                    <span className="text-blue-600 hover:text-blue-700 hover:underline  cursor-pointer px-2">
+                    <a href="tel:+1(201)892-3487">Call</a>
+                    </span>
                     we&apos;ll pick up!
                 </h1>
                 <div className=" h-0.5 w-5/6 bg-gray-700 mb-4"></div>
                 {/* form  */}
-                <div className="bg-gray-100 md:w-1/2 p-10">
+                <div className="bg-gray-100 xl:w-4/6 2xl:w-3/6 p-10">
                     <h1 className=" uppercase text-xl font-semibold">
                         Fill out the form below and we&apos;ll get in touch.
                     </h1>
@@ -78,7 +80,7 @@ const Contact = () => {
                             ></textarea>
                         </div>
                         <div>
-                            <button className=" cursor-pointer  bg-green-700 hover:bg-primary  py-4 lg:px-8 px-4 text-white hover:text-black text-medium text-center  border-4 border-black  font-extrabold duration-300 ease-in-out   ">
+                            <button className=" cursor-pointer rounded-md bg-primary  py-4 lg:px-8 px-4 text-white text-medium text-center   font-extrabold duration-300 ease-in-out   ">
                                 Submit
                             </button>
                         </div>

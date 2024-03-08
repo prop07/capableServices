@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import CkEditor from "@/app/components/CkEditor";
+import Tiny from "../../components/Tiny";
 
 const AdminHomePage = () => {
     const [editorValue, setEditorValue] = useState<string | undefined>();
@@ -10,37 +10,42 @@ const AdminHomePage = () => {
             <div className=" m-4  bg-white text-primary  p-6 text-xl text-center  border-4 border-black font-extrabold shadow-buttonShadow shadow-black     ">
                 Add Service
             </div>
-            {/* <div className="flex gap-2">
-            <div className="flex w-1/2 flex-col gap-2">
-                <div className="w-full ">
-                    <label htmlFor="title" className="block  font-normal text-lg mb-2">
-                        Service Title<span className="text-red-500">*</span>
-                    </label>
-                    <input
-                        type="text"
-                        id="title"
-                        name="title"
-                        className=" border-b-2  border-gray-400   p-2 w-full focus:outline-none focus:border-primary "
-                        required
-                    />
+            <div className="flex gap-2">
+                <div className="flex w-1/2 flex-col gap-2">
+                    <div className="w-full ">
+                        <label htmlFor="title" className="block  font-normal text-lg mb-2">
+                            Service Title<span className="text-red-500">*</span>
+                        </label>
+                        <input
+                            type="text"
+                            id="title"
+                            name="title"
+                            className="w-10/12 border-b-2  border-gray-400   p-2  focus:outline-none focus:border-primary "
+                            required
+                        />
+                    </div>
+                    <div className="w-full">
+                        <label htmlFor="imageUrl" className="block  font-normal text-lg mb-2">
+                            imageUrl
+                        </label>
+                        <input
+                            type="text"
+                            id="imageUrl"
+                            name="imageUrl"
+                            className="w-10/12 border-b-2   border-gray-400   p-2  focus:outline-none focus:border-primary"
+                        />
+                    </div>
                 </div>
-                <div className="w-full">
-                    <label htmlFor="imageUrl" className="block  font-normal text-lg mb-2">
-                        imageUrl
-                    </label>
-                    <input
-                        type="text"
-                        id="imageUrl"
-                        name="imageUrl"
-                        className="border-b-2   border-gray-400   p-2 w-full focus:outline-none focus:border-primary"
-                    />
+                <div className="w-1/2">
+                    <Tiny editorValue={editorValue ? editorValue : ""} setEditorValue={setEditorValue} />
                 </div>
-            </div>  
-            <div className="w-1/2">
-            <CkEditor editorValue={editorValue ? editorValue : ""} setEditorValue={setEditorValue} />
             </div>
-            </div> */}
-            </div>
+            <span className="bg-green-500 p-2">Rich Text output:</span>
+            <div
+                className=" p-6 rendered-form  "
+                dangerouslySetInnerHTML={{ __html: editorValue }}
+            />
+        </div>
     );
 };
 

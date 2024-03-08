@@ -13,7 +13,7 @@ const NotFound = () => {
                     <p className="mb-8">
                         But don&apos;t worry, you can find plenty of other things on our homepage.
                     </p>
-                    <Link href={"/"} className="px-4  py-2 text-sm font-medium   text-white transition-colors duration-150 border border-transparent rounded-lg focus:outline-none focus:shadow-outline-blue bg-gray-600  hover:bg-gray-700">
+                    <Link href={"/"} className="px-4  py-2 text-sm font-medium   text-white transition-colors duration-150 border border-transparent rounded-lg focus:outline-none focus:shadow-outline-blue  hover:bg-gray-700">
                     Homepage
                     </Link>
                 </div>

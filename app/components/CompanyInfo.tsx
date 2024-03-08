@@ -4,7 +4,7 @@ import CountUp from 'react-countup';
 
 const CompanyInfo = () => {
   return (
-    <div className="flex  md:gap-0 gap-4 flex-col sm:flex-row border-4 border-black bg-green-600  text-white  px-4 py-10 md:justify-around justify-center items-center">
+    <div className="flex  md:gap-0 gap-4 flex-col sm:flex-row  bg-primary  text-white  px-4 py-6 md:justify-between justify-center items-center">
         <div className="flex flex-col justify-center items-center ">
             <p className=" lg:font-extrabold font-medium text-2xl">
              10+

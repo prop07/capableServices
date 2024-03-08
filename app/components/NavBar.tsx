@@ -3,7 +3,7 @@ import React, { useState, useContext } from "react";
 import { FaPhoneAlt } from "react-icons/fa";
 import { IoMdMenu } from "react-icons/io";
 import { IoMdClose } from "react-icons/io";
-import { IoIosArrowDown } from "react-icons/io";
+import { FaCaretDown } from "react-icons/fa";
 import Link from "next/link";
 
 
@@ -32,11 +32,11 @@ const Navbar = () => {
   };
 
   return (
-    <div className="fixed w-full  justify-center  z-20">
+    <div className="fixed w-full  justify-center shadow-md shadow-gray-200 z-20">
       <div className=" md:hidden flex justify-center items-center  p-2 text-white  bg-primary ">
         <span className=" flex text-sm items-center justify-center gap-1">
           Call Now: <FaPhoneAlt />
-          in order to save all your progress!
+          +888 985321475212
         </span>
       </div>
       <div className="flex  w-full bg-white font-bold   md:px-16 px-4 h-16">
@@ -53,19 +53,19 @@ const Navbar = () => {
             </div>
             <div onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} className=" relative" key={'services'}>
               <Link href={`/services`} >
-                <p className="group mb-2 flex gap-1 justify-center items-center cursor-pointer font-bold  capitalize  hover:text-primary">
+                <p className="group mb-2 flex  justify-center items-center cursor-pointer font-bold  capitalize  hover:text-primary">
               <span>services</span> 
-                <IoIosArrowDown className=" group-hover:rotate-90 duration-500 ease-in-out" size={15}/>
+                <FaCaretDown  size={15}/>
                 </p>
               </Link>
               { isDropdownVisible && 
-              <div onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} className=" absolute bg-white  w-60  shadow-buttonShadow shadow-black">
-                <div  className="flex flex-col  ">
+              <div onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} className=" absolute bg-white rounded-md  w-60  shadow-md shadow-gray-600">
+                <div  className="flex flex-col ">
               {
                 Object.keys(serviceDetails).map((key)=>(
                     <Link key={key} href={`/services/${serviceDetails[key].serviceTitle.replace(/\s/g, "-").replace("/", ".")}`} >
                   <div className=" cursor-pointer">
-                      <p className="p-2  hover:bg-gray-200  font-medium text-base capitalize">
+                      <p className="p-2  hover:bg-gray-200   font-medium text-base capitalize">
                         {serviceDetails[key].serviceTitle}
                       </p>
                   <hr className=" text-gray-400  mx-auto " />
@@ -101,12 +101,22 @@ const Navbar = () => {
             className={` cursor-pointer ${humBurgerMenu ? "block":"hidden"}`}
             size={30}
           />
-          <div className={`  bg-white  px-4 shadow-buttonShadow shadow-black    absolute top-20   ${humBurgerMenu ? "block":"hidden"}  `}>
+          <div className={`  bg-white  px-4 shadow-buttonShadow shadow-gray-300    absolute top-20   ${humBurgerMenu ? "block":"hidden"}  `}>
           <div key={'mbHome'} className="flex flex-col justify-center items-center">
                 <div >
                   <Link href={`/`} onClick={() => setHumBurgerMenu(!humBurgerMenu)}>
                     <p className="mb-2 p-1  cursor-pointer   font-medium  text-base capitalize">
                       Home
+                    </p>
+                  </Link>
+                </div>
+                <hr className=" text-gray-400 w-3/4 mx-auto " />
+              </div>
+              <div key={'mbServices'} className="flex flex-col justify-center items-center">
+                <div >
+                  <Link href={`/services`} onClick={() => setHumBurgerMenu(!humBurgerMenu)}>
+                    <p className="mb-2 p-1  cursor-pointer   font-medium  text-base capitalize">
+                      Services
                     </p>
                   </Link>
                 </div>
@@ -130,7 +140,7 @@ const Navbar = () => {
           </div>
         </div>
         <div className=" justify-end items-center  md:w-3/12 w-full md:flex hidden">
-          <span className="flex items-center cursor-pointer  bg-secondary  py-1  px-2 text-white text-medium  text-center ">
+          <span className="flex items-center rounded-md cursor-pointer  bg-primary  py-2  px-3 text-white text-medium  text-center ">
             <FaPhoneAlt className="mr-2" /> Call now
           </span>
         </div>
