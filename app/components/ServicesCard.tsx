@@ -9,9 +9,13 @@ const ServicesCard = () => {
   return (
     <div className='my-8'>
     <div className="flex mx-auto justify-center items-center w-1/2">
-      <p className="lg:text-2xl text-xl text-gray-700 text-center  md:font-bold font-bold mb-2 uppercase ">
+      <div>
+        <p className="lg:text-2xl text-xl text-gray-700 text-center  md:font-bold font-bold mb-0.5 uppercase ">
       Hvac Repair Nyc - Air Conditioner Installation In Brooklyn Ny
       </p>
+      <div className="h-1 w-3/12 justify-center m-auto bg-primary mb-2"></div>
+      </div>
+      
     </div>
     <div className='grid xl:grid-cols-3 lg:grid-cols-2 sm:grid-cols-1 gap-6 w-full justify-around '>
       {/* card  */}

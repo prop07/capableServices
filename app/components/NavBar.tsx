@@ -9,7 +9,7 @@ import Link from "next/link";
 
 //context
 import { ServiceContext } from "../../context/ServiceProvider";
-const navLink = ["about", "work", "contact"];
+const navLink = [ "why us?","blog", "contact", "about",];
 
 type Services = {
   [id: string]: {

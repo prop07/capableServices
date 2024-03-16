@@ -17,9 +17,9 @@ type Services = {
 const Footer = () => {
   const serviceDetails = useContext<Services>(ServiceContext);
 
-  const quickLinks = ["about", "services", "work", "contact"];
+  const quickLinks = [ "services", "why us", "contact","about",];
 
-  const location = ["New Jersey"];
+  const location = ["New Jersey", "New York"];
 
   return (
     <footer className=" divide-y ">

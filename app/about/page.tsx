@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import CoreValues from "../components/CoreValues";
+import abousUSVector from "../../image/vectors/aboutUsCard.jpg"
 
 const Page = async () => {
   return (
@@ -31,9 +32,9 @@ const Page = async () => {
       </div>
       {/* about  */}
       <div className="text-gray-600 body-font ">
-        <div className="container mx-auto flex md:px-24 md:py-10 2xl:flex-row flex-col items-center">
-          <div className="lg:flex-grow mt-5 md:mt-0  lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-cente 2xl:w-1/2">
-            <p className="mb-8 md:pl-0  pl-2 pr-2 text-xs md:text-base">
+        <div className=" mx-auto mt-4 flex  2xl:flex-row flex-col items-start">
+          <div className="lg:flex-grow  flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-cente 2xl:w-1/2">
+          <p className="mb-4 md:pl-0  pl-2 pr-2 text-xs md:text-base">
               Capable Service stands as a beacon of reliability and excellence
               in the HVAC industry, serving as a trusted partner for residents
               across New Jersey. With a mantra centered on{" "}
@@ -49,7 +50,7 @@ const Page = async () => {
               prioritizes customer satisfaction above all else, going above and
               beyond to exceed expectations with every service offered.
             </p>
-            <p className="mb-8 md:pl-0  pl-2 pr-2 text-xs md:text-base">
+            <p className="mb-4 md:pl-0  pl-2 pr-2 text-xs md:text-base">
               What sets Capable Service apart is their unwavering commitment to
               quality, affordability, and trustworthiness in every aspect of
               their operations. With over a{" "}
@@ -68,13 +69,13 @@ const Page = async () => {
               quality.
             </p>
           </div>
-          <div className="lg:max-w-lg lg:w-full mb-5 md:mb-0 md:w-1/2 sm:w-3/6">
+          <div className="2xl:block hidden lg:max-w-lg lg:w-full">
             <Image
-              height={500}
-              width={500}
-              className="object-cover object-center rounded"
+              height={350}
+              width={350}
+              className=" object-center"
               alt="hero"
-              src="https://img.freepik.com/free-vector/ventilation-system-abstract-concept-vector-illustration-mechanical-ventilation-airing-cooling-system-maintenance-exhaust-fan-new-air-flow-exchange-improve-air-quality-abstract-metaphor_335657-5754.jpg"
+              src={abousUSVector}
             />
           </div>
         </div>

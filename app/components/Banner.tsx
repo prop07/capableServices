@@ -15,7 +15,7 @@ const Banner = () => {
         <div className="absolute sm:w-2/3 lg:w-2/5 flex flex-col md:p-0 p-4 ">
           <h1 className=" uppercase 2xl:text-5xl text-4xl  font-black flex flex-col   text-gray-800">
             Capable Service your trusted{" "}
-            <span className=" text-primary ">HVAC</span> partner in New Jersey.
+            <span className=" text-primary ">HVAC</span> partner in New Jersey & New York
           </h1>
           <p className="mt-2 md:w-11/12 w-4/6  text-base   text-gray-800  sm:block hidden ">
             At Capable Service, we take pride in delivering top-notch HVAC
