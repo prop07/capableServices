@@ -63,7 +63,7 @@ const Navbar = () => {
                   {Object.keys(serviceDetails).map((key) => (
                     <div key={key} className="group/items relative">
                       <Link href={`/services/${serviceDetails[key].serviceTitle.replace(/\s/g, "-").replace("/", ".")}`}>
-                        <div className=" flex items-center cursor-pointer p-2 hover:bg-gray-100 text-sm  text-gray-800 capitalize ">
+                        <div className=" flex items-center cursor-pointer p-2 group-hover/items:bg-gray-100  hover:bg-gray-100 text-sm  text-gray-800 capitalize ">
                           {serviceDetails[key].serviceTitle}
                           <FaAngleDown className="ml-1 group-hover/items:rotate-90   duration-200 ease-in-out" size={15} />
                         </div>
