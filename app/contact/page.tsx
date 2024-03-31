@@ -8,8 +8,8 @@ const Contact = () => {
             <div className="flex flex-col items-center justify-center ">
                 <div>
                     <Image
-                        width={700}
-                        height={400}
+                        width={900}
+                        height={300}
                         className="mt-20"
                         src={helloImage}
                         alt="helloImage"
@@ -24,7 +24,7 @@ const Contact = () => {
                 </h1>
                 <div className=" h-0.5 w-5/6 bg-gray-700 mb-4"></div>
                 {/* form  */}
-                <div className="bg-gray-100 xl:w-4/6 2xl:w-3/6 p-10">
+                <div className="bg-gray-100 xl:w-4/6 2xl:w-3/6 p-10 mb-4">
                     <h1 className=" uppercase text-xl font-semibold">
                         Fill out the form below and we&apos;ll get in touch.
                     </h1>

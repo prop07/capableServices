@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ["www.onlineoptimism.com","plus.unsplash.com","images.unsplash.com","img.freepik.com", 'img.lovepik.com',"cdn.pixabay.com" , "as2.ftcdn.net"], // Add the hostname(s) here
+    domains: ["firebasestorage.googleapis.com","www.onlineoptimism.com","plus.unsplash.com","images.unsplash.com","img.freepik.com", 'img.lovepik.com',"cdn.pixabay.com" , "as2.ftcdn.net"], // Add the hostname(s) here
   },
   typescript: {
     // !! WARN !!

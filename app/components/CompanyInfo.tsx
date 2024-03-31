@@ -25,6 +25,16 @@ const CompanyInfo = () => {
           
         </div>
         <div className="flex flex-col justify-center items-center  ">
+         
+         <p className=" lg:font-extrabold font-medium text-2xl">
+           20k+
+         </p>
+         <p>
+           Happy Client
+         </p>
+       
+     </div>
+        <div className="flex flex-col justify-center items-center  ">
        
             <p className=" lg:font-extrabold font-medium text-2xl ">
              24/8
