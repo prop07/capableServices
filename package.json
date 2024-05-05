@@ -9,7 +9,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@firebase/database": "^1.0.3",
     "@tinymce/tinymce-react": "^4.3.2",
     "firebase": "^10.8.0",
     "install": "^0.13.0",

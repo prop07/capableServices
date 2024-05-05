@@ -4,7 +4,7 @@ const PatnerCompany = () => {
   return (
     <section >
     <div className="py-8 lg:py-16 mx-auto max-w-screen-xl px-4">
-        <h2 className="lg:text-2xl text-xl text-gray-700  md:font-bold font-bold mb-0.5 uppercase text-center">A Few of our Past & Present Clients</h2>
+        <h2 className="lg:text-2xl text-xl text-gray-700  md:font-bold font-bold mb-0.5 uppercase text-center">A Few of our Past & Present Patener</h2>
         <div className="h-1 m-auto w-2/12 bg-primary mb-4"></div>
         <div className="grid grid-cols-2 gap-8 text-gray-500 sm:gap-12 md:grid-cols-3 lg:grid-cols-6 ">
             <a href="#" className="flex justify-center items-center">

@@ -7,7 +7,7 @@ const CompanyInfo = () => {
     <div className="flex  md:gap-0 gap-4 flex-col sm:flex-row  bg-primary  text-white  px-4 py-6 md:justify-between justify-center items-center">
         <div className="flex flex-col justify-center items-center ">
             <p className=" lg:font-extrabold font-medium text-2xl">
-             10+
+             5+
             </p>
             <p>
               Years Business
@@ -17,7 +17,7 @@ const CompanyInfo = () => {
         <div className="flex flex-col justify-center items-center  ">
          
             <p className=" lg:font-extrabold font-medium text-2xl">
-              14k+
+              5k+
             </p>
             <p>
               Project Complete
@@ -25,19 +25,16 @@ const CompanyInfo = () => {
           
         </div>
         <div className="flex flex-col justify-center items-center  ">
-         
          <p className=" lg:font-extrabold font-medium text-2xl">
-           20k+
-         </p>
-         <p>
-           Happy Client
-         </p>
-       
+          5k+
+        </p>
+        <p>
+        Happy Client
+        </p>
      </div>
         <div className="flex flex-col justify-center items-center  ">
-       
             <p className=" lg:font-extrabold font-medium text-2xl ">
-             24/8
+            24/7
             </p>
             <p>
               Always Support

@@ -28,11 +28,6 @@ const Banner = () => {
                 Get a quote
               </span>
             </Link>
-            <Link href={"/services"}>
-              <span className=" cursor-pointer  bg-primary py-4 lg:px-4 px-4 text-white md:text-base text-sm  text-center font-extrabold rounded-md ">
-                Our services
-              </span>
-            </Link>
           </div>
         </div>
         <div className="">

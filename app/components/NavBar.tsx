@@ -9,7 +9,7 @@ import Link from "next/link";
 
 //context
 import { ServiceContext } from "../../context/ServiceProvider";
-const navLink = ["why us?", "blog", "contact", "about",];
+const navLink = [ "contact", "about","blog"];
 
 type Services = {
   [id: string]: {
@@ -62,12 +62,10 @@ const Navbar = () => {
                   {/* Second Dropdown */}
                   {Object.keys(serviceDetails).map((key) => (
                     <div key={key} className="group/items relative">
-                      <Link href={`/services/${serviceDetails[key].serviceTitle.replace(/\s/g, "-").replace("/", ".")}`}>
                         <div className=" flex items-center cursor-pointer p-2 group-hover/items:bg-gray-100  hover:bg-gray-100 text-sm  text-gray-800 capitalize ">
                           {serviceDetails[key].serviceTitle}
                           <FaAngleDown className="ml-1 group-hover/items:rotate-90   duration-200 ease-in-out" size={15} />
                         </div>
-                      </Link>
                       {/* Second Dropdown Content */}
                       <div className="absolute group-hover/items:block  hidden inset-x-0 top-0  left-60  w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5" role="menu" aria-orientation="vertical" aria-labelledby="second-dropdown-menu">
                         <div className="py-1" role="none">

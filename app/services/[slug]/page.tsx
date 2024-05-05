@@ -3,7 +3,6 @@ import Image from "next/image";
 
 //icon
 import { GoDotFill } from "react-icons/go";
-import { Testimonials } from "@/app/components/Testimonials";
 
 const detailsObject = {
     title:
@@ -19,8 +18,6 @@ const detailsObject = {
 const json = {
     text: "<p>A paragraph is defined as “<strong>a group of sentences or a single sentence that forms a unit</strong>” (Lunsford and Connors 116). Length and appearance do not determine whether a section in a paper is a paragraph. For instance, in some styles of writing, particularly journalistic styles, a paragraph can be just one sentence long.</p><p>&nbsp;</p><ul><li>By following these tips, <strong>tricks, and best practices</strong> for bullet points in Excel, you can create visually appealing, organized and reader-friendly spreadsheets, making the data easier to understand and analyze.</li><li>Another important tip for using bullet points effectively in Excel spreadsheets is to use them to break down complex information into smaller, more manageable chunks. This can help readers to better understand the data and identify key trends or patterns.</li><li>Additionally, it’s important to use bullet points in a logical and intuitive way. For example, if you’re presenting a list of steps or instructions, it’s best to use bullet points in a sequential order to make it easier for readers to follow along.</li></ul><p>&nbsp;</p>"
   }
-  
-
 const page = ({ params }: { params: { slug: string } }) => {
     return (
         <div className="md:w-9/12  mx-auto justify-center z-10">
@@ -39,7 +36,7 @@ const page = ({ params }: { params: { slug: string } }) => {
                 </div>
                 <div className="space-y-2 z-10">
                     <span className="  bg-white text-primary rounded-md  p-2 md:text-4xl text-xl text-center  font-extrabold     ">
-                        {params.slug}
+                        {params.slug.replace(/\./g, "/").replace(/-/g, " ").replace(/%26/g, "&")}
                     </span>
                 </div>
             </div>
@@ -60,7 +57,6 @@ const page = ({ params }: { params: { slug: string } }) => {
                 </div>
             </div>
             <span className="p-2" dangerouslySetInnerHTML={{__html:json.text}}/>
-            <Testimonials/>
         </div>
     );
 };
