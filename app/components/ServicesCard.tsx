@@ -19,20 +19,19 @@ const ServicesCard = () => {
 
   return (
     <div className=' space-y-4 my-4'>
-      <div className="flex mx-auto justify-center items-center w-1/2">
+      <div className="flex mx-auto justify-center items-center p-2 sm:w-1/2">
         <div>
           <p className="lg:text-2xl text-xl text-gray-700 text-center  md:font-bold font-bold mb-0.5 uppercase ">
             Hvac Repair Nyc - Air Conditioner Installation In Brooklyn Ny
           </p>
-          <div className="h-1 w-3/12 justify-center m-auto bg-primary "></div>
         </div>
       </div>
-      <div className='grid mx-auto xl:grid-cols-3 lg:grid-cols-2 sm:grid-cols-1 gap-2  w-full justify-between '>
+      <div className='grid mx-auto xl:grid-cols-3 lg:grid-cols-2 sm:grid-cols-1 gap-2 p-2  w-full justify-between '>
         {/* card  */}
         {Object.keys(serviceDetails).map((key) => (
           <Link key={key} href={`/services/${serviceDetails[key].serviceTitle.replace(/\s/g, "-").replace("/", ".")}`}>
             <div
-              className="group relative cursor-pointer overflow-hidden mx-auto  p-3  border border-gray-50 hover:border-sky-500   shadow-xl ring-1 ring-gray-900/5 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl  sm:max-w-sm sm:rounded-lg ">
+              className="group relative cursor-pointer overflow-hidden mx-auto h-full  p-4  border border-gray-50 hover:border-sky-500   shadow-xl ring-1 ring-gray-900/5 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl  sm:max-w-sm rounded-lg ">
               <span className="absolute top-10 left-5 z-0 h-10 w-10 rounded-full bg-sky-500 transition-all duration-300 group-hover:scale-[30]"></span>
               <div className="relative z-10 mx-auto max-w-md">
                 <div className='flex items-center  '>
@@ -42,10 +41,10 @@ const ServicesCard = () => {
                   <p className='ml-2 text-lg   font-bold text-gray-700  group-hover:text-white/90'>{serviceDetails[key].serviceTitle}</p>
                 </div>
                 <div
-                  className="space-y-6 pt-5 text-base leading-7 text-gray-600 transition-all duration-300 group-hover:text-white/90">
+                  className="space-y-6  pt-5 text-base leading-7 text-gray-600 transition-all duration-300 group-hover:text-white/90">
                   <p>{serviceDetails[key].serviceDescription}</p>
                 </div>
-                <div className="pt-5 text-base font-semibold leading-7">
+                <div className="pt-5 text-base  font-semibold leading-7">
                   <p>
                     <p className="text-sky-500 transition-all duration-300 group-hover:text-white">View Detail
                       &rarr;

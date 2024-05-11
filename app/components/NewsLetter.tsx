@@ -2,7 +2,7 @@ import { IoMdSend } from "react-icons/io";
 
 const NewsLetter = () => {
     return (
-        <div className=" md:w-[80%]  mx-auto  text-gray-900 flex justify-center">
+        <div className=" md:w-[80%] px-2  mx-auto  text-gray-900 flex justify-center">
             <div className="  sm:m-10 bg-white border border-gray-100 lg:border-none  shadow-xl sm:rounded-lg  flex justify-center flex-1">
                 <div className="lg:w-1/2 xl:w-5/12 p-6 sm:p-12 lg:border-l lg:border-t lg:border-b border-gray-100 lg:rounded-tl-lg">
                     <div>

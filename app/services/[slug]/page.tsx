@@ -58,20 +58,20 @@ const Page = ({ params }: { params: { slug: string } }) => {
                 </div>
             </div>
             {/* card  */}
-            <div className="grid justify-between gap-4  grid-cols-1 lg:grid-cols-2 xl:grid-cols-3">
+            <div className="grid justify-between gap-4 px-2  grid-cols-1 lg:grid-cols-2 xl:grid-cols-3">
                 {subcategory && Object.keys(subcategory).map((key) => (
                     <div key={key} className="group relative overflow-hidden rounded-lg shadow-lg transition-all duration-300 hover:scale-105">
                         <div className="relative h-48 overflow-hidden">
-                            <img
+                            <Image
                                 alt="Card header image"
                                 className="h-full w-full object-cover transition-all duration-300 group-hover:scale-105"
-                                height="192"
+                                height={192}
                                 src="https://img.freepik.com/free-photo/team-replacing-old-air-conditioner_482257-78499.jpg?t=st=1714918276~exp=1714921876~hmac=227c8f74610ae20dca5a06b9ca2c1a611fc201e767301fc6e35874dae2c300b9&w=1380" alt="Sunset in the mountains"
                                 style={{
                                     aspectRatio: "384/192",
                                     objectFit: "cover",
                                 }}
-                                width="384"
+                                width={384}
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-primary to-transparent opacity-50" />
                         </div>

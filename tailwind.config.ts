@@ -19,6 +19,7 @@ const config: Config = {
         whatsappGreen: '#25D366',
         facebookBlue: '#1877F2',
         instagramPurple: '#C13584',
+        read: "rgb(82 82 82)",
       },
       boxShadow:{
         "16Shadow": '-16px 16px',
