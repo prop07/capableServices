@@ -57,7 +57,7 @@ const InfoCard = () => {
           </div>
         </div>
         <div className=" block lg:hidden w-full   " style={{ backgroundImage: "url('https://img.freepik.com/premium-photo/portrait-beautiful-asian-woman-yellow-clothshipsters-girl-wear-yellow-hat-take-picturethailand-people_44277-5348.jpg?w=1380')" }}>
-          <div className="flex   md:gap-0 space-y-2 space-x-2 flex-col    text-white px-4 py-8 md:justify-around justify-center items-center" >
+          <div className="flex bg-black  opacity-75   md:gap-0 space-y-2 space-x-2 flex-col    text-white px-4 py-8 md:justify-around justify-center items-center" >
             <div className="flex gap-3  ">
               <div className=" border-2 border-white  h-12 w-12 flex justify-center items-center mt-2 rounded-full">
                 <TiTick size={25} />

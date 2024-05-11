@@ -1,11 +1,10 @@
 'use client'
 import React, { useContext, useEffect } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { ServiceContext } from "@/context/ServiceProvider";
 import TextHeader from "@/ui/text/TextHeader";
 
-//icon
-import { GoDotFill } from "react-icons/go";
 
 type Services = {
     [id: string]: {
@@ -42,48 +41,45 @@ const Page = ({ params }: { params: { slug: string } }) => {
 
 
     return (
-        <div className="md:w-9/12  mx-auto justify-center space-y-6">
+        <div className="md:w-9/12  mx-auto justify-center space-y-6 ">
             <TextHeader title={params.slug.replace(/\./g, "/").replace(/-/g, " ").replace(/%26/g, "&")} />
             {/* details  */}
-            <div className=" text-gray-900">
-                <div className="">
-                    <div className="" dangerouslySetInnerHTML={{ __html: detailsObject.title }} />
-                    <div className="">
-                        {detailsObject.bullet_points.map((item, index) => (
-                            <p className="mb-2 flex justify-start " key={index}>
-                                <GoDotFill className="" /> <span dangerouslySetInnerHTML={{ __html: item }} />
-                            </p>
-                        ))}
-                    </div>
-                </div>
+            <div className=" ">
+                <p className="text-read">Paragraphs are the building blocks of papers Many students define paragraphs in terms of length a paragraph is a group: of at least five sentences, a paragraph is half a page long, etc. In reality, though, the unity and coherence of ideas among sentences is what constitutes a paragraph. A paragraph is defined as “a group of sentences or a single sentence that forms a unit” (Lunsford and Connors 116). Length and appearance do not determine whether a section in a paper is a paragraph. For instance, in some styles of writing, particularly journalistic styles, a paragraph can be just one sentence long. Ultimately, a paragraph is a sentence or group of sentences that support one main idea. In this handout, we will refer to this as the “controlling idea,” because it controls what happens in the rest of the paragraph.</p>
             </div>
             {/* card  */}
             <div className="grid justify-between gap-4 px-2  grid-cols-1 lg:grid-cols-2 xl:grid-cols-3">
                 {subcategory && Object.keys(subcategory).map((key) => (
-                    <div key={key} className="group relative overflow-hidden rounded-lg shadow-lg transition-all duration-300 hover:scale-105">
-                        <div className="relative h-48 overflow-hidden">
-                            <Image
-                                alt="Card header image"
-                                className="h-full w-full object-cover transition-all duration-300 group-hover:scale-105"
-                                height={192}
-                                src="https://img.freepik.com/free-photo/team-replacing-old-air-conditioner_482257-78499.jpg?t=st=1714918276~exp=1714921876~hmac=227c8f74610ae20dca5a06b9ca2c1a611fc201e767301fc6e35874dae2c300b9&w=1380" 
-                                style={{
-                                    aspectRatio: "384/192",
-                                    objectFit: "cover",
-                                }}
-                                width={384}
-                            />
-                            <div className="absolute inset-0 bg-gradient-to-t from-primary to-transparent opacity-50" />
-                        </div>
-                        <div className="p-4">
-                            <h3 className="text-md font-bold  text-gray-600">{key}</h3>
-                            <div className="absolute inset-0 bg-primary opacity-0  p-4 transition-all duration-300 group-hover:opacity-90">
-                                <p className="text-white">
-                                    {subcategory[key]}
-                                </p>
+                    <Link key={key}
+                        href={`/services/details/${key
+                            .replace(/\s/g, "-")
+                            .replace("/", ".")}`}
+                    >
+                        <div className="group relative overflow-hidden rounded-lg shadow-lg transition-all duration-300 hover:scale-105">
+                            <div className="relative h-48 overflow-hidden">
+                                <Image
+                                    alt="Card header image"
+                                    className="h-full w-full object-cover transition-all duration-300 group-hover:scale-105"
+                                    height={192}
+                                    src="https://img.freepik.com/free-photo/team-replacing-old-air-conditioner_482257-78499.jpg?t=st=1714918276~exp=1714921876~hmac=227c8f74610ae20dca5a06b9ca2c1a611fc201e767301fc6e35874dae2c300b9&w=1380"
+                                    style={{
+                                        aspectRatio: "384/192",
+                                        objectFit: "cover",
+                                    }}
+                                    width={384}
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-primary to-transparent opacity-50" />
+                            </div>
+                            <div className="p-4">
+                                <h3 className="text-md font-bold  text-gray-600">{key}</h3>
+                                <div className="absolute inset-0 bg-primary opacity-0  p-4 transition-all duration-300 group-hover:opacity-90">
+                                    <p className="text-white">
+                                        {subcategory[key]}
+                                    </p>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    </Link>
                 ))}
             </div>
         </div>

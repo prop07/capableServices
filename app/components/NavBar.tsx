@@ -76,7 +76,13 @@ const Navbar = () => {
                       <div className="absolute group-hover/items:block  hidden inset-x-0 top-0  left-60  w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5" role="menu" aria-orientation="vertical" aria-labelledby="second-dropdown-menu">
                         <div className="py-1" role="none">
                           {Object.keys(serviceDetails[key].subCatagory).map((key, value) => (
-                            <a key={key} href="#" className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100" role="menuitem">{key}</a>
+                            <Link key={key}
+                              href={`/services/details/${key
+                                .replace(/\s/g, "-")
+                                .replace("/", ".")}`}
+                            >
+                              <p className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100" role="menuitem">{key}</p>
+                            </Link>
                           ))}
                         </div>
                       </div>

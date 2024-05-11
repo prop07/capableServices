@@ -24,14 +24,15 @@ const ServicesCard = () => {
           <p className="lg:text-2xl text-xl text-gray-700 text-center  md:font-bold font-bold mb-0.5 uppercase ">
             Hvac Repair Nyc - Air Conditioner Installation In Brooklyn Ny
           </p>
+        <div className="h-1 m-auto w-4/12 bg-primary mb-4 rounded-full "></div>
         </div>
       </div>
-      <div className='grid mx-auto xl:grid-cols-3 lg:grid-cols-2 sm:grid-cols-1 gap-2 p-2  w-full justify-between '>
+      <div className='grid mx-auto xl:grid-cols-3 lg:grid-cols-2 sm:grid-cols-1 gap-2 p-2  items-center justify-center '>
         {/* card  */}
         {Object.keys(serviceDetails).map((key) => (
           <Link key={key} href={`/services/${serviceDetails[key].serviceTitle.replace(/\s/g, "-").replace("/", ".")}`}>
             <div
-              className="group relative cursor-pointer overflow-hidden mx-auto h-full  p-4  border border-gray-50 hover:border-sky-500   shadow-xl ring-1 ring-gray-900/5 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl  sm:max-w-sm rounded-lg ">
+              className="group relative cursor-pointer overflow-hidden mx-auto   p-4  border border-gray-50 hover:border-sky-500   shadow-xl ring-1 ring-gray-900/5 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl  sm:max-w-sm rounded-lg ">
               <span className="absolute top-10 left-5 z-0 h-10 w-10 rounded-full bg-sky-500 transition-all duration-300 group-hover:scale-[30]"></span>
               <div className="relative z-10 mx-auto max-w-md">
                 <div className='flex items-center  '>
