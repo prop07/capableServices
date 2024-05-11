@@ -39,6 +39,8 @@ const Page = ({ params }: { params: { slug: string } }) => {
 
     const subcategory = Object.values(serviceDetails).find(service => service.serviceTitle === params.slug.replace(/\./g, "/").replace(/-/g, " "))?.subCatagory;
 
+    console.log(subcategory)
+
 
     return (
         <div className="md:w-9/12  mx-auto justify-center space-y-6 ">
@@ -61,7 +63,7 @@ const Page = ({ params }: { params: { slug: string } }) => {
                                     alt="Card header image"
                                     className="h-full w-full object-cover transition-all duration-300 group-hover:scale-105"
                                     height={192}
-                                    src="https://img.freepik.com/free-photo/team-replacing-old-air-conditioner_482257-78499.jpg?t=st=1714918276~exp=1714921876~hmac=227c8f74610ae20dca5a06b9ca2c1a611fc201e767301fc6e35874dae2c300b9&w=1380"
+                                    src={subcategory[key].image}
                                     style={{
                                         aspectRatio: "384/192",
                                         objectFit: "cover",
@@ -74,7 +76,9 @@ const Page = ({ params }: { params: { slug: string } }) => {
                                 <h3 className="text-md font-bold  text-gray-600">{key}</h3>
                                 <div className="absolute inset-0 bg-primary opacity-0  p-4 transition-all duration-300 group-hover:opacity-90">
                                     <p className="text-white">
-                                        {subcategory[key]}
+                                        {subcategory[key].description}
+                                    </p>
+                                    <p className="  pt-4  font-semibold text-md rounded-md text-white">Book now &rarr;
                                     </p>
                                 </div>
                             </div>
