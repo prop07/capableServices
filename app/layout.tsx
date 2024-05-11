@@ -31,7 +31,7 @@ export default function RootLayout({
         <NavBar />
         <SocialNav/>
         <Suspense fullback={<Loading />}>
-        <main >{children}</main>
+        <main className="pt-20" >{children}</main>
         </Suspense>
         <NewsLetter/>
         <Testimonials/>

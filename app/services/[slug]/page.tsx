@@ -1,8 +1,21 @@
-import React from "react";
+'use client'
+import React, { useContext, useEffect } from "react";
 import Image from "next/image";
+import { ServiceContext } from "@/context/ServiceProvider";
+import TextHeader from "@/ui/text/TextHeader";
 
 //icon
 import { GoDotFill } from "react-icons/go";
+
+type Services = {
+    [id: string]: {
+        image: string;
+        serviceDescription: string;
+        serviceTitle: string;
+        subCatagory: object
+    };
+};
+
 
 const detailsObject = {
     title:
@@ -17,48 +30,69 @@ const detailsObject = {
 
 const json = {
     text: "<p>A paragraph is defined as “<strong>a group of sentences or a single sentence that forms a unit</strong>” (Lunsford and Connors 116). Length and appearance do not determine whether a section in a paper is a paragraph. For instance, in some styles of writing, particularly journalistic styles, a paragraph can be just one sentence long.</p><p>&nbsp;</p><ul><li>By following these tips, <strong>tricks, and best practices</strong> for bullet points in Excel, you can create visually appealing, organized and reader-friendly spreadsheets, making the data easier to understand and analyze.</li><li>Another important tip for using bullet points effectively in Excel spreadsheets is to use them to break down complex information into smaller, more manageable chunks. This can help readers to better understand the data and identify key trends or patterns.</li><li>Additionally, it’s important to use bullet points in a logical and intuitive way. For example, if you’re presenting a list of steps or instructions, it’s best to use bullet points in a sequential order to make it easier for readers to follow along.</li></ul><p>&nbsp;</p>"
-  }
-const page = ({ params }: { params: { slug: string } }) => {
+}
+const Page = ({ params }: { params: { slug: string } }) => {
+    const serviceDetails = useContext<Services>(ServiceContext);
+
+    useEffect(() => {
+        console.log("services:", JSON.stringify(serviceDetails))
+    }, [serviceDetails])
+
+    const subcategory = Object.values(serviceDetails).find(service => service.serviceTitle === params.slug.replace(/\./g, "/").replace(/-/g, " "))?.subCatagory;
+
+
     return (
-        <div className="md:w-9/12  mx-auto justify-center z-10">
-            <div
-                className="relative  flex flex-col items-center justify-center text-center text-white "
-                style={{ height: "40vh" }}
-            >
-                <div className="absolute top-0 left-0 w-full h-full overflow-hidden">
-                    <Image
-                        height={800}
-                        width={800}
-                        className="min-w-full min-h-full absolute object-cover"
-                        src="https://images.unsplash.com/photo-1573497620053-ea5300f94f21?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                        alt="service"
-                    />
-                </div>
-                <div className="space-y-2 z-10">
-                    <span className="  bg-white text-primary rounded-md  p-2 md:text-4xl text-xl text-center  font-extrabold     ">
-                        {params.slug.replace(/\./g, "/").replace(/-/g, " ").replace(/%26/g, "&")}
-                    </span>
-                </div>
-            </div>
+        <div className="md:w-9/12  mx-auto justify-center space-y-6">
+            <TextHeader title={params.slug.replace(/\./g, "/").replace(/-/g, " ").replace(/%26/g, "&")} />
             {/* details  */}
-            <div className=" m-6 text-gray-900">
-                <span className="bg-primary md:text-2xl sm:text-xl text-base sm:font-bold font-normal p-2 uppercase text-white">
-                    Details
-                </span>
-                <div className="p-4">
-                    <div className="mt-4" dangerouslySetInnerHTML={{__html: detailsObject.title}} />
-                    <div className="p-2">
+            <div className=" text-gray-900">
+                <div className="">
+                    <div className="" dangerouslySetInnerHTML={{ __html: detailsObject.title }} />
+                    <div className="">
                         {detailsObject.bullet_points.map((item, index) => (
                             <p className="mb-2 flex justify-start " key={index}>
-                                <GoDotFill className="mt-1 mr-2" /> <span dangerouslySetInnerHTML={{__html:item}}/>
+                                <GoDotFill className="" /> <span dangerouslySetInnerHTML={{ __html: item }} />
                             </p>
                         ))}
                     </div>
                 </div>
             </div>
-            <span className="p-2" dangerouslySetInnerHTML={{__html:json.text}}/>
+            {/* card  */}
+            <div className="grid justify-between gap-4  grid-cols-1 lg:grid-cols-2 xl:grid-cols-3">
+                {subcategory && Object.keys(subcategory).map((key) => (
+                    <div key={key} className="group relative overflow-hidden rounded-lg shadow-lg transition-all duration-300 hover:scale-105">
+                        <div className="relative h-48 overflow-hidden">
+                            <img
+                                alt="Card header image"
+                                className="h-full w-full object-cover transition-all duration-300 group-hover:scale-105"
+                                height="192"
+                                src="https://img.freepik.com/free-photo/team-replacing-old-air-conditioner_482257-78499.jpg?t=st=1714918276~exp=1714921876~hmac=227c8f74610ae20dca5a06b9ca2c1a611fc201e767301fc6e35874dae2c300b9&w=1380" alt="Sunset in the mountains"
+                                style={{
+                                    aspectRatio: "384/192",
+                                    objectFit: "cover",
+                                }}
+                                width="384"
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-primary to-transparent opacity-50" />
+                        </div>
+                        <div className="p-4">
+                            <h3 className="text-md font-bold  text-gray-600">{key}</h3>
+                            <div className="absolute inset-0 bg-primary opacity-0  p-4 transition-all duration-300 group-hover:opacity-90">
+                                <p className="text-white">
+                                    {subcategory[key]}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                ))}
+            </div>
         </div>
     );
 };
 
-export default page;
+export default Page;
+
+
+
+
+

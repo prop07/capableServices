@@ -43,7 +43,7 @@ export const Testimonials = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       goToNextSlide();
-    }, 4000);
+    }, 3000);
 
     return () => clearTimeout(timer);
   }, [currentSlide]);
