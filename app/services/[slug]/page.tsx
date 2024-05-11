@@ -53,9 +53,10 @@ const Page = ({ params }: { params: { slug: string } }) => {
             <div className="grid justify-between gap-4 px-2  grid-cols-1 lg:grid-cols-2 xl:grid-cols-3">
                 {subcategory && Object.keys(subcategory).map((key) => (
                     <Link key={key}
-                        href={`/services/details/${key
-                            .replace(/\s/g, "-")
-                            .replace("/", ".")}`}
+                        href={`/services/details/${params.slug.replace(/\s/g, "-")
+                            .replace("/", ".")}/${key
+                                .replace(/\s/g, "-")
+                                .replace("/", ".")}`}
                     >
                         <div className="group relative overflow-hidden rounded-lg shadow-lg transition-all duration-300 hover:scale-105">
                             <div className="relative h-48 overflow-hidden">

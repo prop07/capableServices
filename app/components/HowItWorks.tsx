@@ -2,7 +2,7 @@ import React from 'react'
 import TextHeader from '@/ui/text/TextHeader'
 
 
-export default function HowItWorks() {
+export default function HowItWorks({category, ...props}) {
     return (
         <div className="">
             <div className="container mx-auto px-2 space-y-3 ">

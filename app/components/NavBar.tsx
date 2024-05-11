@@ -60,28 +60,30 @@ const Navbar = () => {
               <div className="hidden group-hover:block hover:block absolute top-5 right-46 mt-2 w-60 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5" role="menu" aria-orientation="vertical" aria-labelledby="dropdown-menu">
                 {Object.keys(serviceDetails).length !== 0 ? <div className="py-1" role="none">
                   {/* Second Dropdown */}
-                  {Object.keys(serviceDetails).map((key) => (
-                    <div key={key} className="group/items relative">
+                  {Object.keys(serviceDetails).map((key1) => (
+                    <div key={key1} className="group/items relative">
                       <Link
-                        href={`/services/${serviceDetails[key].serviceTitle
+                        href={`/services/${serviceDetails[key1].serviceTitle
                           .replace(/\s/g, "-")
                           .replace("/", ".")}`}
                       >
                         <div className=" flex items-center cursor-pointer p-2 group-hover/items:bg-gray-100  hover:bg-gray-100 text-sm  text-gray-800  ">
-                          {serviceDetails[key].serviceTitle}
+                          {serviceDetails[key1].serviceTitle}
                           <FaAngleDown className="ml-1 group-hover/items:rotate-90   duration-200 ease-in-out" size={15} />
                         </div>
                       </Link>
                       {/* Second Dropdown Content */}
                       <div className="absolute group-hover/items:block  hidden inset-x-0 top-0  left-60  w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5" role="menu" aria-orientation="vertical" aria-labelledby="second-dropdown-menu">
                         <div className="py-1" role="none">
-                          {Object.keys(serviceDetails[key].subCatagory).map((key, value) => (
-                            <Link key={key}
-                              href={`/services/details/${key
+                          {Object.keys(serviceDetails[key1].subCatagory).map((key2, value) => (
+                            <Link key={key2}
+                              href={`/services/details/${serviceDetails[key1].serviceTitle
+                                .replace(/\s/g, "-")
+                                .replace("/", ".")}/${key2
                                 .replace(/\s/g, "-")
                                 .replace("/", ".")}`}
                             >
-                              <p className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100" role="menuitem">{key}</p>
+                              <p className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100" role="menuitem">{key2}</p>
                             </Link>
                           ))}
                         </div>

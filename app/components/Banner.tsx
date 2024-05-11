@@ -22,7 +22,7 @@ const Banner = () => {
           </p>
           <div className="mt-4 md:mt-12">
             <Link href={"/contact"}>
-              <span className=" cursor-pointer  bg-primary py-4 lg:px-4 px-4 text-white md:text-base  text-sm text-center  font-extrabold rounded-md">
+              <span className=" cursor-pointer  bg-primary py-4 lg:px-6 px-4 text-white md:text-base  text-sm text-center  font-extrabold rounded-md">
                 Get a quote
               </span>
             </Link>
