@@ -42,7 +42,7 @@ const Banner = () => {
             width={800}
             src={banner12}
             alt="banner"
-            className=" h-[42vh] md:h-[50vh]  m-auto xl:hidden block md:ml-16 ml-0 md:object-none object-contain   "
+            className=" h-[48vh] md:h-[50vh]  m-auto xl:hidden block md:ml-16 ml-0 md:object-none object-contain   "
             // style={{ height: "42vh" }}
           />
         </div>
