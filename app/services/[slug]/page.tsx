@@ -66,7 +66,7 @@ const Page = ({ params }: { params: { slug: string } }) => {
                                 alt="Card header image"
                                 className="h-full w-full object-cover transition-all duration-300 group-hover:scale-105"
                                 height={192}
-                                src="https://img.freepik.com/free-photo/team-replacing-old-air-conditioner_482257-78499.jpg?t=st=1714918276~exp=1714921876~hmac=227c8f74610ae20dca5a06b9ca2c1a611fc201e767301fc6e35874dae2c300b9&w=1380" alt="Sunset in the mountains"
+                                src="https://img.freepik.com/free-photo/team-replacing-old-air-conditioner_482257-78499.jpg?t=st=1714918276~exp=1714921876~hmac=227c8f74610ae20dca5a06b9ca2c1a611fc201e767301fc6e35874dae2c300b9&w=1380" 
                                 style={{
                                     aspectRatio: "384/192",
                                     objectFit: "cover",
