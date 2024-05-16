@@ -58,7 +58,7 @@ const Page = ({ params }: { params: { slug: string } }) => {
                                 .replace(/\s/g, "-")
                                 .replace("/", ".")}`}
                     >
-                        <div className="group relative overflow-hidden rounded-lg shadow-lg transition-all duration-300 hover:scale-105">
+                        <div className="group relative overflow-hidden rounded-lg shadow-md border border-gray-200 transition-all duration-300 hover:scale-105">
                             <div className="relative h-48 overflow-hidden">
                                 <Image
                                     alt="Card header image"
@@ -71,7 +71,6 @@ const Page = ({ params }: { params: { slug: string } }) => {
                                     }}
                                     width={384}
                                 />
-                                <div className="absolute inset-0 bg-gradient-to-t from-primary to-transparent opacity-50" />
                             </div>
                             <div className="p-4">
                                 <h3 className="text-md font-bold  text-gray-600">{key}</h3>

@@ -15,7 +15,7 @@ const Banner = () => {
             Capable Service your trusted
             <span className=" text-primary ">HVAC</span> partner in New Jersey & New York
           </h1>
-          <p className="mt-2 mr-2   text-base font-semibold   text-gray-800  sm:block hidden ">
+          <p className="mt-2 mr-2 text-read   text-base font-semibold    sm:block hidden ">
             At Capable Service, we take pride in delivering top-notch HVAC
             solutions with a commitment to excellence. Our mantra is simple:
             Quality Services is Our Guarantee.

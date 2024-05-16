@@ -22,8 +22,8 @@ const Footer = () => {
   const location = ["New Jersey", "New York"];
 
   return (
-    <footer className=" divide-y ">
-      <div className=" flex bg-secondary text-white  flex-col justify-around py-8 p-2 mx-auto space-y-8 lg:flex-row lg:space-y-0">
+    <footer className=" ">
+      <div className=" flex bg-primary text-white  flex-col justify-around py-8 p-2 mx-auto space-y-8 lg:flex-row lg:space-y-0">
         <div className="lg:w-1/3">
           <div className="flex items-center justify-center w-auto sm:items-start ">
             <Link
@@ -46,7 +46,7 @@ const Footer = () => {
                 <li className="mb-4" key={item}>
                   <Link href={`/${item}`}>
                     <span
-                      className={`text-sm truncate  capitalize  hover:text-primary cursor-pointer  `}
+                      className={`text-sm truncate  capitalize  hover:text-black cursor-pointer transition-al  `}
                       key={index}
                     >
                       {item}
@@ -71,7 +71,7 @@ const Footer = () => {
                       .replace("/", ".")}`}
                   >
                     <span
-                      className={`text-sm truncate capitalize  hover:text-primary cursor-pointer `}
+                      className={`text-sm truncate capitalize  hover:text-black cursor-pointer transition-all `}
                     >
                       {serviceDetails[key].serviceTitle}
                     </span>
@@ -119,7 +119,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="py-2 bg-secondary text-white text-sm text-center ">
+      <div className="py-2 border-t border-gray-100 bg-primary text-white text-xs text-center ">
         © 2010 HVAC Company Co. All rights reserved.
       </div>
     </footer>
