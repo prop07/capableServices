@@ -3,7 +3,7 @@ import React, { useContext, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ServiceContext } from "@/context/ServiceProvider";
-import TextHeader from "@/ui/text/TextHeader";
+import TextHeader from "@/app/components/UI/text/TextHeader";
 
 
 type Services = {

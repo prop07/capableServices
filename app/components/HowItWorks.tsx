@@ -1,6 +1,5 @@
 import React from 'react'
-import TextHeader from '@/ui/text/TextHeader'
-
+import TextHeader from './UI/text/TextHeader'
 
 export default function HowItWorks({category, ...props}) {
     return (

@@ -1,7 +1,7 @@
 import React from "react";
 
 //ui
-import CoreValueCard from "@/ui/CoreValueCard";
+import CoreValueCard from "./UI/CoreValueCard";
 
 //vectors
 import honestyImage from "../../image/vectors/honesty.jpg";

@@ -1,63 +1,134 @@
+'use client'
 import Image from "next/image";
+import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import * as yup from "yup";
+import InputField from "@/app/components/UI/Input/InputField";
+import Dropdown from "@/app/components/UI/Input/DropDown";
+import SubmitButton from "@/app/components/UI/Button/SubmitButton";
+import { useEffect, useState } from "react";
+
+
+const schema = yup.object().shape({
+    name: yup
+        .string()
+        .required("Name is required."),
+    email: yup
+        .string()
+        .email("Invalid email format.")
+        .required("Email is required."),
+    subject: yup
+        .string()
+        .required("Subject is required."),
+    serviceType: yup
+        .string()
+        .required("serviceType is required."),
+    message: yup
+        .string()
+        .required("Message is required."),
+
+});
+
+const serviceTypeList = [
+    { id: 1, type: "Heating and Cooling Repair" },
+    { id: 2, type: "System Installation" },
+    { id: 3, type: "Maintanance" },
+    { id: 4, type: "Others" },
+]
+
+
+
+
 const NewsLetter = () => {
+    
+    const {
+        register,
+        handleSubmit,
+        setValue,
+        getValues,
+        reset,
+        formState: { errors, dirtyFields, isSubmitting },
+        clearErrors,
+    } = useForm({
+        resolver: yupResolver(schema),
+        criteriaMode: "all",
+    });
+
+
+    const [serviceType, setServiceType] = useState([]);
+
+    useEffect(() => {
+        setValue("serviceType", serviceType.type)
+    }, [serviceType])
+    
+
+    const submit = async (data) => {
+        console.log("data", data);
+        reset();
+    }
+
     return (
         <div className=" md:w-[80%] px-2 mt-6 sm:mt-0  mx-auto  text-gray-900 flex justify-center">
             <div className="  sm:m-10 bg-white border border-gray-100 lg:border-none  shadow-xl rounded-lg  flex justify-center flex-1">
                 <div className="lg:w-1/2 xl:w-5/12 p-6 sm:p-12 lg:border-l lg:border-t lg:border-b border-gray-100 lg:rounded-tl-lg">
-                    <div>
-                        <h1 className="lg:text-xl text-center text-xl font-bold mt-4">
+                    <div className=" space-y-6">
+                        <h1 className="lg:text-xl text-center text-xl font-bold ">
                             Schedule Your HVAC Estimate Today !
                         </h1>
                         <form
-                            action="https://fabform.io/f/xxxxx"
-                            method="post"
-                            className="ml-auo space-y-4 p-4"
+                            className="flex flex-col justify-center items-center space-y-6"
+                            action="#"
+                            onSubmit={handleSubmit(submit)}
                         >
-                            <input
-                                type="text"
+                            <InputField
                                 name="name"
-                                placeholder="Name"
-                                className="w-full rounded-md py-2.5 px-4 border text-sm outline-[#007bff]"
+                                placeholder="Name *"
+                                errors={errors}
+                                type={"name"}
+                                // onChange={(e) => setValue("email", e.target.value)}
+                                // onFocus={() => clearErrors("email")}
+                                register={register}
                             />
-                            <input
-                                type="email"
+                            <InputField
                                 name="email"
-                                placeholder="Email"
-                                className="w-full rounded-md py-2.5 px-4 border text-sm outline-[#007bff]"
+                                placeholder="Email *"
+                                errors={errors}
+                                // onChange={(e) => setValue("email", e.target.value)}
+                                // onFocus={() => clearErrors("email")}
+                                register={register}
                             />
-                            <input
-                                type="text"
-                                placeholder="Subject"
+                            <Dropdown
+                                name="serviceType"
+                                placeholder="Service Type *"
+                                options={serviceTypeList}
+                                optionLabel="type"
+                                value={serviceType}
+                                errors={errors}
+                                onChange={(e) => {
+                                    setServiceType(e.target.value);
+                                }}
+                                onFocus={() => clearErrors("serviceType")}
+                            />
+                            <InputField
                                 name="subject"
-                                className="w-full rounded-md py-2.5 px-4 border text-sm outline-[#007bff]"
+                                placeholder="Subject *"
+                                errors={errors}
+                                // onChange={(e) => setValue("email", e.target.value)}
+                                // onFocus={() => clearErrors("email")}
+                                register={register}
                             />
-                            <div>
-                                <p className="w-full text-start ml-2 text-gray-400 text-sm" >
-                                    Service Type:
-                                </p>
-                                <select
-                                    className="w-full py-2.5 px-4 rounded-md bg-white border"
-                                    name="cars"
-                                    id="cars"
-                                >
-                                    <option value="volvo">Volvo</option>
-                                    <option value="saab">Saab</option>
-                                    <option value="mercedes">Mercedes</option>
-                                    <option value="audi">Audi</option>
-                                </select>
-                            </div>
-                            <textarea
-                                placeholder="Message"
-                                rows={4}
+                            <InputField
                                 name="message"
-                                className="w-full rounded-md px-4 border text-sm pt-2.5 outline-[#007bff]"
-                            ></textarea>
-                            <button
-                                type="button"
-                                className="text-white bg-[#007bff] hover:bg-blue-600 font-semibold rounded-md text-sm px-4 py-2.5 w-full"
-                            >
-                                Book It!
-                            </button>
+                                placeholder="Message *"
+                                errors={errors}
+                                register={register}
+                                multiline={true}
+                            />
+                            <SubmitButton
+                                placeholder="Submit"
+                                disabled={isSubmitting}
+                                isLoading={isSubmitting}
+                            />
                         </form>
                     </div>
                 </div>

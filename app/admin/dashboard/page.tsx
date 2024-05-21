@@ -7,7 +7,7 @@ const AdminHomePage = () => {
 
     return (
         <div className=" pt-24 w-9/12 mx-auto justify-center ">
-            <div className=" m-4  bg-white text-primary  p-6 text-xl text-center  border-4 border-black font-extrabold shadow-buttonShadow shadow-black     ">
+            <div className=" m-4  bg-white text-primary  p-6 text-xl text-center  border-4 border-black font-extrabold shadow-buttonShadow shadow-black  ">
                 Add Service
             </div>
             <div className="flex gap-2">
@@ -45,6 +45,7 @@ const AdminHomePage = () => {
                 className=" p-6 rendered-form  "
                 dangerouslySetInnerHTML={{ __html: editorValue }}
             />
+            <p>{editorValue}</p>
         </div>
     );
 };

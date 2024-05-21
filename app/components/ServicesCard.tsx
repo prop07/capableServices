@@ -46,11 +46,11 @@ const ServicesCard = () => {
                   <p>{serviceDetails[key].serviceDescription}</p>
                 </div>
                 <div className="pt-5 text-base  font-semibold leading-7">
-                  <p>
+                  <div>
                     <p className="text-sky-500 transition-all duration-300 group-hover:text-white">View Detail
                       &rarr;
                     </p>
-                  </p>
+                  </div>
                 </div>
               </div>
             </div>
