@@ -24,7 +24,7 @@ const ServicesCard = () => {
           <p className="lg:text-2xl text-xl text-gray-700 text-center  md:font-bold font-bold mb-0.5 uppercase ">
             Hvac Repair Nyc - Air Conditioner Installation In Brooklyn Ny
           </p>
-        <div className="h-1 m-auto w-4/12 bg-primary mb-4 rounded-full "></div>
+        <div className="h-1 m-auto w-2/12 bg-primary mb-4 rounded-full "></div>
         </div>
       </div>
       <div className='grid mx-auto xl:grid-cols-3 lg:grid-cols-2 sm:grid-cols-1 gap-2 p-2  items-center justify-center '>

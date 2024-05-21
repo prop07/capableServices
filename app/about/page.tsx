@@ -6,26 +6,7 @@ import abousUSVector from "../../image/vectors/aboutUsCard.jpg"
 const Page = async () => {
   return (
     <div className=" md:w-9/12  mx-auto justify-center z-10">
-      <div
-        className="relative  flex flex-col items-center justify-center text-center text-white "
-        style={{ height: "40vh" }}
-      >
-        <div className="absolute top-0 left-0 w-full h-full overflow-hidden">
-          <Image
-            height={800}
-            width={800}
-            className="min-w-full min-h-full absolute object-cover"
-            src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            alt="about"
-          />
-        </div>
-        <div className=" space-y-2 z-10">
-          <span className="  bg-white text-primary rounded-md  p-2 md:text-4xl text-xl text-center  font-extrabold      ">
-            About us
-          </span>
-        </div>
-      </div>
-      <div className="pt-8 mt-4">
+      <div className=" mt-4">
         <span className="bg-primary md:text-2xl sm:text-xl text-base sm:font-bold font-normal p-2 text-white">
           ABOUT CAPABLE SERVICE
         </span>

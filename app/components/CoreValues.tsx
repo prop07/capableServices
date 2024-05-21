@@ -52,7 +52,7 @@ const CoreValues = () => {
           <p className="lg:text-2xl text-xl text-gray-700 text-start  md:font-bold font-bold mb-0.5 uppercase ">
             Core Values
           </p>
-          <div className="h-1 w-4/6 bg-primary"></div>
+          <p className="h-1 w-9/12 bg-primary rounded-full"></p>
         </div>
       </div>
       {/* card  */}

@@ -3,6 +3,9 @@ import { useContext } from "react";
 import { AiFillInstagram, AiFillTwitterSquare } from "react-icons/ai";
 import { FaFacebookSquare } from "react-icons/fa";
 import Link from "next/link";
+import Image from "next/image";
+import logo from "../../image/logo.png";
+
 
 //context
 import { ServiceContext } from "../../context/ServiceProvider";
@@ -26,12 +29,12 @@ const Footer = () => {
       <div className=" flex bg-primary text-white  flex-col justify-around py-8 p-2 mx-auto space-y-8 lg:flex-row lg:space-y-0">
         <div className="lg:w-1/3">
           <div className="flex items-center justify-center w-auto sm:items-start ">
-            <Link
-              href="/"
-              className="flex justify-center space-x-3 lg:justify-start"
-            >
-              Logo
-            </Link>
+          <Link href={"/"}>
+            <p className="relative h-24 w-44 bg-white rounded-lg ">
+              <Image fill={true} style={{ objectFit: "contain"}} className="px-3"  src={logo} alt="logo"/>
+              {/* Logo */}
+            </p>
+          </Link>
           </div>
         </div>
         <div className="grid grid-cols-1 text-sm gap-x-3 gap-y-8 lg:w-2/3 sm:grid-cols-4 text-center sm:text-start">

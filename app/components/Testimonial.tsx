@@ -41,7 +41,7 @@ const Testimonial = () => {
   return (
     <div className=' md:w-9/12  mx-auto justify-center '>
     <div className="px-3 mb-3">
-      <p className="font-semibold text-center tracking-tight text-gray-900 text-2xl mb-3">Testimonial</p>
+      <p className="font-semibold text-center tracking-tight text-gray-900 text-2xl mb-0.5">Testimonial</p>
       <div className="h-1 m-auto w-2/12 bg-primary rounded-full mb-4"></div>
       <Swiper
         spaceBetween={30}

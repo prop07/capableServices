@@ -1,10 +1,14 @@
 "use client";
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { FaPhoneAlt } from "react-icons/fa";
 import { IoMdMenu } from "react-icons/io";
-import { IoMdClose } from "react-icons/io";
+import { IoMdClose, IoIosArrowBack, IoMdArrowDropleft } from "react-icons/io";
 import { FaCaretDown, FaAngleDown } from "react-icons/fa";
 import Link from "next/link";
+import Image from "next/image";
+import { usePathname } from "next/navigation";
+import logo from "../../image/logo.png";
+
 
 
 //context
@@ -20,8 +24,15 @@ type Services = {
 };
 
 const Navbar = () => {
+  const pathname = usePathname();
   const serviceDetails = useContext<Services>(ServiceContext);
   const [humBurgerMenu, setHumBurgerMenu] = useState(false);
+
+  useEffect(() => {
+    console.log("pathname", pathname)
+
+  }, [pathname])
+  
 
   console.log("serviceDetails", serviceDetails)
 
@@ -35,27 +46,36 @@ const Navbar = () => {
       </div>
       <div className="flex  w-full bg-white font-bold   md:px-16 px-4 h-16">
         <div className="flex justify-start items-center w-3/12">
-          <Link href={"/"}>Logo</Link>
+          <Link href={"/"}>
+            <p className="relative h-16 w-32">
+              <Image fill={true} style={{ objectFit: "contain"}}   src={logo} alt="logo"/>
+              {/* Logo */}
+            </p>
+          </Link>
         </div>
         <div className="md:flex hidden md:gap-8 sm:gap-4 gap-2 md:w-6/12 w-full justify-center items-center">
           <div key={'home'}>
             <Link href={`/`} >
-              <p className="mb-2  cursor-pointer font-bold  capitalize  hover:text-primary">
+              <p className={`mb-0.5  cursor-pointer font-bold  capitalize ${pathname === "/"? "text-primary": "hover:text-primary"}`}>
                 home
               </p>
+              <div className={`h-0.5 rounded-full ${pathname === "/"? "bg-primary": "bg-transparent"}`}></div>
             </Link>
           </div>
           <div className="group relative inline-block text-left">
-            {/* First Dropdown */}
             <div >
-              <p
-                className=" mb-2 flex  justify-center items-center cursor-pointer font-bold  capitalize  hover:text-primary"
+              <div className={` font-bold cursor-pointer flex justify-center items-center  capitalize ${pathname.includes("/services")? "text-primary": "hover:text-primary"}`}
+              >
+                <div
+              className={`mb-0.5 `}
                 id="dropdown-menu"
                 aria-haspopup="true"
               >
                 Services
-                <FaCaretDown className="ml-1" size={15} />
-              </p>
+              <div className={`h-0.5 rounded-full ${pathname.includes("/services")? "bg-primary": "bg-transparent"}`}></div>
+              </div>
+                <IoMdArrowDropleft size={20} />
+              </div>
               {/* First Dropdown Content */}
               <div className="hidden group-hover:block hover:block absolute top-5 right-46 mt-2 w-60 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5" role="menu" aria-orientation="vertical" aria-labelledby="dropdown-menu">
                 {Object.keys(serviceDetails).length !== 0 ? <div className="py-1" role="none">
@@ -69,7 +89,7 @@ const Navbar = () => {
                       >
                         <div className=" flex items-center cursor-pointer p-2 group-hover/items:bg-gray-100  hover:bg-gray-100 text-sm  text-gray-800  ">
                           {serviceDetails[key1].serviceTitle}
-                          <FaAngleDown className="ml-1 group-hover/items:rotate-90   duration-200 ease-in-out" size={15} />
+                          <IoIosArrowBack className="ml-1 group-hover/items:rotate-180   duration-200 ease-in-out" size={15} />
                         </div>
                       </Link>
                       {/* Second Dropdown Content */}
@@ -105,9 +125,10 @@ const Navbar = () => {
           {navLink.map((item) => (
             <div key={item}>
               <Link href={`/${item.replace(/\s/g, "-").replace("/", ".")}`}>
-                <p className="mb-2 text-nowrap  cursor-pointer font-bold  capitalize  hover:text-primary">
+                <p className={`mb-0.5  cursor-pointer font-bold  capitalize ${pathname.includes(item) ? "text-primary": "hover:text-primary"}`}>
                   {item}
                 </p>
+              <div className={`h-0.5 rounded-full ${pathname.includes(item)? "bg-primary": "bg-transparent"}`}></div>
               </Link>
             </div>
           ))}
