@@ -1,13 +1,13 @@
 "use client";
 import React, { useState, useContext, useEffect } from "react";
 import { FaPhoneAlt } from "react-icons/fa";
-import { IoMdMenu } from "react-icons/io";
 import { IoMdClose, IoIosArrowBack, IoMdArrowDropleft } from "react-icons/io";
 import { FaCaretDown, FaAngleDown } from "react-icons/fa";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import logo from "../../image/logo.png";
+import DrawerNav from "./DrawerNav";
 
 
 
@@ -134,53 +134,7 @@ const Navbar = () => {
           ))}
         </div>
         <div className="md:hidden flex relative w-full justify-end items-center ">
-          <IoMdMenu
-            onClick={() => setHumBurgerMenu(!humBurgerMenu)}
-            className={` cursor-pointer ${humBurgerMenu ? "hidden" : "block"}`}
-            size={30}
-          />
-          <IoMdClose
-            onClick={() => setHumBurgerMenu(!humBurgerMenu)}
-            className={` cursor-pointer ${humBurgerMenu ? "block" : "hidden"}`}
-            size={30}
-          />
-          <div className={`  bg-white  px-4 shadow-buttonShadow shadow-gray-300    absolute top-20   ${humBurgerMenu ? "block" : "hidden"}  `}>
-            <div key={'mbHome'} className="flex flex-col justify-center items-center">
-              <div >
-                <Link href={`/`} onClick={() => setHumBurgerMenu(!humBurgerMenu)}>
-                  <p className="mb-2 p-1  cursor-pointer   font-medium  text-base capitalize">
-                    Home
-                  </p>
-                </Link>
-              </div>
-              <hr className=" text-gray-400 w-3/4 mx-auto " />
-            </div>
-            <div key={'mbServices'} className="flex flex-col justify-center items-center">
-              <div >
-                <Link href={`/services`} onClick={() => setHumBurgerMenu(!humBurgerMenu)}>
-                  <p className="mb-2 p-1  cursor-pointer   font-medium  text-base capitalize">
-                    Services
-                  </p>
-                </Link>
-              </div>
-              <hr className=" text-gray-400 w-3/4 mx-auto " />
-            </div>
-            {humBurgerMenu
-              ? navLink.map((item) => (
-                <div key={item} className="flex flex-col justify-center items-center">
-                  <div >
-                    <Link href={`/${item}`} onClick={() => setHumBurgerMenu(!humBurgerMenu)}>
-                      <p className="mb-2 p-1  cursor-pointer   font-medium  text-base capitalize">
-                        {item}
-                      </p>
-                    </Link>
-                  </div>
-                  <hr className=" text-gray-400 w-3/4 mx-auto " />
-                </div>
-
-              ))
-              : null}
-          </div>
+          <DrawerNav/>
         </div>
         <div className=" justify-end items-center  md:w-3/12 w-full md:flex hidden">
           <span className="flex items-center rounded-md cursor-pointer  bg-primary  py-2  px-3 text-white text-medium  text-center ">

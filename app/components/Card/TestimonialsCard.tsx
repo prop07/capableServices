@@ -8,10 +8,10 @@ const TestimonialCard = ({ id, name, content, ...props }) => {
       </svg>
         <figcaption className="flex  items-center justify-center space-x-3">
           <div className="space-y-3">
-            <p className=" text-sm sm:text-xl text-center   text-gray-900 max-w-sm  ">&quot;{content}&quot;</p>
+            <p className=" text-lg sm:text-xl text-center   text-gray-900 max-w-sm  ">&quot;{content}&quot;</p>
             <div className="flex items-center justify-center gap-2  divide-gray-500 ">
               <FaCircleUser className="text-primary" size={25} />
-              <p className=" text-sm sm:text-xl   text-read ">{name}</p>
+              <p className=" text-lg sm:text-xl   text-read ">{name}</p>
             </div>
           </div>
         </figcaption>
