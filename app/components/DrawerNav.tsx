@@ -10,7 +10,7 @@ import ListItemText from '@mui/material/ListItemText';
 import { IoMdMenu } from "react-icons/io";
 import { useSwipeable } from 'react-swipeable';
 
-export default function DrawerNav() {
+const DrawerNav = () => {
     const [state, setState] = React.useState({
         top: false,
         left: false,
@@ -25,17 +25,18 @@ export default function DrawerNav() {
         setState({ ...state, [anchor]: open });
     };
 
-    const swipeHandlers = (anchor) => useSwipeable({
-        onSwipedRight: (eventData) => {
-            // console.log("Swiped right!", eventData);
-            // Add your logic here for what should happen on swipe right
-            setState({ ...state, [anchor]: false });
-        },
-    });
+    const handlers = {
+        right: useSwipeable({
+            onSwipedRight: (eventData) => {
+                setState({ ...state, right: false });
+            },
+        }),
+        // Add other swipe handlers if needed for other anchors
+    };
 
     const list = (anchor) => (
         <Box
-            {...swipeHandlers(anchor)}
+            {...handlers[anchor]}
             sx={{ width: anchor === 'top' || anchor === 'bottom' ? 'auto' : 250 }}
             role="presentation"
             className="px-3 flex"
@@ -78,3 +79,5 @@ export default function DrawerNav() {
         </div>
     );
 }
+
+export default DrawerNav;
