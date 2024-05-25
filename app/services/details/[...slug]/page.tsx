@@ -9,7 +9,7 @@ const Page = ({ params }: { params: { slug: string } }) => {
   console.log("params", category , title);
   
   return (
-    <div className="md:w-9/12 mx-auto justify-center space-y-6">
+    <div className="md:w-[70vw] mb-4 mx-auto justify-center space-y-6">
       <HowItWorks category={category} />
     </div>
   );

@@ -7,9 +7,9 @@ import Loading from "./loading";
 import { ToastContainer } from "react-toastify";
 
 
-//context
 import ServiceProvider from "../context/ServiceProvider";
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v13-appRouter";
+
 
 //components
 import NavBar from "./components/NavBar"

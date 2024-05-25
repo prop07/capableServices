@@ -43,7 +43,7 @@ const Page = ({ params }: { params: { slug: string } }) => {
 
 
     return (
-        <div className="md:w-9/12  mx-auto justify-center space-y-6 ">
+        <div className="md:w-[70vw] mb-4  mx-auto justify-center space-y-6 ">
             <TextHeader title={params.slug.replace(/\./g, "/").replace(/-/g, " ").replace(/%26/g, "&")} />
             {/* details  */}
             <div className=" ">

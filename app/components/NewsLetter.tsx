@@ -7,7 +7,7 @@ import InputField from "@/app/components/UI/Input/InputField";
 import Dropdown from "@/app/components/UI/Input/DropDown";
 import SubmitButton from "@/app/components/UI/Button/SubmitButton";
 import { useEffect, useState } from "react";
-
+import DateField from "./UI/Input/DateField";
 
 const schema = yup.object().shape({
     name: yup
@@ -26,6 +26,10 @@ const schema = yup.object().shape({
     message: yup
         .string()
         .required("Message is required."),
+    date:yup
+        .date()
+        .min(new Date(), 'Date must be today or in the future')
+        .required("Date is required"),
 });
 
 const serviceTypeList = [
@@ -65,6 +69,8 @@ const NewsLetter = () => {
         console.log("data", data);
         reset();
     }
+
+    console.log(errors);
 
     return (
         <div className=" md:w-[70vw]  mx-auto justify-center  mt-6 sm:mt-0    text-gray-900 flex ">
@@ -116,6 +122,11 @@ const NewsLetter = () => {
                                 // onFocus={() => clearErrors("email")}
                                 register={register}
                             />
+                            <DateField
+                            name="date"
+                            placeholder="Pick Date *"
+                            onChange={(value)=>{setValue("date",value ), clearErrors("date")}}
+                            errors={errors} />
                             <InputField
                                 name="message"
                                 placeholder="Message *"
