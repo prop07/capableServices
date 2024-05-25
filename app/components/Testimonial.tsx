@@ -39,15 +39,15 @@ const userReview = [
 
 const Testimonial = () => {
   return (
-    <div className=' md:w-9/12  mx-auto justify-center '>
+    <div className=' md:w-[70vw] py-4   mx-auto justify-center '>
     <div className="px-3 mb-3">
       <p className="font-semibold text-center tracking-tight text-gray-900 text-2xl mb-0.5">Testimonial</p>
-      <div className="h-1 m-auto w-2/12 bg-primary rounded-full mb-4"></div>
+      <div className="h-1 m-auto w-2/12 bg-primary rounded-full mb-2"></div>
       <Swiper
         spaceBetween={30}
         slidesPerView={1}
         autoplay={{
-          delay: 3000,
+          delay: 4000,
           disableOnInteraction: false,
         }}
         navigation={false}

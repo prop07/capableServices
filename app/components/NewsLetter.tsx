@@ -26,7 +26,6 @@ const schema = yup.object().shape({
     message: yup
         .string()
         .required("Message is required."),
-
 });
 
 const serviceTypeList = [
@@ -68,9 +67,9 @@ const NewsLetter = () => {
     }
 
     return (
-        <div className=" md:w-[80%] px-2 mt-6 sm:mt-0  mx-auto  text-gray-900 flex justify-center">
-            <div className="  sm:m-10 bg-white border border-gray-100 lg:border-none  shadow-xl rounded-lg  flex justify-center flex-1">
-                <div className="lg:w-1/2 xl:w-5/12 p-6 sm:p-12 lg:border-l lg:border-t lg:border-b border-gray-100 lg:rounded-tl-lg">
+        <div className=" md:w-[70vw]  mx-auto justify-center  mt-6 sm:mt-0    text-gray-900 flex ">
+            <div className=" bg-white lg:border lg:border-gray-100 lg:border-none   rounded-lg   flex justify-center flex-1">
+                <div className="p-8 lg:border-l lg:border-t lg:border-b md:border-gray-100 lg:rounded-tl-lg lg:rounded-bl-lg">
                     <div className=" space-y-6">
                         <h1 className="lg:text-xl text-center text-xl font-bold ">
                             Schedule Your HVAC Estimate Today !
@@ -137,7 +136,6 @@ const NewsLetter = () => {
                 </div>
             </div>
         </div>
-
     );
 };
 

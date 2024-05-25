@@ -7,7 +7,7 @@ import PatnerCompany from "./components/PatnerCompany";
 
 export default function Home() {
   return (
-    <div className=" md:w-9/12  mx-auto justify-center ">
+    <div className=" md:w-[70vw]  mx-auto justify-center ">
       <Banner />
       <CompanyInfo />
       <ServicesCard />
