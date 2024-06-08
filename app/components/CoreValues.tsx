@@ -59,6 +59,7 @@ const CoreValues = () => {
       <div className="grid xl:grid-cols-2 grid-cols-1 md:px-0 px-2">
         {Object.entries(coreValuesDetails).map(([key, value]) => (
           <CoreValueCard
+          className="sm:border-none border-b border-gray-200"
             key={key}
             title={key}
             description={value.description}

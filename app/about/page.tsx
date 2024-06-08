@@ -62,7 +62,60 @@ const Page = async () => {
         </div>
       </div>
       <CoreValues/>
-
+      <div className="mt-4 sm:mt-0">
+      <div className="max-w-7xl mx-auto">
+        <div className="text-center">
+          <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">Why Us?</h2>
+          <p className="mt-4 text-xl text-gray-500">Our Commitment to Excellence</p>
+        </div>
+        <div className="mt-10 space-y-8 sm:space-y-0 sm:grid sm:grid-cols-2 sm:gap-x-6 sm:gap-y-8 lg:grid-cols-3">
+          <div>
+            <div className="flow-root bg-white rounded-lg px-6 py-8 ">
+              <div className="-mt-6">
+                <div>
+                  <h3 className="mt-5 text-lg font-medium text-gray-900">Our Commitment to Excellence</h3>
+                  <p className="mt-2 text-base text-gray-500">
+                    At Capable Service, we understand that the reputation of a good service is built on the foundation
+                    of satisfied customers and their positive experiences with our company. We take pride in
+                    consistently exceeding customer expectations and providing tailored solutions to address specific
+                    needs.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div className="flow-root bg-white rounded-lg px-6 py-8 ">
+              <div className="-mt-6">
+                <div>
+                  <h3 className="mt-5 text-lg font-medium text-gray-900">Shared Goals for Success</h3>
+                  <p className="mt-2 text-base text-gray-500">
+                    Our goal, shared with our valued customers, is to provide effective solutions to any HVAC-related
+                    challenges. Whether it's heater repair, system installation, fan motor replacement, or any other
+                    service, our dedicated team is committed to delivering results that align with your unique
+                    requirements.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div className="flow-root bg-white rounded-lg px-6 py-8 ">
+              <div className="-mt-6">
+                <div>
+                  <h3 className="mt-5 text-lg font-medium text-gray-900">Trust in Quality Service</h3>
+                  <p className="mt-2 text-base text-gray-500">
+                    We believe in the power of trust when it comes to HVAC installations and repairs. When you choose
+                    Capable Service, you can trust that the time and energy invested in the installation process ensure
+                    a reliable and efficient system. Our aim is to get it right the first time.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     </div>
   );
 };

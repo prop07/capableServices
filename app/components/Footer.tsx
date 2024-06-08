@@ -20,21 +20,23 @@ type Services = {
 const Footer = () => {
   const serviceDetails = useContext<Services>(ServiceContext);
 
-  const quickLinks = [ "services", "contact","about",];
+  const quickLinks = ["services", "contact", "about",];
 
-  const location = ["New Jersey"];
+  const location = [
+    "New York",
+    "New Jersey"];
 
   return (
     <footer className=" ">
       <div className=" flex bg-primary text-white  flex-col justify-around py-8 p-2 mx-auto space-y-8 lg:flex-row lg:space-y-0">
         <div className="lg:w-1/3">
           <div className="flex items-center justify-center w-auto sm:items-start ">
-          <Link href={"/"}>
-            <p className="relative h-24 w-44 bg-white rounded-lg ">
-              <Image fill={true} style={{ objectFit: "contain"}} className="px-3"  src={logo} alt="logo"/>
-              {/* Logo */}
-            </p>
-          </Link>
+            <Link href={"/"}>
+              <p className="relative h-24 w-44 bg-white rounded-lg ">
+                <Image fill={true} style={{ objectFit: "contain" }} className="px-3" src={logo} alt="logo" />
+                {/* Logo */}
+              </p>
+            </Link>
           </div>
         </div>
         <div className="grid grid-cols-1 text-sm gap-x-3 gap-y-8 lg:w-2/3 sm:grid-cols-4 text-center sm:text-start">
@@ -103,21 +105,27 @@ const Footer = () => {
           <div>
             <div className="uppercase  text-lg  ">Get in Touch</div>
             <div className="flex sm:justify-start justify-center space-x-3">
-              <AiFillInstagram
-                title="instagram"
-                className="cursor-pointer bg-gradient-to-r mt-2  hover:mt-1 duration-300 ease-in-out"
-                size={30}
-              />
-              <AiFillTwitterSquare
-                title="twitter"
-                className="cursor-pointer   mt-2  hover:mt-1 duration-300 ease-in-out"
-                size={30}
-              />
-              <FaFacebookSquare
-                title="facebook"
-                className="cursor-pointer  mt-2  hover:mt-1 duration-300 ease-in-out"
-                size={30}
-              />
+              <Link href="https://api.whatsapp.com/send?phone=+888 985321475212" target="_blank" passHref>
+                <AiFillInstagram
+                  title="instagram"
+                  className="cursor-pointer bg-gradient-to-r mt-2  hover:mt-1 duration-300 ease-in-out"
+                  size={30}
+                />
+              </Link>
+              <Link href="https://www.facebook.com/CapableService" target="_blank" passHref>
+                <AiFillTwitterSquare
+                  title="twitter"
+                  className="cursor-pointer   mt-2  hover:mt-1 duration-300 ease-in-out"
+                  size={30}
+                />
+              </Link>
+              <Link href="https://www.facebook.com/CapableService" target="_blank" passHref>
+                <FaFacebookSquare
+                  title="facebook"
+                  className="cursor-pointer  mt-2  hover:mt-1 duration-300 ease-in-out"
+                  size={30}
+                />
+              </Link>
             </div>
           </div>
         </div>

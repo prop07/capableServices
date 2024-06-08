@@ -32,7 +32,8 @@ const Navbar = () => {
       <div className=" md:hidden flex justify-center items-center  p-2 text-white  bg-primary ">
         <span className=" flex text-sm items-center justify-center gap-1">
           Call Now: <FaPhoneAlt />
-          +888 985321475212
+          <Link href={"tel:+888 985321475212"}>+888 985321475212
+          </Link>
         </span>
       </div>
       <div className="flex  w-full bg-white font-bold   md:px-16 px-4 h-16">
@@ -129,7 +130,7 @@ const Navbar = () => {
         </div>
         <div className=" justify-end items-center  md:w-3/12 w-full md:flex hidden">
           <span className="flex items-center rounded-md cursor-pointer  bg-primary  py-2  px-3 text-white text-medium  text-center ">
-            <FaPhoneAlt className="mr-2" /> Call now
+          <Link className="flex items-center" href={"tel:+888 985321475212"}><FaPhoneAlt className="mr-2" /> Call now</Link>   
           </span>
         </div>
       </div>

@@ -130,7 +130,7 @@ const SocialNav = () => {
     return (
         <div className='  w-full   items-end text-white '>
             <div className=" flex">
-            <Link href="https://api.whatsapp.com/send?phone=9867772654" target="_blank" passHref>
+            <Link href="https://api.whatsapp.com/send?phone=+888 985321475212" target="_blank" passHref>
             <div className='bg-whatsappGreen hover:bg-green-600 flex justify-center cursor-pointer items-center h-12 w-20  duration-300 ease-in-out '>
             <FaWhatsapp  size={25}/>
             </div>  

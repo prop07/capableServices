@@ -11,7 +11,7 @@ interface cardDetails {
 
 const CoreValueCard = ({title, description, image }:cardDetails) => {
     return (
-        <div className='flex sm:flex-row  flex-col  justify-center sm:items-start items-center '>
+        <div className='flex sm:flex-row  flex-col  justify-center sm:items-start items-center sm:border-none border-b border-gray-200 '>
             <div>
                 <Image
                     src={image}

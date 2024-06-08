@@ -18,12 +18,8 @@ const schema = yup.object().shape({
         .string()
         .email("Invalid email format.")
         .required("Email is required."),
-        phone: yup
-        .string()
-        // .matches(
-        //     /^(?:\+1\s?)?(\(?\d{3}\)?[-.\s]?)?\d{3}[-.\s]?\d{4}$/,
-        //     "Must be a valid US phone number."
-        //   )
+    phone: yup.string()
+        .matches(/^\+?\d{1,3}\s?\(?\d{3}\)?[-\s]?\d{3}[-\s]?\d{4}$/, "Must be a valid phone number with optional '+' and spaces.")
         .required("Phone is required."),
     address: yup
         .string()
@@ -35,7 +31,7 @@ const schema = yup.object().shape({
         .string(),
     scheduleDate: yup
         .date()
-        .min(new Date(new Date().setDate(new Date().getDate() + 1)), 'Date must be at least 1 day after today.')
+        .min(new Date(), 'Date at least be today or future date.')
         .required("Date is required"),
 });
 
