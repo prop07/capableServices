@@ -1,4 +1,5 @@
 import * as React from "react";
+import { CgSpinnerAlt, CgSpinner } from "react-icons/cg";
 
 export default function SubmitButton({
     placeholder,
@@ -17,10 +18,9 @@ export default function SubmitButton({
                 onClick={props.onClick}
             >
                 {isLoading ? (
-                    <>
-                        {" "}
-                        <i className=" animate-spin bi bi-arrow-counterclockwise"></i>
-                    </>
+                    <div className="animate-spin ">
+                        <CgSpinner size={24} />
+                    </div>
                 ) : (
                     <>{placeholder}</>
                 )}

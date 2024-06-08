@@ -13,7 +13,7 @@ const InfoCard = () => {
         </div>
         <div className=" lg:block hidden bg-black rounded-tr-md rounded-br-md   p-6 sm:p-12  ">
           <div className="flex  md:gap-0 space-y-2 space-x-2 flex-col    text-white px-4 py-8 md:justify-around justify-center items-center" >
-            <div className="flex gap-3  ">
+            <div className="flex gap-5  ">
               <div className=" border-2 border-white h-12 w-12 flex justify-center items-center mt-2 rounded-full">
                 <TiTick size={25} />
               </div>
@@ -22,8 +22,7 @@ const InfoCard = () => {
                   Become Self-sufficent
                 </p>
                 <p>
-                  The syntax allows us to dynamically apply the primary and
-                  secondary colors defined in the
+                Achieve self-sufficiency with top-notch HVAC solutions. Ensure year-round comfort and efficiency in your space.
                 </p>
               </div>
             </div>
@@ -36,8 +35,7 @@ const InfoCard = () => {
                   Save on your energy bills
                 </p>
                 <p>
-                  The syntax allows us to dynamically apply the primary and
-                  secondary colors defined in the
+                Cut energy costs with efficient HVAC solutions. Enjoy lower bills and a comfortable, self-sufficient home.
                 </p>
               </div>
             </div>
@@ -50,8 +48,7 @@ const InfoCard = () => {
                   Reduce your carbon emission
                 </p>
                 <p>
-                  The syntax allows us to dynamically apply the primary and
-                  secondary colors defined in the
+                Slash your carbon footprint with eco-friendly HVAC systems. Go green while staying cool and comfy.
                 </p>
               </div>
             </div>

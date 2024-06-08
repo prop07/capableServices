@@ -40,7 +40,6 @@ export default function DropDown({
         value={value}
         label={placeholder}
         onChange={(e) => {
-          console.log("e", e);
           // handleChange(e);
           onChange(e);
         }}

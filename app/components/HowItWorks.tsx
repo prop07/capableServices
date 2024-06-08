@@ -1,12 +1,13 @@
 import React from 'react'
 import TextHeader from './UI/text/TextHeader'
+import Link from 'next/link'
 
-export default function HowItWorks({category, ...props}) {
+export default function HowItWorks({ category, ...props }) {
     return (
         <div className="">
             <div className="container mx-auto px-2 space-y-3 ">
                 <div className="mx-auto max-w-3xl text-center space-y-3">
-                    <TextHeader title="How It Works"/>
+                    <TextHeader title="How It Works" />
                     <p className=" text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed ">
                         Discover the seamless process of scheduling an appointment, getting a quote, and enjoying a hassle-free
                         installation.
@@ -21,7 +22,7 @@ export default function HowItWorks({category, ...props}) {
                             </div>
                             <h3 className="text-lg font-semibold">Step 1: Schedule Appointment</h3>
                             <p className="text-gray-500 w-10/12 ">
-                            Schedule an in-home appointment for a Capable services expert to measure your space and assess and evaluate your HVAC needs.
+                                <Link href={"/contact"} ><span className="text-blue-500 cursor-pointer ">Schedule</span></Link> an in-home appointment for a Capable services expert to measure your space and assess and evaluate your HVAC needs.
                             </p>
                         </div>
                         <div className="group flex flex-col items-center  space-y-4 sm:border-r sm:border-gray-200 ">
@@ -30,7 +31,7 @@ export default function HowItWorks({category, ...props}) {
                             </div>
                             <h3 className="text-lg font-semibold">Step 2: Get Your Quote</h3>
                             <p className="text-gray-500 w-10/12 ">
-                            When your assessment is complete, we’ll follow up with a quote for the new heat pump. It’ll include product pricing and a labor breakdown, along with financing options to fit your budget. We’ll be there to answer any questions you may have.
+                                When your assessment is complete, we’ll follow up with a quote for the new heat pump. It’ll include product pricing and a labor breakdown, along with financing options to fit your budget. We’ll be there to answer any questions you may have.
                             </p>
                         </div>
                         <div className="group flex flex-col items-center  space-y-4  ">
@@ -39,7 +40,7 @@ export default function HowItWorks({category, ...props}) {
                             </div>
                             <h3 className="text-lg font-semibold">Step 3: Installation Day</h3>
                             <p className="text-gray-500 w-10/12 ">
-                            Once the installation is complete, Capable services professionals will clean up your old unit and then review manufacturer care and maintenance instructions with you. We ensure you’re 100% satisfied with the new unit and installation. 
+                                Once the installation is complete, Capable services professionals will clean up your old unit and then review manufacturer care and maintenance instructions with you. We ensure you’re 100% satisfied with the new unit and installation.
                             </p>
                         </div>
                     </div>

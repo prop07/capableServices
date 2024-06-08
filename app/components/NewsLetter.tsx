@@ -18,6 +18,10 @@ const schema = yup.object().shape({
         .string()
         .email("Invalid email format.")
         .required("Email is required."),
+    phone: yup
+    .string()
+    .matches(/^\d+$/, "Must be a number.")
+    .required("Phone is required."),
     address: yup
         .string()
         .required("Address is required."),
@@ -28,7 +32,7 @@ const schema = yup.object().shape({
         .string(),
     scheduleDate: yup
         .date()
-        .min(new Date(new Date().setDate(new Date().getDate() + 1)), 'Date must be in the future')
+        .min(new Date(new Date().setDate(new Date().getDate() + 1)), 'Date must be more than 1 day from today.')
         .required("Date is required"),
 });
 
@@ -57,6 +61,7 @@ const NewsLetter = () => {
 
     useEffect(() => {
         setValue("serviceType", service.type);
+        clearErrors("serviceType");
     }, [service]);
 
     useEffect(() => {
@@ -64,13 +69,23 @@ const NewsLetter = () => {
     }, [date]);
 
     const submit = async (data) => {
+        // Show loading notification
         const updatingToast = showLoadingNotification("Processing...");
-        console.log("data", data);
-        setService("");
-        setDate(null);
-        reset();
-        updatingToast.error("error");
-        updatingToast.success("submit");
+    
+        try {
+            // Simulate an API call with a timeout
+            await new Promise((resolve) => setTimeout(resolve, 2000));  // Just for demonstration
+    
+            // This should be your actual success call
+            updatingToast.success("Submission successful!");
+        } catch (error) {
+            // On error
+            updatingToast.error("Something went wrong. Try again!");
+        } finally {
+            setService("");
+            setDate(null);
+            reset();
+        }
     };
 
     return (
@@ -94,6 +109,12 @@ const NewsLetter = () => {
                             <InputField
                                 name="email"
                                 placeholder="Email"
+                                errors={errors}
+                                register={register}
+                            />
+                            <InputField
+                                name="phone"
+                                placeholder="Phone"
                                 errors={errors}
                                 register={register}
                             />

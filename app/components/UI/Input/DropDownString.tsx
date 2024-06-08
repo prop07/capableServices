@@ -40,7 +40,6 @@ export default function DropDownString({
         value={value ? value : ""}
         label={placeholder}
         onChange={(e) => {
-          console.log("e", e);
           onChange(e);
         }}
         InputLabelProps={{ shrink: true }}

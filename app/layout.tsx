@@ -5,6 +5,7 @@ import "./globals.css";
 import { Suspense } from "react";
 import Loading from "./loading";
 import { ToastContainer } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 
 import ServiceProvider from "../context/ServiceProvider";
@@ -32,6 +33,7 @@ export default function RootLayout({
       <AppRouterCacheProvider>
         <ServiceProvider>
       <body className={inter.className}>
+        <ToastContainer position="top-center"/>
         <NavBar />
         <SocialNav/>
         <Suspense fullback={<Loading />}>

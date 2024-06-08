@@ -19,13 +19,10 @@ type Services = {
 const Page = ({ params }: { params: { slug: string } }) => {
     const serviceDetails = useContext<Services>(ServiceContext);
 
-    useEffect(() => {
-        console.log("services:", JSON.stringify(serviceDetails))
-    }, [serviceDetails])
 
     const subcategory = Object.values(serviceDetails).find(service => service.serviceTitle === params.slug.replace(/\./g, "/").replace(/-/g, " "))?.subCatagory;
 
-    console.log(subcategory)
+
 
 
     return (

@@ -17,7 +17,6 @@ const ServiceProvider = ({ children}:{children: any}) => {
               onValue(reference, (snapshot) => {
                 const data = snapshot.val();
                 setServiceDetails(data);
-                console.log( data)
               });
             } catch (error) {
               console.error("Error fetching order data:", error);

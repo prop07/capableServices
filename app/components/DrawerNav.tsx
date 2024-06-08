@@ -30,12 +30,6 @@ const DrawerNav = () => {
     // const handleCategoryClick = (categoryId) => {
     //     setActiveCategory(categoryId === activeCategory ? null : categoryId);
     // };
-
-    useEffect(() => {
-        console.log("Service Details drawer", JSON.stringify(serviceDetails))
-        // console.log("title",serviceDetails[-Nr9p1BeYh1zD-iZanEj]?.subCatagory?.serviceTitle)
-    }, [serviceDetails])
-
     const [state, setState] = useState({
         top: false,
         left: false,
@@ -110,7 +104,8 @@ const DrawerNav = () => {
     return (
         <div>
             {['right'].map((anchor) => (
-                <React.Fragment key={anchor}>
+                <React.Fragment key={anchor}
+                onKeyDown={toggleDrawer(anchor, false)}>
                     <Button className='rounded-md' onClick={toggleDrawer(anchor, true)}>
                         <IoMdMenu size={30} />
                     </Button>
@@ -118,6 +113,7 @@ const DrawerNav = () => {
                         anchor={anchor}
                         open={state[anchor]}
                         onClose={toggleDrawer(anchor, false)}
+                        
                     >
                         <SocialNav/>
                         {list(anchor)}
