@@ -18,10 +18,13 @@ const schema = yup.object().shape({
         .string()
         .email("Invalid email format.")
         .required("Email is required."),
-    phone: yup
-    .string()
-    .matches(/^\d+$/, "Must be a number.")
-    .required("Phone is required."),
+        phone: yup
+        .string()
+        // .matches(
+        //     /^(?:\+1\s?)?(\(?\d{3}\)?[-.\s]?)?\d{3}[-.\s]?\d{4}$/,
+        //     "Must be a valid US phone number."
+        //   )
+        .required("Phone is required."),
     address: yup
         .string()
         .required("Address is required."),
@@ -32,7 +35,7 @@ const schema = yup.object().shape({
         .string(),
     scheduleDate: yup
         .date()
-        .min(new Date(new Date().setDate(new Date().getDate() + 1)), 'Date must be more than 1 day from today.')
+        .min(new Date(new Date().setDate(new Date().getDate() + 1)), 'Date must be at least 1 day after today.')
         .required("Date is required"),
 });
 
@@ -78,6 +81,7 @@ const NewsLetter = () => {
     
             // This should be your actual success call
             updatingToast.success("Submission successful!");
+            console.log(data);
         } catch (error) {
             // On error
             updatingToast.error("Something went wrong. Try again!");

@@ -23,9 +23,7 @@ export default function DropDown({
     setFieldValue(event.target.value);
   };
 
-  const params = React.useMemo(() => {
-    return { shrink: true };
-  }, []);
+
 
   return (
     <FormControl
@@ -43,7 +41,6 @@ export default function DropDown({
           // handleChange(e);
           onChange(e);
         }}
-        InputLabelProps={{ shrink: true }}
         onFocus={onFocus}
       >
         {options.map((option, index) => (

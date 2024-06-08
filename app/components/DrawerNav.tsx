@@ -104,8 +104,7 @@ const DrawerNav = () => {
     return (
         <div>
             {['right'].map((anchor) => (
-                <React.Fragment key={anchor}
-                onKeyDown={toggleDrawer(anchor, false)}>
+                <React.Fragment key={anchor}>
                     <Button className='rounded-md' onClick={toggleDrawer(anchor, true)}>
                         <IoMdMenu size={30} />
                     </Button>

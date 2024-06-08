@@ -14,17 +14,17 @@ const PatnerCompany = () => {
             <p className="relative h-16">
             <Image fill={true} style={{ objectFit: "contain"}}   src={"https://firebasestorage.googleapis.com/v0/b/capableservices-4e5f8.appspot.com/o/partners%2Flg.png?alt=media&token=0eaff373-57ad-4b30-95f3-e44ecf932076"} alt="partner"/>
             </p> 
-            <p className="relative h-16">
-            <Image fill={true} style={{ objectFit: "contain"}}   src={"https://firebasestorage.googleapis.com/v0/b/capableservices-4e5f8.appspot.com/o/partners%2Fptnr4.png?alt=media&token=a99c61fb-f979-407e-914d-cf55032c9dea"} alt="partner"/>
+            <p className="relative h-16 py-2">
+            <Image fill={true} style={{ objectFit: "contain"}}   src={"https://firebasestorage.googleapis.com/v0/b/capableservices-4e5f8.appspot.com/o/partners%2Fcarrier.png?alt=media&token=b6e780d4-9f46-4967-94d6-af7ad12190fc"} alt="partner"/>
             </p> 
             <p className="relative h-16">
             <Image fill={true} style={{ objectFit: "contain"}}   src={"https://firebasestorage.googleapis.com/v0/b/capableservices-4e5f8.appspot.com/o/partners%2Fptnr6.png?alt=media&token=48b4dc2f-9a85-4bd9-9c38-a3ee0d9fde71"} alt="partner"/>
             </p>  
             <p className="relative h-16">
-            <Image fill={true} style={{ objectFit: "contain"}}   src={"https://firebasestorage.googleapis.com/v0/b/capableservices-4e5f8.appspot.com/o/partners%2Fptnr2.png?alt=media&token=97cf308a-1f5d-45cf-bc48-78815216f37c"} alt="partner"/>
+            <Image fill={true} style={{ objectFit: "contain"}}   src={"https://firebasestorage.googleapis.com/v0/b/capableservices-4e5f8.appspot.com/o/partners%2Fcoleman.png?alt=media&token=979b9416-1e06-4b82-907e-1951c2161e39"} alt="partner"/>
             </p>
             <p className="relative h-16">
-            <Image fill={true} style={{ objectFit: "contain"}}   src={"https://firebasestorage.googleapis.com/v0/b/capableservices-4e5f8.appspot.com/o/partners%2Fptnr3.png?alt=media&token=1de14b5d-4895-488e-9d01-d77841dcf64c"} alt="partner"/>
+            <Image fill={true} style={{ objectFit: "contain"}}   src={"https://firebasestorage.googleapis.com/v0/b/capableservices-4e5f8.appspot.com/o/partners%2Fleenox.png?alt=media&token=e537fc46-0dd7-49cc-95d6-1616559d1e5a"} alt="partner"/>
             </p>                   
         </div>
     </div>
