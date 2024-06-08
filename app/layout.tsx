@@ -31,7 +31,7 @@ export default function RootLayout({
     <html lang="en">
       <AppRouterCacheProvider>
         <ServiceProvider>
-      <body   className={inter.className}>
+      <body className={inter.className}>
         <NavBar />
         <SocialNav/>
         <Suspense fullback={<Loading />}>

@@ -12,8 +12,9 @@ export default function Home() {
       <CompanyInfo />
       <ServicesCard />
       <InfoCard />
-      <PatnerCompany/>
-      </div>
-    
+      <PatnerCompany />
+    </div>
+
   );
 }
+

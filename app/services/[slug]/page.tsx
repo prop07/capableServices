@@ -16,20 +16,6 @@ type Services = {
 };
 
 
-const detailsObject = {
-    title:
-        "Paragraphs are the building blocks of papers Many students define paragraphs in terms of <strong>length a paragraph is a group</strong>:  of at least <strong>five</strong>  sentences, a paragraph is half a page long, etc. In reality, though, the unity and coherence of ideas among sentences is what constitutes a paragraph. A paragraph is defined as “a group of sentences or a single sentence that forms a unit” (Lunsford and Connors 116). Length and appearance do not determine whether a section in a paper is a paragraph. For instance, in some styles of writing, particularly journalistic styles, a paragraph can be just one sentence long. Ultimately, a paragraph is a sentence or group of sentences that support one main idea. In this handout, we will refer to this as the “controlling idea,” because it controls what happens in the rest of the paragraph.",
-    bullet_points: [
-        "Werewolves were consistently rated to be the scariest monsters.",
-        "<strong>Ugly vampires were typically</strong> said to be scarier than other types of vampires.",
-        "Zombies scored higher  <strong>scariness ratings</strong> with young girls than with young boys.",
-        "Clowns, despite being a control  group, scored unexpectedly high scariness ratings.",
-    ],
-};
-
-const json = {
-    text: "<p>A paragraph is defined as “<strong>a group of sentences or a single sentence that forms a unit</strong>” (Lunsford and Connors 116). Length and appearance do not determine whether a section in a paper is a paragraph. For instance, in some styles of writing, particularly journalistic styles, a paragraph can be just one sentence long.</p><p>&nbsp;</p><ul><li>By following these tips, <strong>tricks, and best practices</strong> for bullet points in Excel, you can create visually appealing, organized and reader-friendly spreadsheets, making the data easier to understand and analyze.</li><li>Another important tip for using bullet points effectively in Excel spreadsheets is to use them to break down complex information into smaller, more manageable chunks. This can help readers to better understand the data and identify key trends or patterns.</li><li>Additionally, it’s important to use bullet points in a logical and intuitive way. For example, if you’re presenting a list of steps or instructions, it’s best to use bullet points in a sequential order to make it easier for readers to follow along.</li></ul><p>&nbsp;</p>"
-}
 const Page = ({ params }: { params: { slug: string } }) => {
     const serviceDetails = useContext<Services>(ServiceContext);
 
@@ -46,7 +32,7 @@ const Page = ({ params }: { params: { slug: string } }) => {
         <div className="md:w-[70vw] mb-4  mx-auto justify-center space-y-6 ">
             <TextHeader title={params.slug.replace(/\./g, "/").replace(/-/g, " ").replace(/%26/g, "&")} />
             {/* details  */}
-            <div className=" ">
+            <div className="px-2 ">
                 <p className="text-read">Paragraphs are the building blocks of papers Many students define paragraphs in terms of length a paragraph is a group: of at least five sentences, a paragraph is half a page long, etc. In reality, though, the unity and coherence of ideas among sentences is what constitutes a paragraph. A paragraph is defined as “a group of sentences or a single sentence that forms a unit” (Lunsford and Connors 116). Length and appearance do not determine whether a section in a paper is a paragraph. For instance, in some styles of writing, particularly journalistic styles, a paragraph can be just one sentence long. Ultimately, a paragraph is a sentence or group of sentences that support one main idea. In this handout, we will refer to this as the “controlling idea,” because it controls what happens in the rest of the paragraph.</p>
             </div>
             {/* card  */}

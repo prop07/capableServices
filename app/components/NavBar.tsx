@@ -1,8 +1,7 @@
 "use client";
 import React, { useState, useContext, useEffect } from "react";
 import { FaPhoneAlt } from "react-icons/fa";
-import { IoMdClose, IoIosArrowBack, IoMdArrowDropleft } from "react-icons/io";
-import { FaCaretDown, FaAngleDown } from "react-icons/fa";
+import {  IoIosArrowBack, IoMdArrowDropleft } from "react-icons/io";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
@@ -26,15 +25,7 @@ type Services = {
 const Navbar = () => {
   const pathname = usePathname();
   const serviceDetails = useContext<Services>(ServiceContext);
-  const [humBurgerMenu, setHumBurgerMenu] = useState(false);
 
-  useEffect(() => {
-    console.log("pathname", pathname)
-
-  }, [pathname])
-  
-
-  console.log("serviceDetails", serviceDetails)
 
   return (
     <div className="fixed w-full  justify-center shadow-md shadow-gray-200 z-20">
@@ -47,13 +38,13 @@ const Navbar = () => {
       <div className="flex  w-full bg-white font-bold   md:px-16 px-4 h-16">
         <div className="flex justify-start items-center w-3/12">
           <Link href={"/"}>
-            <p className="relative h-16 w-32">
+            <p className="relative h-16 w-28">
               <Image fill={true} style={{ objectFit: "contain"}}   src={logo} alt="logo"/>
               {/* Logo */}
             </p>
           </Link>
         </div>
-        <div className="md:flex hidden md:gap-8 sm:gap-4 gap-2 md:w-6/12 w-full justify-center items-center">
+        <div className="md:flex hidden lg:gap-10 gap-6  md:w-6/12 w-full justify-center items-center">
           <div key={'home'}>
             <Link href={`/`} >
               <p className={`mb-0.5  cursor-pointer font-bold  capitalize ${pathname === "/"? "text-primary": "hover:text-primary"}`}>

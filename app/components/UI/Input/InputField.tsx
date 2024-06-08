@@ -15,10 +15,6 @@ export default function InputField({
 }) {
   // const [value, setValue] = useState("");
 
-  const params = useMemo(() => {
-    return { shrink: true };
-  }, []);
-
   return (
     <div className="w-full">
       <TextField

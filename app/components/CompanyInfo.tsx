@@ -9,7 +9,7 @@ const CompanyInfo = () => {
         <p className=" lg:font-extrabold font-medium text-2xl">
           5+
         </p>
-        <p>
+        <p className='text-center'>
           Years Business
         </p>
       </div>
@@ -17,7 +17,7 @@ const CompanyInfo = () => {
         <p className=" lg:font-extrabold font-medium text-2xl">
           5k+
         </p>
-        <p>
+        <p className='text-center'>
           Project Complete
         </p>
       </div>
@@ -25,7 +25,7 @@ const CompanyInfo = () => {
         <p className=" lg:font-extrabold font-medium text-2xl">
           5k+
         </p>
-        <p>
+        <p className='text-center'>
           Happy Client
         </p>
       </div>
@@ -33,7 +33,7 @@ const CompanyInfo = () => {
         <p className=" lg:font-extrabold font-medium text-2xl ">
           24/7
         </p>
-        <p>
+        <p className='text-center'>
           Always Support
         </p>
       </div>
@@ -42,7 +42,7 @@ const CompanyInfo = () => {
         <p className=" lg:font-extrabold font-medium  text-2xl">
           <CountUp end={100} duration={5} />%
         </p>
-        <p>
+        <p className='text-center'>
           Work Success
         </p>
       </div>

@@ -17,16 +17,22 @@ type Services = {
 const ServicesCard = () => {
   const serviceDetails = useContext<Services>(ServiceContext);
 
+  if (!serviceDetails || Object.keys(serviceDetails).length === 0) {
+    return <Loading />;
+  }
+
+
+
   return (
     <div className='py-4 '>
-      <div className="flex mx-auto justify-center items-center mb-2  sm:w-1/2">
+      {/* <div className="flex mx-auto justify-center items-center mb-2  sm:w-1/2">
         <div>
           <p className="lg:text-2xl text-xl text-gray-700 text-center  md:font-bold font-bold mb-0.5 uppercase ">
             Hvac Repair Nyc - Air Conditioner Installation In Brooklyn Ny
           </p>
-        <div className="h-1 m-auto w-2/12 bg-primary  rounded-full "></div>
+          <div className="h-1 m-auto w-2/12 bg-primary  rounded-full "></div>
         </div>
-      </div>
+      </div> */}
       <div className='grid mx-auto xl:grid-cols-3 lg:grid-cols-2 sm:grid-cols-1 gap-2 px-3 sm:px-0   '>
         {/* card  */}
         {Object.keys(serviceDetails).map((key) => (
@@ -57,9 +63,43 @@ const ServicesCard = () => {
           </Link>
         ))}
       </div>
+      {/* <Loading/> */}
     </div>
   )
 }
 
 export default ServicesCard
+
+
+
+const Loading = () => {
+  return (
+    <div className='py-4'>
+    <div className='grid mx-auto xl:grid-cols-3 lg:grid-cols-2 sm:grid-cols-1 gap-2 px-3 sm:px-0   '>
+      {[...Array(3).keys()].map((index) => (
+        
+        <div
+        key={index}
+        className="border border-gray-100 rounded-md px-3 py-2 mx-auto mb-3 max-w-sm cursor-wait  "
+        >
+            <div className="animate-pulse flex gap-2 ">
+              <div>
+            <div className="h-20 w-20 bg-gray-300  rounded-full"></div>
+              </div>
+              <div className="flex-1 space-y-3 py-1">
+                <div className="h-2 bg-gray-300  w-[180px]  rounded"></div>
+                <div className='h-2'></div>
+                <div className="h-2 bg-gray-300 xl:w-[180px]  sm:w-[240px] w-[180px] rounded"></div>
+                <div className="h-2 bg-gray-300 xl:w-[180px]  sm:w-[240px] w-[180px] rounded"></div>
+                <div className="h-2 bg-gray-300 xl:w-[180px]  sm:w-[240px] w-[180px] rounded"></div>
+                <div className="h-2 bg-gray-300 xl:w-[180px]  sm:w-[240px] w-[180px] rounded"></div>
+                <div className="h-2  bg-gray-300 w-[50px] rounded"></div>
+              </div>
+            </div>
+          </div>
+        ))}
+        </div>
+    </div>
+  );
+};
 

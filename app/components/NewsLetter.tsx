@@ -1,4 +1,5 @@
-'use client'
+'use client';
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -6,8 +7,8 @@ import * as yup from "yup";
 import InputField from "@/app/components/UI/Input/InputField";
 import Dropdown from "@/app/components/UI/Input/DropDown";
 import SubmitButton from "@/app/components/UI/Button/SubmitButton";
-import { useEffect, useState } from "react";
 import DateField from "./UI/Input/DateField";
+import { showLoadingNotification } from "./UI/Notification";
 
 const schema = yup.object().shape({
     name: yup
@@ -17,122 +18,115 @@ const schema = yup.object().shape({
         .string()
         .email("Invalid email format.")
         .required("Email is required."),
-    subject: yup
+    address: yup
         .string()
-        .required("Subject is required."),
+        .required("Address is required."),
     serviceType: yup
         .string()
-        .required("serviceType is required."),
+        .required("Service type is required."),
     message: yup
-        .string()
-        .required("Message is required."),
-    date:yup
+        .string(),
+    scheduleDate: yup
         .date()
-        .min(new Date(), 'Date must be today or in the future')
+        .min(new Date(new Date().setDate(new Date().getDate() + 1)), 'Date must be in the future')
         .required("Date is required"),
 });
 
 const serviceTypeList = [
     { id: 1, type: "Heating and Cooling Repair" },
     { id: 2, type: "System Installation" },
-    { id: 3, type: "Maintanance" },
+    { id: 3, type: "Maintenance" },
     { id: 4, type: "Others" },
-]
-
-
-
+];
 
 const NewsLetter = () => {
-    
+    const [service, setService] = useState("");
+    const [date, setDate] = useState(null);
+
     const {
         register,
         handleSubmit,
         setValue,
-        getValues,
         reset,
-        formState: { errors, dirtyFields, isSubmitting },
+        formState: { errors, isSubmitting },
         clearErrors,
     } = useForm({
         resolver: yupResolver(schema),
         criteriaMode: "all",
     });
 
-
-    const [serviceType, setServiceType] = useState([]);
+    useEffect(() => {
+        setValue("serviceType", service.type);
+    }, [service]);
 
     useEffect(() => {
-        setValue("serviceType", serviceType.type)
-    }, [serviceType])
-    
+        setValue("scheduleDate", date);
+    }, [date]);
 
     const submit = async (data) => {
+        const updatingToast = showLoadingNotification("Processing...");
         console.log("data", data);
+        setService("");
+        setDate(null);
         reset();
-    }
-
-    console.log(errors);
+        updatingToast.error("error");
+        updatingToast.success("submit");
+    };
 
     return (
-        <div className=" md:w-[70vw]  mx-auto justify-center  mt-6 sm:mt-0    text-gray-900 flex ">
-            <div className=" bg-white lg:border lg:border-gray-100 lg:border-none   rounded-lg   flex justify-center flex-1">
+        <div className="md:w-[70vw] mx-auto justify-center mt-6 sm:mt-0 text-gray-900 flex">
+            <div className="bg-white lg:border lg:border-gray-100 lg:border-none rounded-lg flex justify-center flex-1">
                 <div className="p-8 lg:border-l lg:border-t lg:border-b md:border-gray-100 lg:rounded-tl-lg lg:rounded-bl-lg">
-                    <div className=" space-y-6">
-                        <h1 className="lg:text-xl text-center text-xl font-bold ">
-                            Schedule Your HVAC Estimate Today !
+                    <div className="space-y-6">
+                        <h1 className="lg:text-xl text-center text-xl font-bold">
+                            Schedule Your HVAC Estimate Today!
                         </h1>
                         <form
                             className="flex flex-col justify-center items-center space-y-6"
-                            action="#"
                             onSubmit={handleSubmit(submit)}
                         >
                             <InputField
                                 name="name"
-                                placeholder="Name *"
+                                placeholder="Name"
                                 errors={errors}
-                                type={"name"}
-                                // onChange={(e) => setValue("email", e.target.value)}
-                                // onFocus={() => clearErrors("email")}
                                 register={register}
                             />
                             <InputField
                                 name="email"
-                                placeholder="Email *"
+                                placeholder="Email"
                                 errors={errors}
-                                // onChange={(e) => setValue("email", e.target.value)}
-                                // onFocus={() => clearErrors("email")}
                                 register={register}
                             />
                             <Dropdown
                                 name="serviceType"
-                                placeholder="Service Type *"
+                                placeholder="Service Type"
                                 options={serviceTypeList}
                                 optionLabel="type"
-                                value={serviceType}
+                                value={service}
                                 errors={errors}
                                 onChange={(e) => {
-                                    setServiceType(e.target.value);
+                                    setService(e.target.value);
                                 }}
-                                onFocus={() => clearErrors("serviceType")}
                             />
                             <InputField
-                                name="subject"
-                                placeholder="Subject *"
+                                name="address"
+                                placeholder="Address"
                                 errors={errors}
-                                // onChange={(e) => setValue("email", e.target.value)}
-                                // onFocus={() => clearErrors("email")}
                                 register={register}
                             />
                             <DateField
-                            name="date"
-                            placeholder="Pick Date *"
-                            onChange={(value)=>{setValue("date",value ), clearErrors("date")}}
-                            errors={errors} />
+                                name="scheduleDate"
+                                value={date}
+                                placeholder="Pick Date"
+                                onChange={(value) => { setDate(value); clearErrors("scheduleDate"); }}
+                                errors={errors}
+                            />
                             <InputField
                                 name="message"
-                                placeholder="Message *"
+                                placeholder="Message (optional)"
                                 errors={errors}
                                 register={register}
-                                multiline={true}
+                                multiline
                             />
                             <SubmitButton
                                 placeholder="Submit"
@@ -143,7 +137,12 @@ const NewsLetter = () => {
                     </div>
                 </div>
                 <div className="flex-1 relative text-center hidden lg:flex">
-                    <Image fill={true} style={{ objectFit: "cover", borderTopRightRadius: "8px", borderBottomRightRadius: "8px" }} alt="ac image" src={"https://firebasestorage.googleapis.com/v0/b/capableservices-4e5f8.appspot.com/o/otherImage%2FACImage.jpg?alt=media&token=9af70431-467d-4e20-9f02-5f0c05fcf3b2"} />
+                    <Image
+                        fill
+                        style={{ objectFit: "cover", borderTopRightRadius: "8px", borderBottomRightRadius: "8px" }}
+                        alt="ac image"
+                        src="https://firebasestorage.googleapis.com/v0/b/capableservices-4e5f8.appspot.com/o/otherImage%2FACImage.jpg?alt=media&token=9af70431-467d-4e20-9f02-5f0c05fcf3b2"
+                    />
                 </div>
             </div>
         </div>
@@ -151,5 +150,3 @@ const NewsLetter = () => {
 };
 
 export default NewsLetter;
-
-
