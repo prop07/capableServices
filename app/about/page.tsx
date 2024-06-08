@@ -91,7 +91,7 @@ const Page = async () => {
                   <h3 className="mt-5 text-lg font-medium text-gray-900">Shared Goals for Success</h3>
                   <p className="mt-2 text-base text-gray-500">
                     Our goal, shared with our valued customers, is to provide effective solutions to any HVAC-related
-                    challenges. Whether it's heater repair, system installation, fan motor replacement, or any other
+                    challenges. Whether it&apos;s heater repair, system installation, fan motor replacement, or any other
                     service, our dedicated team is committed to delivering results that align with your unique
                     requirements.
                   </p>
