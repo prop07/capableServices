@@ -81,11 +81,11 @@ const Navbar = () => {
                       >
                         <div className=" flex items-center cursor-pointer p-2 group-hover/items:bg-primary group-hover/items:text-white  hover:bg-primary hover:text-white text-xs  text-gray-800 transition-all  ">
                           {serviceDetails[key1].serviceTitle}
-                          <IoIosArrowBack className="ml-1 group-hover/items:rotate-180   duration-200 ease-in-out" size={15} />
+                          {/* <IoIosArrowBack className="ml-1 group-hover/items:rotate-180   duration-200 ease-in-out" size={15} /> */}
                         </div>
                       </Link>
                       {/* Second Dropdown Content */}
-                      <div className="absolute group-hover/items:block  hidden inset-x-0 top-0  left-60  w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5" role="menu" aria-orientation="vertical" aria-labelledby="second-dropdown-menu">
+                      {/* <div className="absolute group-hover/items:block  hidden inset-x-0 top-0  left-60  w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5" role="menu" aria-orientation="vertical" aria-labelledby="second-dropdown-menu">
                         <div className="py-1" role="none">
                           {Object.keys(serviceDetails[key1].subCatagory).map((key2, value) => (
                             <Link key={key2}
@@ -99,7 +99,7 @@ const Navbar = () => {
                             </Link>
                           ))}
                         </div>
-                      </div>
+                      </div> */}
                     </div>
                   ))}
                 </div> : <div className="text-center p-4">
