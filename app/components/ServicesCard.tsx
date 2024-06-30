@@ -37,7 +37,7 @@ const ServicesCard = () => {
       <div className='grid mx-auto xl:grid-cols-3 lg:grid-cols-2 sm:grid-cols-1 gap-2 px-3 sm:px-0   '>
         {/* card  */}
         {Object.keys(serviceDetails).map((key) => (
-          <div ><Link  href={`/services/${serviceDetails[key].serviceTitle.replace(/\s/g, "-").replace("/", ".")}`}>
+          <div key={key} ><Link  href={`/services/${serviceDetails[key].serviceTitle.replace(/\s/g, "-").replace("/", ".")}`}>
             <div
               className="group relative cursor-pointer overflow-hidden mx-auto   p-4  border border-gray-50 hover:border-sky-500   shadow-xl ring-1 ring-gray-900/5 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl max-w-sm rounded-lg ">
               <span className="absolute  top-5 left-5 z-0 h-8 w-8 rounded-full bg-sky-500 transition-all duration-300 group-hover:scale-[30]"></span>
