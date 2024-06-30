@@ -8,7 +8,7 @@ import { FiMail } from "react-icons/fi";
 
 const SocialNav = () => {
 return (
-    <div className=' lg:flex   w-full  mt-24 fixed hidden flex-col items-end text-white '>
+    <div className=' lg:flex z-50   w-full  mt-24 fixed hidden flex-col items-end text-white '>
         <div className="absolute">
           <Link href="https://api.whatsapp.com/send?phone=+888 985321475212" target="_blank" passHref>
         <div className='bg-whatsappGreen hover:bg-green-600 flex justify-center cursor-pointer items-center h-24 w-12  rounded-tl-md duration-300 ease-in-out '>

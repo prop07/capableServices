@@ -25,7 +25,7 @@ type Services = {
 
 const DrawerNav = () => {
     const serviceDetails = useContext<Services>(ServiceContext);
-    // const [activeCategory, setActiveCategory] = useState(null);
+    const [isServiceDetails, setServiceDetails] = useState(false);
 
     // const handleCategoryClick = (categoryId) => {
     //     setActiveCategory(categoryId === activeCategory ? null : categoryId);
@@ -56,45 +56,33 @@ const DrawerNav = () => {
     const list = (anchor) => (
         <Box
             {...handlers[anchor]}
-            sx={{ width: anchor === 'top' || anchor === 'bottom' ? 'auto' : 220 }}
+            sx={{ width: anchor === 'top' || anchor === 'bottom' ? 'auto' : 240 }}
             role="presentation"
-            className=" flex w-full relative  ml-2"
+            className=" flex w-full h-full relative  bg-primary justify-center"
             // onClick={toggleDrawer(anchor, false)}
             onKeyDown={toggleDrawer(anchor, false)}
         >
-            <div className='absolute bg-gray-400 h-20 w-1  rounded-full justify-center top-[50vh] left-0'></div>
+            <div className='absolute bg-white h-20 w-1 ml-2  rounded-full justify-center top-[43vh] left-0'></div>
             <List>
-                <div className="grid w-full">
-                    <span className=" font-bold mb-2 w-full hover:bg-gray-200 px-2 rounded-md" onClick={toggleDrawer(anchor, false)}><Link href={"/"}><p>Home</p></Link></span>
-                    <span className=" font-bold flex items-center  px-2" >Services <MdOutlineKeyboardArrowLeft size={19} /></span>
-                    <div className="">
+                <div className="grid w-full space-y-10 mt-4">
+                    <span className=" font-bold  w-full text-white text-center   px-2 rounded-md" onClick={toggleDrawer(anchor, false)}><Link href={"/"}><p>Home</p></Link></span>
+                    <span className=" font-bold flex items-center justify-center text-white cursor-pointer  px-2" onClick={()=>setServiceDetails(!isServiceDetails)}>Services <MdOutlineKeyboardArrowLeft className={ ` transition-all ${isServiceDetails === true ? "-rotate-90":""}`} size={19} /></span>
+                  {
+                    isServiceDetails && 
+                    <div className="space-y-6 ">
                         {Object.entries(serviceDetails).map(([categoryId, category]) => (
-                            <div key={categoryId} className=" justify-center border-b hover:bg-gray-200 border-gray-300">
-                                <Link href={`/services/${category.serviceTitle
+                            <div key={categoryId} className=" justify-center text-center text-sm ">
+                               
+                                        <span className='text-white'> <Link href={`/services/${category.serviceTitle
                                     .replace(/\s/g, "-")
-                                    .replace("/", ".")}`}> <button
-                                        className=" text-left text-sm font-semibold  py-2  px-2   flex gap-2 justify-between items-center"
-                                        // onClick={() => handleCategoryClick(categoryId)}
-                                        onClick={toggleDrawer(anchor, false)}
-                                    >
-                                        <p>{category.serviceTitle}</p>
-                                        {/* <p>{activeCategory === categoryId ? <FaMinus size={15}/> : <FaPlus size={15}/>}</p> */}
-                                    </button></Link>
-                                {/* {activeCategory === categoryId && (
-                                    <div className="mt-4 ml-2 ">
-                                        {Object.entries(category.subCatagory).map(([subCategoryId, subCategory]) => (
-                                            <div key={subCategoryId} className=" border-b border-gray-200 ">
-                                                <h2 className="text-sm text-gray-800 hover:bg-gray-100 ">{subCategoryId}</h2>
-                                            </div>
-                                        ))}
-                                    </div>
-                                )} */}
+                                    .replace("/", ".")}`}>{category.serviceTitle}</Link></span>
                             </div>
                         ))}
                     </div>
-                    <div className=" font-bold mb-2 mt-2 cursor-pointer hover:bg-gray-200 px-2 rounded-md" onClick={toggleDrawer(anchor, false)}><Link href={"/contact"}><p>Contact</p></Link></div>
-                    <div className=" font-bold mb-2 cursor-pointer hover:bg-gray-200 px-2 rounded-md" onClick={toggleDrawer(anchor, false)}><Link href={"/about"}><p>About</p></Link></div>
-                    <div className=" font-bold mb-2 cursor-pointer hover:bg-gray-200 px-2 rounded-md" onClick={toggleDrawer(anchor, false)}><Link href={"/blog"}><p>Blog</p></Link></div>
+                  }  
+                    <div className=" font-bold text-white text-center  cursor-pointer px-2 rounded-md" onClick={toggleDrawer(anchor, false)}><span><Link href={"/contact"}>Contact</Link></span></div>
+                    <div className=" font-bold  text-white text-center cursor-pointer  px-2 rounded-md" onClick={toggleDrawer(anchor, false)}><span><Link href={"/about"}>About</Link></span></div>
+                    <div className=" font-bold  cursor-pointer text-white text-center  px-2 rounded-md" onClick={toggleDrawer(anchor, false)}><span><Link href={"/blog"}>Blog</Link></span></div>
                 </div>
                 
             </List>
@@ -106,7 +94,7 @@ const DrawerNav = () => {
             {['right'].map((anchor) => (
                 <React.Fragment key={anchor}>
                     <Button className='rounded-md' onClick={toggleDrawer(anchor, true)}>
-                        <IoMdMenu size={30} />
+                        <IoMdMenu className='text-white' size={30} />
                     </Button>
                     <Drawer
                         anchor={anchor}

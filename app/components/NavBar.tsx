@@ -28,7 +28,7 @@ const Navbar = () => {
 
 
   return (
-    <div className="fixed w-full  justify-center shadow-md shadow-gray-200 z-20">
+    <div className="absolute w-full  justify-center  z-20">
       <div className=" md:hidden flex justify-center items-center  p-2 text-white  bg-primary ">
         <span className=" flex text-sm items-center justify-center gap-1">
           Call Now: <FaPhoneAlt />
@@ -36,7 +36,7 @@ const Navbar = () => {
           </Link>
         </span>
       </div>
-      <div className="flex  w-full bg-white font-bold   md:px-16 px-4 h-16">
+      <div className="flex  w-full  font-bold   md:px-16 px-4 h-16">
         <div className="flex justify-start items-center w-3/12">
           <Link href={"/"}>
             <p className="relative h-16 w-28">
@@ -45,10 +45,10 @@ const Navbar = () => {
             </p>
           </Link>
         </div>
-        <div className="md:flex hidden lg:gap-10 gap-6  md:w-6/12 w-full justify-center items-center">
+        <div className="md:flex hidden lg:gap-10 gap-6  w-full justify-end items-center">
           <div key={'home'}>
             <Link href={`/`} >
-              <p className={`mb-0.5  cursor-pointer font-bold  capitalize ${pathname === "/"? "text-primary": "hover:text-primary"}`}>
+              <p className={`mb-0.5  cursor-pointer text-sm capitalize ${pathname === "/"? "text-primary": " text-white "}`}>
                 home
               </p>
               <div className={`h-0.5 rounded-full ${pathname === "/"? "bg-primary": "bg-transparent"}`}></div>
@@ -56,7 +56,7 @@ const Navbar = () => {
           </div>
           <div className="group relative inline-block text-left">
             <div >
-              <div className={` font-bold cursor-pointer flex justify-center items-center  capitalize ${pathname.includes("/services")? "text-primary": "hover:text-primary"}`}
+              <div className={` cursor-pointer flex justify-center items-center text-sm  capitalize ${pathname.includes("/services")? "text-primary": " text-white"}`}
               >
                 <div
               className={`mb-0.5 `}
@@ -69,7 +69,7 @@ const Navbar = () => {
                 <IoMdArrowDropleft size={20} />
               </div>
               {/* First Dropdown Content */}
-              <div className="hidden group-hover:block hover:block absolute top-5 right-46 mt-2 w-60 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5" role="menu" aria-orientation="vertical" aria-labelledby="dropdown-menu">
+              <div className="hidden group-hover:block hover:block absolute top-4 right-46 mt-2 w-60 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5" role="menu" aria-orientation="vertical" aria-labelledby="dropdown-menu">
                 {Object.keys(serviceDetails).length !== 0 ? <div className="py-1" role="none">
                   {/* Second Dropdown */}
                   {Object.keys(serviceDetails).map((key1) => (
@@ -79,7 +79,7 @@ const Navbar = () => {
                           .replace(/\s/g, "-")
                           .replace("/", ".")}`}
                       >
-                        <div className=" flex items-center cursor-pointer p-2 group-hover/items:bg-gray-100  hover:bg-gray-100 text-sm  text-gray-800  ">
+                        <div className=" flex items-center cursor-pointer p-2 group-hover/items:bg-primary group-hover/items:text-white  hover:bg-primary hover:text-white text-xs  text-gray-800 transition-all  ">
                           {serviceDetails[key1].serviceTitle}
                           <IoIosArrowBack className="ml-1 group-hover/items:rotate-180   duration-200 ease-in-out" size={15} />
                         </div>
@@ -95,7 +95,7 @@ const Navbar = () => {
                                 .replace(/\s/g, "-")
                                 .replace("/", ".")}`}
                             >
-                              <p className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100" role="menuitem">{key2}</p>
+                              <p className="block px-4 py-2 text-xs text-gray-800 hover:bg-primary hover:text-white transition-all" role="menuitem">{key2}</p>
                             </Link>
                           ))}
                         </div>
@@ -117,21 +117,21 @@ const Navbar = () => {
           {navLink.map((item) => (
             <div key={item}>
               <Link href={`/${item.replace(/\s/g, "-").replace("/", ".")}`}>
-                <p className={`mb-0.5  cursor-pointer font-bold  capitalize ${pathname.includes(item) ? "text-primary": "hover:text-primary"}`}>
+                <p className={`mb-0.5  cursor-pointer text-sm  capitalize ${pathname.includes(item) ? "text-primary": " text-white"}`}>
                   {item}
                 </p>
               <div className={`h-0.5 rounded-full ${pathname.includes(item)? "bg-primary": "bg-transparent"}`}></div>
               </Link>
             </div>
           ))}
-        </div>
-        <div className="md:hidden flex relative w-full justify-end items-center ">
-          <DrawerNav/>
-        </div>
-        <div className=" justify-end items-center  md:w-3/12 w-full md:flex hidden">
+           <div className=" justify-end items-center  w-3/12  md:flex hidden">
           <span className="flex items-center rounded-md cursor-pointer  bg-primary  py-2  px-3 text-white text-medium  text-center ">
           <Link className="flex items-center" href={"tel:+888 985321475212"}><FaPhoneAlt className="mr-2" /> Call now</Link>   
           </span>
+        </div>
+        </div>
+        <div className="md:hidden flex relative w-full justify-end items-center ">
+          <DrawerNav/>
         </div>
       </div>
     </div>

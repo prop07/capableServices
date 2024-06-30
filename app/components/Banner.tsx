@@ -2,52 +2,35 @@ import React from "react";
 import Link from "next/link";
 import banner13 from "../../image/banner1-3.png";
 import banner12 from "../../image/banner1-2.png";
+import banner from "../../image/banner.jpeg";
 
 
 import Image from "next/image";
 
 const Banner = () => {
   return (
-    <main className="relative bg-white  ">
-      <div className="bg-white  flex  items-center ">
-        <div className="absolute w-5/4 sm:w-4/6  lg:w-3/5 xl:w-5/12 flex flex-col md:p-0 p-4 ">
-          <h1 className=" uppercase lg:text-4xl md:text-3xl text-xl  font-black flex flex-col   text-gray-800">
-            Capable Service your trusted
-            <span className=" text-primary ">HVAC</span> partner in New York & New Jersey
-          </h1>
-          <p className="mt-2 mr-2 text-read   text-base  font-medium  ">
-            At Capable Service, we take pride in delivering top-notch HVAC
-            solutions with a commitment to excellence. Our mantra is simple:
-            Quality Services is Our Guarantee.
-          </p>
-          <div className="mt-6 ">
-            <Link href={"/contact"}>
-              <span className=" cursor-pointer  bg-primary py-4 lg:px-6 px-4 text-white md:text-base  text-sm text-center  font-extrabold rounded-md">
-                Get a quote
-              </span>
-            </Link>
-          </div>
-        </div>
-        <div className="">
-          <Image
-            height={1500}
-            width={1500}
-            src={banner13}
-            alt="banner"
-            className=" m-auto py-6 xl:block hidden  "
-            style={{ height: "50vh" }}
-          />
-            <Image
-            height={800}
-            width={800}
-            src={banner12}
-            alt="banner"
-            className=" h-[45vh]  m-auto xl:hidden block md:ml-16 ml-0 md:object-none object-contain   "
-            // style={{ height: "42vh" }}
-          />
-        </div>
-      </div>
-    </main>
+  <section className="w-full relative overflow-hidden mb-4">
+  <div className="h-[100vh] w-[100vw] relative">
+    <Image
+      fill={true}
+      style={{ objectFit: "cover" }}
+      src={banner}
+      alt="banner"
+    />
+    {/* Gradient overlay for fading effect at the bottom 10% */}
+    <div className="absolute bottom-0 left-0 right-0 h-[10%] bg-gradient-to-b from-transparent to-white"></div>
+  </div>
+  <div className="absolute inset-0 bg-background/50 dark:bg-background/70 flex items-center justify-center p-4 text-center">
+    <div className="space-y-4 max-w-3xl">
+      <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-white">
+        CAPABLE SERVICES
+      </h1>
+      <p className="text-lg md:text-2xl text-muted-foreground text-white">
+        HVAC For Life.
+      </p>
+    </div>
+  </div>
+</section>
   );
 };
 

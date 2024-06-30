@@ -51,7 +51,7 @@ const Footer = () => {
                 <li className="mb-4" key={item}>
                   <Link href={`/${item}`}>
                     <span
-                      className={`text-sm truncate  capitalize  hover:text-black cursor-pointer transition-al  `}
+                      className={`text-sm truncate  capitalize   cursor-pointer transition-al  `}
                       key={index}
                     >
                       {item}
@@ -76,7 +76,7 @@ const Footer = () => {
                       .replace("/", ".")}`}
                   >
                     <span
-                      className={`text-sm truncate capitalize  hover:text-black cursor-pointer transition-all `}
+                      className={`text-sm truncate capitalize   cursor-pointer transition-all `}
                     >
                       {serviceDetails[key].serviceTitle}
                     </span>

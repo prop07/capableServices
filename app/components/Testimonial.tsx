@@ -116,9 +116,8 @@ const userReview = [
 const Testimonial = () => {
   return (
     <div className=' md:w-[70vw] py-4   mx-auto justify-center '>
-      <div className="px-3 mb-3">
-        <p className="font-semibold text-center tracking-tight text-gray-900 text-2xl mb-0.5">Testimonial</p>
-        <div className="h-1 m-auto w-2/12 bg-primary rounded-full mb-2"></div>
+      <div className="px-3 sm:px-0 mb-3 ">
+        <div className="font-semibold flex justify-center text-center items-center tracking-tight text-read text-lg mb-0.5 py-2 w-full ">People leader love the Capable service experiance</div>
         <Swiper
           spaceBetween={30}
           slidesPerView={1}

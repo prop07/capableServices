@@ -93,7 +93,7 @@ const NewsLetter = () => {
             <div className="bg-white lg:border lg:border-gray-100 lg:border-none rounded-lg flex justify-center flex-1">
                 <div className="p-8 lg:border-l lg:border-t lg:border-b md:border-gray-100 lg:rounded-tl-lg lg:rounded-bl-lg">
                     <div className="space-y-6">
-                        <h1 className="lg:text-xl text-center text-xl font-bold">
+                        <h1 className="text-lg text-center font-bold">
                             Schedule Your HVAC Estimate Today!
                         </h1>
                         <form
