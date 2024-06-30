@@ -10,7 +10,7 @@ const TestimonialCard = ({ id, name, content, ...props }) => {
           <div className="space-y-2">
             <p className=" text-base text-center   text-gray-900 max-w-sm  ">&quot;{content}&quot;</p>
             <div className="flex items-center justify-center gap-2  divide-gray-500 ">
-              <FaCircleUser className="text-primary" size={25} />
+              <FaCircleUser className="text-primary" size={20} />
               <p className="font-semibold   text-read ">{name}</p>
             </div>
           </div>
