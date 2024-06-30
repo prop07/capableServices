@@ -56,10 +56,10 @@ const Navbar = () => {
           </div>
           <div className="group relative inline-block text-left">
             <div >
-              <div className={` cursor-pointer flex justify-center items-center text-sm  capitalize ${pathname.includes("/services")? "text-primary": " text-white"}`}
+              <div className={` cursor-pointer flex justify-center items-center text-base  capitalize ${pathname.includes("/services")? "text-primary": " text-white"}`}
               >
                 <div
-              className={`mb-0.5 `}
+              className={`mb-0.5 font-bold  `}
                 id="dropdown-menu"
                 aria-haspopup="true"
               >

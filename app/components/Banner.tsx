@@ -18,7 +18,7 @@ const Banner = () => {
       alt="banner"
     />
     {/* Gradient overlay for fading effect at the bottom 10% */}
-    <div className="absolute bottom-0 left-0 right-0 h-[10%] bg-gradient-to-b from-transparent to-white"></div>
+    <div className="absolute bottom-0 left-0 right-0 h-[5%] bg-gradient-to-b from-transparent to-white"></div>
   </div>
   <div className="absolute inset-0 bg-background/50 dark:bg-background/70 flex items-center justify-center p-4 text-center">
     <div className="space-y-4 max-w-3xl">

@@ -3,8 +3,9 @@ import React, { useContext, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ServiceContext } from "@/context/ServiceProvider";
-import TextHeader from "@/app/components/UI/text/TextHeader";
+import { BsArrowRight } from "react-icons/bs";
 import Loading from "@/app/loading";
+import banner from "../../../image/servicesBanner.jpeg"
 
 
 type Services = {
@@ -33,53 +34,79 @@ const Page = ({ params }: { params: { slug: string } }) => {
         )
     }
 
-
-
-
-
     return (
-        <div className="md:w-[70vw] mb-4  mx-auto justify-center space-y-6 ">
-            <TextHeader title={params.slug.replace(/\./g, "/").replace(/-/g, " ").replace(/%26/g, "&")} />
-            {/* details  */}
-            <div className="px-4 ">
-                <p className="text-read">{details}</p>
-            </div>
-            {/* card  */}
-            <div className="grid justify-between gap-4 px-2  grid-cols-1 lg:grid-cols-2 xl:grid-cols-3">
-                {subcategory && Object.keys(subcategory).map((key) => (
-                    <Link key={key}
-                        href={`/services/details/${params.slug.replace(/\s/g, "-")
-                            .replace("/", ".")}/${key
-                                .replace(/\s/g, "-")
-                                .replace("/", ".")}`}
-                    >
-                        <div className="group relative overflow-hidden rounded-lg shadow-md border border-gray-200 transition-all duration-300 hover:scale-105">
-                            <div className="relative h-48 overflow-hidden">
-                                <Image
-                                    alt="Card header image"
-                                    className="h-full w-full object-cover transition-all duration-300 group-hover:scale-105"
-                                    height={192}
-                                    src={subcategory[key].image}
-                                    style={{
-                                        aspectRatio: "384/192",
-                                        objectFit: "cover",
-                                    }}
-                                    width={384}
-                                />
-                            </div>
-                            <div className="p-4">
-                                <h3 className="text-md font-bold  text-gray-600">{key}</h3>
-                                <div className="absolute inset-0 bg-primary opacity-0  p-4 transition-all duration-300 group-hover:opacity-90">
-                                    <p className="text-white">
+        <div>
+            <section className="w-full relative overflow-hidden mb-4">
+                <div className="h-[50vh] w-[100vw] relative">
+                    <Image
+                        fill={true}
+                        style={{ objectFit: "cover" }}
+                        src={banner}
+                        alt="banner"
+                    />
+                    {/* Gradient overlay for fading effect at the bottom 10% */}
+                    <div className="absolute bottom-0 left-0 right-0 h-[2%] bg-gradient-to-b from-transparent to-white"></div>
+                </div>
+                <div className="absolute inset-0 bg-background/50 dark:bg-background/70 flex items-center justify-center p-4 text-center">
+                    <div className="space-y-4 max-w-3xl">
+                        <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-white">
+                            {params.slug.replace(/\./g, "/").replace(/-/g, " ").replace(/%26/g, "&")}
+                        </h1>
+                        <p className="font-semibold text-muted-foreground text-white">
+                            {details}
+                        </p>
+                    </div>
+                </div>
+            </section>
+            <div className="md:w-[70vw] mb-4  mx-auto justify-center space-y-6 ">
+                <div className="space-y-20 px-2">
+                    {subcategory && Object.keys(subcategory).map((key, index) => (
+                        index % 2 === 0 ?
+                            (<div key={key} className="sm:flex ">
+                                <div className="relative h-[30vh]  flex-1">
+                                    <Image fill={true} objectFit="cover" src={subcategory[key].image} alt="image" />
+                                </div>
+                                <div className="flex-1 flex flex-col p-4 justify-center space-y-3">
+                                    <p className="text-lg font-semibold text-read">{key}</p>
+                                    <p className="text-read">
                                         {subcategory[key].description}
                                     </p>
-                                    <p className="  pt-4  font-semibold text-md rounded-md text-white">Book now &rarr;
-                                    </p>
+                                    <Link className="flex items-center" href={`/services/details/${params.slug.replace(/\s/g, "-")
+                                        .replace("/", ".")}/${key
+                                            .replace(/\s/g, "-")
+                                            .replace("/", ".")}`}>
+                                        <p className="flex gap-3 items-center w-full justify-center rounded-md cursor-pointer bg-primary border-2 border-primary hover:bg-white hover:text-primary transition-all py-2 px-3 text-white text-medium text-center mt-4">
+                                            <span>Book Now</span>
+                                            <BsArrowRight className="ml-2" size={15} />
+                                        </p>
+                                    </Link>
                                 </div>
-                            </div>
-                        </div>
-                    </Link>
-                ))}
+                            </div>) :
+                            (<div key={key} className="sm:flex ">
+                                <div className="relative h-[30vh] sm:hidden block w-[100vw] flex-1">
+                                    <Image fill={true} objectFit="cover" src={subcategory[key].image} alt="image" />
+                                </div>
+                                <div className="flex-1 flex flex-col p-4 justify-center space-y-3">
+                                    <p className="text-lg font-semibold text-read">{key}</p>
+                                    <p className="text-read">
+                                        {subcategory[key].description}
+                                    </p>
+                                    <Link className="flex items-center" href={`/services/details/${params.slug.replace(/\s/g, "-")
+                                        .replace("/", ".")}/${key
+                                            .replace(/\s/g, "-")
+                                            .replace("/", ".")}`}>
+                                        <p className="flex gap-3 items-center w-full justify-center rounded-md cursor-pointer bg-primary border-2 border-primary hover:bg-white hover:text-primary transition-all py-2 px-3 text-white text-medium text-center mt-4">
+                                            <span>Book Now</span>
+                                            <BsArrowRight className="ml-2" size={15} />
+                                        </p>
+                                    </Link>
+                                </div>
+                                <div className="relative h-[30vh]  hidden sm:block  flex-1">
+                                    <Image fill={true} objectFit="cover" src={subcategory[key].image} alt="image" />
+                                </div>
+                    </div>)
+                    ))}
+                </div>
             </div>
         </div>
     );
