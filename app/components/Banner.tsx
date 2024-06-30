@@ -10,7 +10,7 @@ import Image from "next/image";
 const Banner = () => {
   return (
   <section className="w-full relative overflow-hidden mb-4">
-  <div className="h-[100vh] w-[100vw] relative">
+  <div className="h-[105vh] w-[100vw] relative">
     <Image
       fill={true}
       style={{ objectFit: "cover" }}

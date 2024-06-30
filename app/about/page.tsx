@@ -2,17 +2,37 @@ import React from "react";
 import Image from "next/image";
 import CoreValues from "../components/CoreValues";
 import abousUSVector from "../../image/vectors/aboutUsCard.jpg"
+import banner from "../../image/about.jpg"
 
 const Page = async () => {
   return (
-    <div className=" md:w-9/12  mx-auto justify-center z-10">
-      <div className=" mt-4">
-        <span className="bg-primary md:text-2xl sm:text-xl text-base sm:font-bold font-normal p-2 text-white">
-          ABOUT CAPABLE SERVICE
-        </span>
-      </div>
+    <div className="">
+      <section className="w-full relative overflow-hidden mb-4">
+                <div className="h-[50vh] w-[100vw] relative">
+                    <Image
+                        fill={true}
+                        style={{ objectFit: "cover" }}
+                        src={banner}
+                        alt="banner"
+                        className=""
+                    />
+                    {/* Gradient overlay for fading effect at the bottom 10% */}
+                    <div className="absolute bottom-0 left-0 right-0 h-[2%] bg-gradient-to-b from-transparent to-white"></div>
+                </div>
+                <div className="absolute inset-0 bg-background/50 dark:bg-background/70 flex items-center justify-center p-2  mt-20 sm:mt-0 text-center">
+                    <div className="space-y-4 max-w-3xl">
+                        <h1 className="text-xl md:text-6xl font-bold tracking-tight text-white">
+                        ABOUT CAPABLE SERVICE
+                        </h1>
+                        <p className="font-semibold text-xs sm:text-base text-white">
+                            Our team will reach out to you soon
+                        </p>
+                    </div>
+                </div>
+            </section>
       {/* about  */}
-      <div className="text-gray-600 body-font ">
+      <div className="md:w-[70vw] mb-4  mx-auto justify-center space-y-6">
+        <div className="text-gray-600 body-font ">
         <div className=" mx-auto mt-4 flex  2xl:flex-row flex-col items-start">
           <div className="lg:flex-grow  flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-cente 2xl:w-1/2">
           <p className="mb-4 md:pl-0  pl-2 pr-2 text-xs md:text-base">
@@ -116,6 +136,8 @@ const Page = async () => {
         </div>
       </div>
     </div>
+      </div>
+      
     </div>
   );
 };

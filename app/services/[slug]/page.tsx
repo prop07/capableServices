@@ -43,16 +43,17 @@ const Page = ({ params }: { params: { slug: string } }) => {
                         style={{ objectFit: "cover" }}
                         src={banner}
                         alt="banner"
+                        className="  "
                     />
                     {/* Gradient overlay for fading effect at the bottom 10% */}
                     <div className="absolute bottom-0 left-0 right-0 h-[2%] bg-gradient-to-b from-transparent to-white"></div>
                 </div>
-                <div className="absolute inset-0 bg-background/50 dark:bg-background/70 flex items-center justify-center p-4 text-center">
+                <div className="absolute inset-0 bg-background/50 dark:bg-background/70 flex items-center justify-center p-2  mt-20 sm:mt-0 text-center">
                     <div className="space-y-4 max-w-3xl">
-                        <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-white">
+                        <h1 className="text-xl md:text-6xl font-bold tracking-tight text-white">
                             {params.slug.replace(/\./g, "/").replace(/-/g, " ").replace(/%26/g, "&")}
                         </h1>
-                        <p className="font-semibold text-muted-foreground text-white">
+                        <p className="font-semibold text-xs sm:text-base text-white">
                             {details}
                         </p>
                     </div>
