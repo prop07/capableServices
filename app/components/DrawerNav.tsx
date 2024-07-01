@@ -73,7 +73,7 @@ const DrawerNav = () => {
                         {Object.entries(serviceDetails).map(([categoryId, category]) => (
                             <div key={categoryId} className=" justify-center text-center text-sm ">
                                
-                                        <span className='text-white'> <Link href={`/services/${category.serviceTitle
+                                        <span className='text-white' onClick={toggleDrawer(anchor, false)} > <Link href={`/services/${category.serviceTitle
                                     .replace(/\s/g, "-")
                                     .replace("/", ".")}`}>{category.serviceTitle}</Link></span>
                             </div>
