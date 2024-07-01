@@ -19,7 +19,10 @@ const schema = yup.object().shape({
         .email("Invalid email format.")
         .required("Email is required."),
     phone: yup.string()
-        .matches(/^\+?\d{1,3}\s?\(?\d{3}\)?[-\s]?\d{3}[-\s]?\d{4}$/, "Must be a valid phone number with optional '+' and spaces.")
+        .matches(
+            /^\+?\d{1,3}\s?\d{1,15}$/,
+            "Must be a valid phone number with an optional '+' and spaces."
+        )
         .required("Phone is required."),
     address: yup
         .string()
@@ -31,7 +34,7 @@ const schema = yup.object().shape({
         .string(),
     scheduleDate: yup
         .date()
-        .min(new Date(), 'Date at least be today or future date.')
+        .min((new Date().getDate() - 1), 'Date at least today or future date.')
         .required("Date is required"),
 });
 
@@ -70,11 +73,11 @@ const NewsLetter = () => {
     const submit = async (data) => {
         // Show loading notification
         const updatingToast = showLoadingNotification("Processing...");
-    
+
         try {
             // Simulate an API call with a timeout
             await new Promise((resolve) => setTimeout(resolve, 2000));  // Just for demonstration
-    
+
             // This should be your actual success call
             updatingToast.success("Submission successful!");
             console.log(data);

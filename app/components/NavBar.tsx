@@ -28,7 +28,7 @@ const Navbar = () => {
 
 
   return (
-    <div className="absolute w-full  justify-center backdrop-blur-[4px] bg-white/30  z-20">
+    <div className="absolute w-full  justify-center backdrop-blur-[10px] bg-white/10  z-20">
       <div className=" md:hidden flex justify-center items-center  p-2 text-white  bg-primary ">
         <span className=" flex text-sm items-center justify-center gap-1">
           Call Now: <FaPhoneAlt />

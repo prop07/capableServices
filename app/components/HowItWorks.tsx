@@ -7,17 +7,9 @@ export default function HowItWorks({ category, ...props }) {
     return (
         <div className="">
             <div className="container mx-auto px-2 space-y-3 ">
-                <div className="mx-auto max-w-3xl text-center space-y-3">
-                    <TextHeader title="How It Works" />
-                    <p className=" text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed ">
-                        Discover the seamless process of scheduling an appointment, getting a quote, and enjoying a hassle-free
-                        work done.
-                    </p>
-                </div>
                 <div className="relative    ">
                     <div className="absolute inset-0  " />
-                    {
-                        category === "System-Installation" ?
+                    {category === "System-Installation" ?
                             <div className="relative z-10 grid grid-cols-1 gap-8  py-12 sm:grid-cols-3 sm:gap-0 rounded-lg bg-white border border-gray-100 shadow-lg ">
                                 <div className="group flex flex-col items-center  space-y-4 sm:border-r sm:border-gray-200 ">
                                     <div className="relative flex h-16 w-16 items-center justify-center  rounded-full bg-gray-900  text-white transition-all duration-300 group-hover:scale-110  ">
@@ -58,7 +50,7 @@ export default function HowItWorks({ category, ...props }) {
                                     <Link href={"/contact"} ><span className="text-blue-500 cursor-pointer ">Schedule</span></Link> an in-home appointment for a Capable services expert to measure your space and assess and evaluate your HVAC needs.
                                 </p>
                             </div>  
-                                </div>
+                    </div>
                     }
                 </div>
             </div>

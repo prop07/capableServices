@@ -37,7 +37,7 @@ import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 
 export default function DateField({ name, placeholder,value, onChange, errors, ...props }) {
-    const today = new Date(new Date().setDate(new Date().getDate() + 1));
+    const today = new Date(new Date().setDate(new Date().getDate()));
 
     return (
         <>

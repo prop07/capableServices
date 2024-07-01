@@ -50,7 +50,7 @@ const Page = ({ params }: { params: { slug: string } }) => {
                 </div>
                 <div className="absolute inset-0 bg-background/50 dark:bg-background/70 flex items-center justify-center p-2  mt-20 sm:mt-0 text-center">
                     <div className="space-y-4 max-w-3xl">
-                        <h1 className="text-xl md:text-6xl font-bold tracking-tight text-white">
+                        <h1 className="text-xl md:text-4xl font-bold tracking-tight text-white">
                             {params.slug.replace(/\./g, "/").replace(/-/g, " ").replace(/%26/g, "&")}
                         </h1>
                         <p className="font-semibold text-xs sm:text-base text-white">
