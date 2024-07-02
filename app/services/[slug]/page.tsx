@@ -43,7 +43,7 @@ const Page = ({ params }: { params: { slug: string } }) => {
                         style={{ objectFit: "cover" }}
                         src={banner}
                         alt="banner"
-                        className="  "
+                        className=" grayscale "
                     />
                     {/* Gradient overlay for fading effect at the bottom 10% */}
                     <div className="absolute bottom-0 left-0 right-0 h-[2%] bg-gradient-to-b from-transparent to-white"></div>
