@@ -104,7 +104,7 @@ const NewsLetter = () => {
                             Schedule Your HVAC Estimate Today!
                         </h1>
                         <form
-                            className="flex flex-col justify-center items-center space-y-6"
+                            className="flex flex-col justify-center items-center space-y-5"
                             onSubmit={handleSubmit(submit)}
                         >
                             <InputField
@@ -162,7 +162,7 @@ const NewsLetter = () => {
                                     setChecked={setChecked}
                                 />
                                 <p className="text-xs">
-                                    I agree to the <Link className="text-blue-500" href="/">Terms & Conditions</Link>
+                                    I agree to the <Link className="text-blue-500" href="/">Terms & Conditions</Link>.
                                 </p>
                             </div>
                             <SubmitButton

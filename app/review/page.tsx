@@ -65,7 +65,7 @@ const NewsLetter = () => {
 
 
     return (
-        <div className="md:w-[70vw] mx-auto justify-center sm:mt-0 text-gray-900 flex pt-20 mb-4 h-[70vh]">
+        <div className="md:w-[70vw] mx-auto justify-center p-8 pt-24 md:pt-20  text-gray-900 flex   min-h-[72vh]">
             <div className="bg-white lg:border lg:border-gray-100 lg:border-none rounded-lg flex justify-center flex-1">
                 <div className="p-8 flex items-center lg:border-l lg:border-t lg:border-b md:border-gray-100 lg:rounded-tl-lg lg:rounded-bl-lg">
                     <div className="space-y-6 ">
@@ -73,7 +73,7 @@ const NewsLetter = () => {
                             Testimonial Form
                         </h1>
                         <form
-                            className="flex flex-col justify-center items-center space-y-6"
+                            className="flex flex-col justify-center items-center space-y-4"
                             onSubmit={handleSubmit(submit)}
                         >
                             <InputField
@@ -101,7 +101,7 @@ const NewsLetter = () => {
                                 setChecked={setChecked}
                                 />
                                 <p className="text-xs">
-                                    I agree to the <Link className="text-blue-500" href="/">Terms & Conditions</Link>
+                                    I agree to the <Link className="text-blue-500" href="/">Terms & Conditions</Link>.
                                 </p>
                             </div>
                             <SubmitButton
