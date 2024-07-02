@@ -20,7 +20,7 @@ type Services = {
 const Footer = () => {
   const serviceDetails = useContext<Services>(ServiceContext);
 
-  const quickLinks = ["services", "contact", "about",];
+  const quickLinks = ["services", "contact", "about"];
 
   const location = [
     "New York",
@@ -59,6 +59,15 @@ const Footer = () => {
                   </Link>
                 </li>
               ))}
+               <li className="mb-4">
+                  <Link href={`/review`}>
+                    <span
+                      className={`text-sm truncate  capitalize   cursor-pointer transition-al  `}
+                    >
+                      Post Testimonial
+                    </span>
+                  </Link>
+                </li>
             </ul>
           </div>
           <div className="space-y-3">

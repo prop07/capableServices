@@ -24,12 +24,12 @@ const Page = async () => {
             <h1 className="text-xl md:text-4xl font-bold tracking-tight text-white">
               ABOUT CAPABLE SERVICE
             </h1>
-            <div className="grid  grid-cols-2 lg:grid-cols-4   text-white  px-4 md:justify-between justify-center items-center">
+            <div className="grid gap-4  grid-cols-2 lg:grid-cols-4   text-white  px-4 md:justify-between justify-center items-center">
               <div className="flex flex-col justify-center items-center ">
                 <p className=" font-medium text-xl">
                   5+
                 </p>
-                <p className='text-center'>
+                <p className='text-center text-sm'>
                   Years Business
                 </p>
               </div>
@@ -37,7 +37,7 @@ const Page = async () => {
                 <p className=" font-medium text-xl">
                   5k+
                 </p>
-                <p className='text-center'>
+                <p className='text-center text-sm'>
                   Project Complete
                 </p>
               </div>
@@ -45,7 +45,7 @@ const Page = async () => {
                 <p className=" font-medium text-xl">
                   5k+
                 </p>
-                <p className='text-center'>
+                <p className='text-center text-sm'>
                   Happy Client
                 </p>
               </div>
@@ -53,7 +53,7 @@ const Page = async () => {
                 <p className=" font-medium text-xl ">
                   24/7
                 </p>
-                <p className='text-center'>
+                <p className='text-center text-sm'>
                   Always Support
                 </p>
               </div>

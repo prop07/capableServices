@@ -23,7 +23,7 @@ type Services = {
 };
 
 
-const DrawerNav = () => {
+const DrawerNav = ({className, ...props}) => {
     const serviceDetails = useContext<Services>(ServiceContext);
     const [isServiceDetails, setServiceDetails] = useState(false);
 
@@ -94,7 +94,7 @@ const DrawerNav = () => {
             {['right'].map((anchor) => (
                 <React.Fragment key={anchor}>
                     <Button className='rounded-md' onClick={toggleDrawer(anchor, true)}>
-                        <IoMdMenu className='text-white' size={30} />
+                        <IoMdMenu className={className} size={30} />
                     </Button>
                     <Drawer
                         anchor={anchor}

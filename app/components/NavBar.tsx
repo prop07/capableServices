@@ -26,9 +26,14 @@ const Navbar = () => {
   const pathname = usePathname();
   const serviceDetails = useContext<Services>(ServiceContext);
 
+  useEffect(() => {
+    console.log("path:", pathname)
+  }, [pathname])
+  
+
 
   return (
-    <div className="absolute w-full  justify-center backdrop-blur-[10px] bg-white/10  z-20">
+    <div className={`absolute w-full  justify-center  z-20 ${pathname === "/" ? "bg-none": "bg-white"} `}>
       <div className=" md:hidden flex justify-center items-center  p-2 text-white  bg-primary ">
         <span className=" flex text-sm items-center justify-center gap-1">
           Call Now: <FaPhoneAlt />
@@ -48,7 +53,7 @@ const Navbar = () => {
         <div className="md:flex hidden lg:gap-10 gap-6  w-full justify-end items-center">
           <div key={'home'}>
             <Link href={`/`} >
-              <p className={`mb-0.5  cursor-pointer text-sm capitalize ${pathname === "/"? "text-primary": " text-white "}`}>
+              <p className={`mb-0.5  cursor-pointer text-sm capitalize ${pathname === "/"? "text-primary": " text-black "}`}>
                 home
               </p>
               <div className={`h-0.5 rounded-full ${pathname === "/"? "bg-primary": "bg-transparent"}`}></div>
@@ -56,7 +61,7 @@ const Navbar = () => {
           </div>
           <div className="group relative inline-block text-left">
             <div >
-              <div className={` cursor-pointer flex justify-center items-center text-base  capitalize ${pathname.includes("/services")? "text-primary": " text-white"}`}
+              <div className={` cursor-pointer flex justify-center items-center text-sm  capitalize ${pathname.includes("/services")?"text-primary":(pathname === "/"? "text-white": "text-black")}`}
               >
                 <div
               className={`mb-0.5 font-bold  `}
@@ -117,7 +122,7 @@ const Navbar = () => {
           {navLink.map((item) => (
             <div key={item}>
               <Link href={`/${item.replace(/\s/g, "-").replace("/", ".")}`}>
-                <p className={`mb-0.5  cursor-pointer text-sm  capitalize ${pathname.includes(item) ? "text-primary": " text-white"}`}>
+                <p className={`mb-0.5  cursor-pointer text-sm  capitalize ${pathname.includes(item)?"text-primary":(pathname === "/"? "text-white": "text-black")}`}>
                   {item}
                 </p>
               <div className={`h-0.5 rounded-full ${pathname.includes(item)? "bg-primary": "bg-transparent"}`}></div>
@@ -131,7 +136,7 @@ const Navbar = () => {
         </div>
         </div>
         <div className="md:hidden flex relative w-full justify-end items-center ">
-          <DrawerNav/>
+          <DrawerNav className={pathname==="/"? "text-white": "text-black"}/>
         </div>
       </div>
     </div>
