@@ -73,21 +73,70 @@ const NewsLetter = () => {
         setValue("scheduleDate", date);
     }, [date]);
 
+    // const submit = async (data) => {
+    //     // Show loading notification
+    //     const updatingToast = showLoadingNotification("Processing...");
+
+    //     try {
+    //         // Simulate an API call with a timeout
+    //         await new Promise((resolve) => setTimeout(resolve, 2000));  // Just for demonstration
+
+    //         // This should be your actual success call
+    //         updatingToast.success("Submission successful!");
+    //         console.log(data);
+    //     } catch (error) {
+    //         // On error
+    //         updatingToast.error("Something went wrong. Try again!");
+    //     } finally {
+    //         setChecked(false);
+    //         setService("");
+    //         setDate(null);
+    //         reset();
+    //     }
+    // };
+
     const submit = async (data) => {
-        // Show loading notification
+        console.log(data);
         const updatingToast = showLoadingNotification("Processing...");
 
         try {
-            // Simulate an API call with a timeout
-            await new Promise((resolve) => setTimeout(resolve, 2000));  // Just for demonstration
+            // Call your API endpoint to send an email
+            const response = await fetch("/api/mail", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    email: data.email,
+                    phone: data.phone,
+                    firstName: data.name,
+                    address: data.address,
+                    serviceType: data.serviceType,
+                    date: data.scheduleDate,
+                    message: data.message
+                }),  // Send your form data or relevant data
+            });
 
-            // This should be your actual success call
-            updatingToast.success("Submission successful!");
-            console.log(data);
+            // Check if the request was successful
+            if (!response.ok) {
+                throw new Error("Failed to send email");
+            }
+
+            const result = await response.json();
+
+            // Assuming your API returns a success message or something similar
+            if (result.success) {
+                updatingToast.success("Submission successful!");
+                console.log(data);
+            } else {
+                throw new Error(result.message || "Unknown error occurred");
+            }
         } catch (error) {
             // On error
             updatingToast.error("Something went wrong. Try again!");
+            console.error(error);
         } finally {
+            // Reset form or state variables as needed
             setChecked(false);
             setService("");
             setDate(null);
