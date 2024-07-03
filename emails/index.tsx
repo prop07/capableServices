@@ -31,7 +31,7 @@ import {
   }: ContactEmailTemplateProps) => (
     <Html>
     <Head />
-    <Preview>Confirm your email address</Preview>
+    <Preview>{serviceType}  {date}</Preview>
     <Body style={main}>
       <Container style={container}>
         <Section style={logoContainer}>

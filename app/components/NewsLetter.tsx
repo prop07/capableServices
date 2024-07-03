@@ -98,6 +98,9 @@ const NewsLetter = () => {
     const submit = async (data) => {
         console.log(data);
         const updatingToast = showLoadingNotification("Processing...");
+        const timestamp = data.scheduleDate;
+        const date = new Date(timestamp);
+        const formattedDate = date.toISOString().split('T')[0];
 
         try {
             // Call your API endpoint to send an email
@@ -112,7 +115,7 @@ const NewsLetter = () => {
                     firstName: data.name,
                     address: data.address,
                     serviceType: data.serviceType,
-                    date: data.scheduleDate,
+                    date: formattedDate,
                     message: data.message
                 }),  // Send your form data or relevant data
             });
