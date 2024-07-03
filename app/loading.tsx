@@ -100,7 +100,7 @@ const CubeInner = styled.div`
 
 const Loading = () => {
     return (
-        <div className='h-[100vh] flex justify-center items-center'>
+        <div className='h-screen w-screen  flex items-center justify-center'>
             <Container>
                 <Cube>
                     <CubeInner />
