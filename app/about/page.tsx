@@ -17,7 +17,7 @@ const Page = async () => {
             className=""
           />
           {/* Gradient overlay for fading effect at the bottom 10% */}
-          <div className="absolute bottom-0 left-0 right-0 h-[2%] bg-gradient-to-b from-transparent to-white"></div>
+          <div className="absolute bottom-0 left-0 right-0 h-[0.5%] bg-gradient-to-b from-transparent to-white"></div>
         </div>
         <div className="absolute inset-0 bg-background/50 dark:bg-background/70 flex items-center justify-center p-2  mt-20 sm:mt-0 text-center">
           <div className="space-y-4 max-w-3xl">
