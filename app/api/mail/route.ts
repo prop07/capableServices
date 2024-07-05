@@ -12,10 +12,11 @@ export async function POST(request) {
         
         // Send the email using Resend
         await resend.emails.send({
-            from: 'Acme <onboarding@resend.dev>',
+            from: 'capablehvac.com',
             to: email,
-            bcc:"rijalmanoj404@gmail.com",
-            subject: 'New HVAC Request',
+            bcc:"capableservicehvac@gmail.com",
+            subject: 'HVAC Request Confirmed',
+            reply_to:"support@capablehvac.com",
             react: ContactEmailTemplate({ firstName, phone, address, serviceType, date, message, email }),
         });
         
