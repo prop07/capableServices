@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useContext, useEffect } from "react";
 import { FaPhoneAlt } from "react-icons/fa";
-import {  IoIosArrowBack, IoMdArrowDropleft } from "react-icons/io";
+import {  IoMdArrowDropleft } from "react-icons/io";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
@@ -33,7 +33,7 @@ const Navbar = () => {
 
 
   return (
-    <div className={`absolute w-full  justify-center  z-20 ${pathname === "/" ? "bg-none": "bg-white"} `}>
+    <div className={`absolute w-full  justify-center  z-20 ${pathname === "/" ? "bg-none": "bg-white "} `}>
       <div className=" md:hidden flex justify-center items-center  p-2 text-white  bg-primary ">
         <span className=" flex text-sm items-center justify-center gap-1">
           Call Now: <FaPhoneAlt />
@@ -41,7 +41,7 @@ const Navbar = () => {
           </Link>
         </span>
       </div>
-      <div className="flex  w-full  font-bold   md:px-16 px-4 h-16">
+      <div className="flex  w-full  font-bold   lg:px-16 px-2 h-16">
         <div className="flex justify-start items-center w-3/12">
           <Link href={"/"}>
             <p className="relative h-16 w-28">
@@ -50,6 +50,7 @@ const Navbar = () => {
             </p>
           </Link>
         </div>
+        {/* here  */}
         <div className="md:flex hidden lg:gap-10 gap-6  w-full justify-end items-center">
           <div key={'home'}>
             <Link href={`/`} >

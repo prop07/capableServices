@@ -12,6 +12,7 @@ import ServiceProvider from "../context/ServiceProvider";
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v13-appRouter";
 
 // Components
+import { FloatingNav } from "./components/UI/FloatingNav";
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
 import NewsLetter from "./components/NewsLetter";
@@ -34,6 +35,7 @@ export default function RootLayout({
           <body className={inter.className}>
             <ToastContainer position="top-center" />
             <NavBar />
+            <FloatingNav className={"md:block hidden"} />
             <SocialNav />
             <Suspense fallback={<Loading />}>
               <main className="">{children}</main>
