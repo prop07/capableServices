@@ -214,7 +214,7 @@ const NewsLetter = () => {
                                     setChecked={setChecked}
                                 />
                                 <p className="text-xs">
-                                    I agree to the <Link className="text-blue-500" href="/">Terms & Conditions</Link>.
+                                    I agree to the <Link className="text-blue-500" href="https://drive.google.com/file/d/1lV66PTf4NEmB118WiFxxPH5fm2b6DyFj/view?usp=sharing" target="_blank">Terms & Conditions</Link>.
                                 </p>
                             </div>
                             <SubmitButton

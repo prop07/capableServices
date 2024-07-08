@@ -10,26 +10,26 @@ export default async function sitemap() {
         return {
             url: `${baseUrl}/services/${service.type.replace(/\s/g, "-")
                 .replace("/", ".")}`,
-            lastModified: new Date(),
+            lastModified: new Date().toISOString().split('T')[0],
         }
     })
     return [{
         url: baseUrl,
-        lastModified: new Date(),
+        lastModified: new Date().toISOString().split('T')[0],
     },
+    ...services,
     {
         url: `${baseUrl}/contact`,
-        lastModified: new Date(),
+        lastModified: new Date().toISOString().split('T')[0],
     },
     {
         url: `${baseUrl}/about`,
-        lastModified: new Date(),
+        lastModified: new Date().toISOString().split('T')[0],
     },
     {
         url: `${baseUrl}/blog`,
-        lastModified: new Date(),
+        lastModified: new Date().toISOString().split('T')[0],
     },
-    ...services
 
     ]
 
