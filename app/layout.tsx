@@ -1,5 +1,4 @@
 'use client';
-import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { Suspense } from "react";
@@ -20,6 +19,7 @@ import SocialNav from "./components/SocialNav";
 import Testimonial from "./components/Testimonial";
 
 const inter = Inter({ subsets: ["latin"] });
+
 
 export default function RootLayout({
   children,

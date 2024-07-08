@@ -3,6 +3,13 @@ import Image from "next/image";
 import CoreValues from "../components/CoreValues";
 import abousUSVector from "../../image/vectors/aboutUsCard.jpg"
 import banner from "../../image/about.jpg"
+import { Metadata } from "next";
+
+
+export const metadata: Metadata={
+  title:"About",
+  description:"Your Comfort is Our Mission."
+}
 
 const Page = async () => {
   return (

@@ -21,10 +21,6 @@ type Services = {
 
 const Page = ({ params }: { params: { slug: string } }) => {
     const serviceDetails = useContext<Services>(ServiceContext);
-
-
-
-
     const subcategory = Object.values(serviceDetails).find(service => service.serviceTitle === params.slug.replace(/\./g, "/").replace(/-/g, " "))?.subCatagory;
     const details = Object.values(serviceDetails).find(service => service.serviceTitle === params.slug.replace(/\./g, "/").replace(/-/g, " "))?.details;
 
@@ -35,6 +31,11 @@ const Page = ({ params }: { params: { slug: string } }) => {
     }
 
     return (
+        <>
+            <head>
+                <title>{params.slug.replace(/\./g, "/").replace(/-/g, " ")}</title>
+                <meta name="description" content={"Your Comfort is Our Mission."} />
+            </head>
         <div>
             <section className="w-full relative overflow-hidden mb-4">
                 <div className="h-[50vh] w-[100vw] relative">
@@ -45,17 +46,16 @@ const Page = ({ params }: { params: { slug: string } }) => {
                         alt="banner"
                         className=""
                     />
-                    {/* Gradient overlay for fading effect at the bottom 10% */}
-                    <div className="absolute bottom-0 left-0 right-0 h-[0.5%] bg-gradient-to-b from-transparent to-white"></div>
+                    <div className="absolute bottom-0 left-0 right-0 h-[0.5%] bg-gradient-to-b from-transparent to-white "></div>
                 </div>
                 <div className="absolute inset-0 bg-background/50 dark:bg-background/70 flex items-center justify-center p-2  mt-20 sm:mt-0 text-center ">
                     <div className="space-y-4 max-w-3xl">
-                        <h1 className="text-xl md:text-4xl font-bold tracking-tight text-white">
+                        <h1 className="text-xl md:text-3xl font-bold tracking-tight text-white backdrop-blur-md p-2 rounded-md">
                             {params.slug.replace(/\./g, "/").replace(/-/g, " ").replace(/%26/g, "&")}
                         </h1>
-                        <p className="font-semibold text-xs sm:text-base text-white">
+                        {/* <p className="font-semibold text-xs sm:text-base text-white">
                             {details}
-                        </p>
+                        </p> */}
                     </div>
                 </div>
             </section>
@@ -110,12 +110,9 @@ const Page = ({ params }: { params: { slug: string } }) => {
                 </div>
             </div>
         </div>
+        </>
+
     );
 };
 
 export default Page;
-
-
-
-
-
