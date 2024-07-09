@@ -1,6 +1,5 @@
 'use client'
 import React from 'react'
-import CountUp from 'react-countup';
 import bgImage from "../../image/vectors/wave .png"
 import Image from 'next/image';
 
