@@ -24,8 +24,6 @@ interface ContactEmailTemplateProps {
   message: string;
 }
 
-
-
 export const ContactEmailTemplate = ({
   firstName, phone, email, serviceType, address, date, message
 }: ContactEmailTemplateProps) => (
@@ -56,9 +54,9 @@ export const ContactEmailTemplate = ({
           <Text style={confirmationCodeText}>Message: {message}</Text>
         </Section>
         <Text style={textRead}>
-            Note: If you have an emergency, please don't hesitate to contact us at <Link href={"tel:+888 985321475212"}>+888 985321475212
-            </Link>. We're here to help!
-          </Text>
+          Note: If you have an emergency, please don't hesitate to contact us at <Link href={"tel:+888 985321475212"}>+888 985321475212
+          </Link>. We're here to help!
+        </Text>
         <Text style={textRead}>
           If you didn't request this email, there's nothing to worry about, you
           can safely ignore it.
@@ -71,20 +69,9 @@ export const ContactEmailTemplate = ({
               <Section>
                 <Row>
                   <Column>
-                    <Link href="/">
-                      <Img
-                        src={`https://raw.githubusercontent.com/prop07/capableServices/main/image/icon/twitterIcon-removebg.png?token=GHSAT0AAAAAACTLT3W5RUDQKTS6C7YO2JK6ZUM3RKQ`}
-                        width="32"
-                        height="32"
-                        alt="twitter"
-                        style={socialMediaIcon}
-                      />
-                    </Link>
-                  </Column>
-                  <Column>
                     <Link href="https://www.facebook.com/CapableService">
                       <Img
-                        src={`https://raw.githubusercontent.com/prop07/capableServices/main/image/icon/facebook-removebg.png?token=GHSAT0AAAAAACTLT3W4XATCU6A5NPUGIXBEZUM3QLQ`}
+                        src={`https://firebasestorage.googleapis.com/v0/b/capableservices-4e5f8.appspot.com/o/icons%2Ffacebook-removebg.png?alt=media&token=fcd6420c-a04b-4957-8f79-2814cfbe0d4f`}
                         width="32"
                         height="32"
                         alt="facebook"
@@ -93,12 +80,23 @@ export const ContactEmailTemplate = ({
                     </Link>
                   </Column>
                   <Column>
-                    <Link href="/">
+                    <Link href="https://www.facebook.com/CapableService">
                       <Img
-                        src={`https://raw.githubusercontent.com/prop07/capableServices/main/image/icon/instagram-removebg.png?token=GHSAT0AAAAAACTLT3W55L66XRSMKAUT37ZGZUM3QZA`}
+                        src={`https://firebasestorage.googleapis.com/v0/b/capableservices-4e5f8.appspot.com/o/icons%2Finstagram-removebg.png?alt=media&token=0d2f8079-617f-48a2-b16d-4abe74ecf4fc`}
                         width="32"
                         height="32"
                         alt="instagram"
+                        style={socialMediaIcon}
+                      />
+                    </Link>
+                  </Column>
+                  <Column>
+                    <Link href="/">
+                      <Img
+                        src={`https://firebasestorage.googleapis.com/v0/b/capableservices-4e5f8.appspot.com/o/icons%2FtwitterIcon-removebg.png?alt=media&token=1430dca7-b6de-4314-bfb0-f644839548f1`}
+                        width="32"
+                        height="32"
+                        alt="twitter"
                         style={socialMediaIcon}
                       />
                     </Link>
@@ -108,7 +106,6 @@ export const ContactEmailTemplate = ({
             </Column>
           </Row>
         </Section>
-
         <Section>
           <Link
             style={footerLink}
@@ -138,7 +135,7 @@ export const ContactEmailTemplate = ({
           </Link>
           <Text style={footerText}>
             ©2022 Capable Services, LLC, a HVAC company. <br />
-             USA <br />
+            USA <br />
             <br />
             All rights reserved.
           </Text>
@@ -228,9 +225,9 @@ const text = {
   lineHeight: "24px",
 };
 
-const textRead ={
+const textRead = {
   color: "rgb(75 85 99)",
-  fontSize: "14px",
+  fontSize: "13px",
   lineHeight: "24px",
 
 }
