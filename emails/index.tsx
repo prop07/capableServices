@@ -111,7 +111,7 @@ import {
         <Section>
           <Link
             style={footerLink}
-            href="https://slackhq.com"
+            href="www.capablehvac.com/blog"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -120,7 +120,7 @@ import {
           &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
           <Link
             style={footerLink}
-            href="https://slack.com/legal"
+            href="https://drive.google.com/file/d/1lV66PTf4NEmB118WiFxxPH5fm2b6DyFj/view"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -129,7 +129,7 @@ import {
           &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
           <Link
             style={footerLink}
-            href="https://slack.com/help"
+            href="https://www.capablehvac.com/"
             target="_blank"
             rel="noopener noreferrer"
           >
