@@ -73,27 +73,6 @@ const NewsLetter = () => {
         setValue("scheduleDate", date);
     }, [date]);
 
-    // const submit = async (data) => {
-    //     // Show loading notification
-    //     const updatingToast = showLoadingNotification("Processing...");
-
-    //     try {
-    //         // Simulate an API call with a timeout
-    //         await new Promise((resolve) => setTimeout(resolve, 2000));  // Just for demonstration
-
-    //         // This should be your actual success call
-    //         updatingToast.success("Submission successful!");
-    //         console.log(data);
-    //     } catch (error) {
-    //         // On error
-    //         updatingToast.error("Something went wrong. Try again!");
-    //     } finally {
-    //         setChecked(false);
-    //         setService("");
-    //         setDate(null);
-    //         reset();
-    //     }
-    // };
 
     const submit = async (data) => {
         console.log(data);
@@ -116,21 +95,16 @@ const NewsLetter = () => {
                     serviceType: data.serviceType,
                     date: formattedDate,
                     message: data.message
-                }),  
+                }),
             });
 
-            if (!response.ok) {
-                throw new Error("Failed to send email");
-            }
-
-            const result = await response.json();
-
-            if (result.success) {
+            if (response.status === 200) {
                 updatingToast.success("Submission successful!");
-                console.log(data);
-            } else {
-                throw new Error(result.message || "Unknown error occurred");
             }
+            else {
+                updatingToast.error("Something went wrong. Try again!");
+            }
+
         } catch (error) {
             updatingToast.error("Something went wrong. Try again!");
             console.error(error);
