@@ -1,35 +1,35 @@
 import {
-    Body,
-    Container,
-    Column,
-    Head,
-    Heading,
-    Html,
-    Img,
-    Link,
-    Preview,
-    Row,
-    Section,
-    Text,
-  } from "@react-email/components";
-  import * as React from "react";
-  
-  interface ContactEmailTemplateProps {
-    firstName: string;
-    phone:string;
-    email:string;
-    serviceType:string;
-    address:string;
-    date:string;
-    message:string;
-  }
-  
-  
-  
-  export const ContactEmailTemplate = ({
-    firstName,phone,email,serviceType,address,date,message
-  }: ContactEmailTemplateProps) => (
-    <Html>
+  Body,
+  Container,
+  Column,
+  Head,
+  Heading,
+  Html,
+  Img,
+  Link,
+  Preview,
+  Row,
+  Section,
+  Text,
+} from "@react-email/components";
+import * as React from "react";
+
+interface ContactEmailTemplateProps {
+  firstName: string;
+  phone: string;
+  email: string;
+  serviceType: string;
+  address: string;
+  date: string;
+  message: string;
+}
+
+
+
+export const ContactEmailTemplate = ({
+  firstName, phone, email, serviceType, address, date, message
+}: ContactEmailTemplateProps) => (
+  <Html>
     <Head />
     <Preview>{serviceType}  {date}</Preview>
     <Body style={main}>
@@ -46,7 +46,6 @@ import {
         <Text style={heroText}>
           Your Request Details are below.
         </Text>
-
         <Section style={codeBox}>
           <Text style={confirmationCodeText}>Name: {firstName}</Text>
           <Text style={confirmationCodeText}>Phone: {phone}</Text>
@@ -56,12 +55,14 @@ import {
           <Text style={confirmationCodeText}>Email: {email}</Text>
           <Text style={confirmationCodeText}>Message: {message}</Text>
         </Section>
-
-        <Text style={text}>
+        <Text style={textRead}>
+            Note: If you have an emergency, please don't hesitate to contact us at <Link href={"tel:+888 985321475212"}>+888 985321475212
+            </Link>. We're here to help!
+          </Text>
+        <Text style={textRead}>
           If you didn't request this email, there's nothing to worry about, you
           can safely ignore it.
         </Text>
-
         <Section>
           <Row style={footerLogos}>
             <Column style={{ width: "66%" }}>
@@ -72,10 +73,21 @@ import {
                   <Column>
                     <Link href="/">
                       <Img
-                        src={`https://capable-services.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo.f170472a.png&w=1200&q=75`}
+                        src={`https://raw.githubusercontent.com/prop07/capableServices/main/image/icon/twitterIcon-removebg.png?token=GHSAT0AAAAAACTLT3W5RUDQKTS6C7YO2JK6ZUM3RKQ`}
                         width="32"
                         height="32"
-                        alt="Slack"
+                        alt="twitter"
+                        style={socialMediaIcon}
+                      />
+                    </Link>
+                  </Column>
+                  <Column>
+                    <Link href="https://www.facebook.com/CapableService">
+                      <Img
+                        src={`https://raw.githubusercontent.com/prop07/capableServices/main/image/icon/facebook-removebg.png?token=GHSAT0AAAAAACTLT3W4XATCU6A5NPUGIXBEZUM3QLQ`}
+                        width="32"
+                        height="32"
+                        alt="facebook"
                         style={socialMediaIcon}
                       />
                     </Link>
@@ -83,21 +95,10 @@ import {
                   <Column>
                     <Link href="/">
                       <Img
-                        src={`https://capable-services.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo.f170472a.png&w=1200&q=75`}
+                        src={`https://raw.githubusercontent.com/prop07/capableServices/main/image/icon/instagram-removebg.png?token=GHSAT0AAAAAACTLT3W55L66XRSMKAUT37ZGZUM3QZA`}
                         width="32"
                         height="32"
-                        alt="Slack"
-                        style={socialMediaIcon}
-                      />
-                    </Link>
-                  </Column>
-                  <Column>
-                    <Link href="/">
-                      <Img
-                        src={`https://capable-services.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo.f170472a.png&w=1200&q=75`}
-                        width="32"
-                        height="32"
-                        alt="Slack"
+                        alt="instagram"
                         style={socialMediaIcon}
                       />
                     </Link>
@@ -133,11 +134,11 @@ import {
             target="_blank"
             rel="noopener noreferrer"
           >
-           Website
+            Website
           </Link>
           <Text style={footerText}>
-            ©2022 Capable Services, LLC, a Salesforce company. <br />
-            500 Howard Street, San Francisco, CA 94105, USA <br />
+            ©2022 Capable Services, LLC, a HVAC company. <br />
+             USA <br />
             <br />
             All rights reserved.
           </Text>
@@ -145,84 +146,91 @@ import {
       </Container>
     </Body>
   </Html>
-  );
-  
+);
 
-  
-  export default ContactEmailTemplate;
-  
-  const footerText = {
-    fontSize: "12px",
-    color: "#b7b7b7",
-    lineHeight: "15px",
-    textAlign: "left" as const,
-    marginBottom: "50px",
-  };
-  
-  const footerLink = {
-    color: "#b7b7b7",
-    textDecoration: "underline",
-  };
-  
-  const footerLogos = {
-    marginBottom: "32px",
-    paddingLeft: "8px",
-    paddingRight: "8px",
-    width: "100%",
-  };
-  
-  const socialMediaIcon = {
-    display: "inline",
-    marginLeft: "32px",
-    objectFit:"contain",
-  };
-  
-  const main = {
-    backgroundColor: "#ffffff",
-    margin: "0 auto",
-    fontFamily:
-      "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif",
-  };
-  
-  const container = {
-    margin: "0 auto",
-    padding: "0px 20px",
-  };
-  
-  const logoContainer = {
-    marginTop: "32px",
-    objectFit:"contain",
-  };
-  
-  const h1 = {
-    color: "#1d1c1d",
-    fontSize: "34px",
-    fontWeight: "700",
-    margin: "30px 0",
-    padding: "0",
-    lineHeight: "42px",
-  };
-  
-  const heroText = {
-    fontSize: "20px",
-    lineHeight: "28px",
-    marginBottom: "30px",
-  };
-  
-  const codeBox = {
-    background: "rgb(245, 244, 245)",
-    borderRadius: "4px",
-    marginBottom: "30px",
-    padding: "30px 20px",
-  };
-  
-  const confirmationCodeText = {
-    fontSize: "16px",
-    verticalAlign: "middle",
-  };
-  
-  const text = {
-    color: "#000",
-    fontSize: "14px",
-    lineHeight: "24px",
-  };
+
+
+export default ContactEmailTemplate;
+
+const footerText = {
+  fontSize: "12px",
+  color: "#b7b7b7",
+  lineHeight: "15px",
+  textAlign: "left" as const,
+  marginBottom: "50px",
+};
+
+const footerLink = {
+  color: "#b7b7b7",
+  textDecoration: "underline",
+};
+
+const footerLogos = {
+  marginBottom: "32px",
+  paddingLeft: "8px",
+  paddingRight: "8px",
+  width: "100%",
+};
+
+const socialMediaIcon = {
+  display: "inline",
+  marginLeft: "32px",
+  objectFit: "contain",
+};
+
+const main = {
+  backgroundColor: "#ffffff",
+  margin: "0 auto",
+  fontFamily:
+    "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif",
+};
+
+const container = {
+  margin: "0 auto",
+  padding: "0px 20px",
+};
+
+const logoContainer = {
+  marginTop: "32px",
+  objectFit: "contain",
+};
+
+const h1 = {
+  color: "#1d1c1d",
+  fontSize: "34px",
+  fontWeight: "700",
+  margin: "30px 0",
+  padding: "0",
+  lineHeight: "42px",
+};
+
+const heroText = {
+  fontSize: "20px",
+  lineHeight: "28px",
+  marginBottom: "30px",
+};
+
+const codeBox = {
+  background: "rgb(245, 244, 245)",
+  borderRadius: "4px",
+  marginBottom: "30px",
+  padding: "30px 20px",
+};
+
+const confirmationCodeText = {
+  fontSize: "16px",
+  verticalAlign: "middle",
+};
+
+const text = {
+  color: "#000",
+  fontSize: "14px",
+  lineHeight: "24px",
+};
+
+const textRead ={
+  color: "rgb(75 85 99)",
+  fontSize: "14px",
+  lineHeight: "24px",
+
+}
