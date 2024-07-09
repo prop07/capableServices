@@ -103,7 +103,6 @@ const NewsLetter = () => {
         const formattedDate = date.toISOString().split('T')[0];
 
         try {
-            // Call your API endpoint to send an email
             const response = await fetch("/api/mail", {
                 method: "POST",
                 headers: {
@@ -117,17 +116,15 @@ const NewsLetter = () => {
                     serviceType: data.serviceType,
                     date: formattedDate,
                     message: data.message
-                }),  // Send your form data or relevant data
+                }),  
             });
 
-            // Check if the request was successful
             if (!response.ok) {
                 throw new Error("Failed to send email");
             }
 
             const result = await response.json();
 
-            // Assuming your API returns a success message or something similar
             if (result.success) {
                 updatingToast.success("Submission successful!");
                 console.log(data);
@@ -135,11 +132,9 @@ const NewsLetter = () => {
                 throw new Error(result.message || "Unknown error occurred");
             }
         } catch (error) {
-            // On error
             updatingToast.error("Something went wrong. Try again!");
             console.error(error);
         } finally {
-            // Reset form or state variables as needed
             setChecked(false);
             setService("");
             setDate(null);

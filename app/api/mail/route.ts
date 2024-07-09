@@ -8,15 +8,16 @@ export async function POST(request) {
         // Parse the JSON request body
         const { firstName, email, phone, address, serviceType, date, message } = await request.json();
         
-        // const emailList = [email,"rijalmanoj07@gmail.com"];
+        const emailList = [email,"capableservicehvac@gmail.com"];
         
         // Send the email using Resend
         await resend.emails.send({
-            from: 'capablehvac.com',
+            // from: 'Acme <onboarding@resend.dev>',
+            from: 'Capable HVAC <capablehvac.com>',
             to: email,
-            bcc:"capableservicehvac@gmail.com",
             subject: 'HVAC Request Confirmed',
-            reply_to:"support@capablehvac.com",
+            bcc:"capableservicehvac@gmail.com",
+            reply_to:"capableservicehvac@gmail.com",
             react: ContactEmailTemplate({ firstName, phone, address, serviceType, date, message, email }),
         });
         
