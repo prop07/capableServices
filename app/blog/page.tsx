@@ -1,5 +1,12 @@
 import React from 'react';
 import BlogCard from '../components/Card/BlogCard';
+import { Metadata } from "next";
+
+
+export const metadata: Metadata={
+    title:"Blog",
+    description:"Your Comfort is Our Mission."
+  }
 
 const Page = () => {
     return (
