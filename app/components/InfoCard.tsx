@@ -18,8 +18,8 @@ const InfoCard = () => {
         <p className='text-white text-center'>Why Us ?</p>
         <div className="flex  md:gap-0 space-y-2 space-x-2 flex-col    text-white px-4 py-8 md:justify-around justify-center items-center" >
           <div className="flex gap-5  ">
-            <div className=" border-2 border-white h-12 w-12 flex justify-center items-center mt-2 rounded-full">
-              <TiTick size={25} />
+            <div className=" border-2 border-white h-10 w-10 flex justify-center items-center mt-2 rounded-full">
+              <TiTick size={20} />
             </div>
             <div className="lg:w-80 w-52">
               <p className=" font-medium text-lg mb-2">
@@ -31,8 +31,8 @@ const InfoCard = () => {
             </div>
           </div>
           <div className="flex gap-3 ">
-            <div className=" border-2 border-white h-12 w-12 flex justify-center items-center mt-2  rounded-full">
-              <TiTick size={25} />
+            <div className=" border-2 border-white h-10 w-10 flex justify-center items-center mt-2  rounded-full">
+              <TiTick size={20} />
             </div>
             <div className="lg:w-80 w-52">
               <p className=" font-medium text-lg mb-2">
@@ -44,8 +44,8 @@ const InfoCard = () => {
             </div>
           </div>
           <div className="flex gap-3 ">
-            <div className=" border-2 border-white h-12 w-12 flex justify-center items-center mt-2  rounded-full">
-              <TiTick size={25} />
+            <div className=" border-2 border-white h-10 w-10 flex justify-center items-center mt-2  rounded-full">
+              <TiTick size={20} />
             </div>
             <div className="lg:w-80 w-52">
               <p className=" font-medium text-lg mb-2">
@@ -69,8 +69,8 @@ const InfoCard = () => {
         <p className='text-white text-center'>Why Us ?</p>
         <div className="flex  md:gap-0 space-y-4 space-x-2 flex-col    text-white px-4 py-8 md:justify-around justify-center items-center" >
           <div className="flex gap-5  ">
-            <div className=" border-2 border-white h-12 w-12 flex justify-center items-center mt-2 rounded-full">
-              <TiTick size={25} />
+            <div className=" border-2 border-white h-10 w-10 flex justify-center items-center mt-2 rounded-full">
+              <TiTick size={20} />
             </div>
             <div className="lg:w-80 w-52">
               <p className=" font-medium text-base mb-2">
@@ -82,8 +82,8 @@ const InfoCard = () => {
             </div>
           </div>
           <div className="flex gap-3 ">
-            <div className=" border-2 border-white h-12 w-12 flex justify-center items-center mt-2  rounded-full">
-              <TiTick size={25} />
+            <div className=" border-2 border-white h-10 w-10 flex justify-center items-center mt-2  rounded-full">
+              <TiTick size={20} />
             </div>
             <div className="lg:w-80 w-52">
               <p className=" font-medium text-base mb-2">
@@ -95,8 +95,8 @@ const InfoCard = () => {
             </div>
           </div>
           <div className="flex gap-3 ">
-            <div className=" border-2 border-white h-12 w-12 flex justify-center items-center mt-2  rounded-full">
-              <TiTick size={25} />
+            <div className=" border-2 border-white h-10 w-10 flex justify-center items-center mt-2  rounded-full">
+              <TiTick size={20} />
             </div>
             <div className="lg:w-80 w-52">
               <p className=" font-medium text-base mb-2">

@@ -65,7 +65,7 @@ const NewsLetter = () => {
 
 
     return (
-        <div className="md:w-[70vw] mx-auto justify-center p-8 pt-24 md:pt-20  text-gray-900 flex   min-h-[72vh]">
+        <div className="md:w-[70vw] mx-auto justify-center p-8 pt-24 md:pt-20  text-gray-900 flex  min-h-[76vh]">
             <div className="bg-white lg:border lg:border-gray-100 lg:border-none rounded-lg flex justify-center flex-1">
                 <div className="p-8 flex items-center lg:border-l lg:border-t lg:border-b md:border-gray-100 lg:rounded-tl-lg lg:rounded-bl-lg">
                     <div className="space-y-6 ">
