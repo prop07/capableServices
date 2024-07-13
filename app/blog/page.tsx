@@ -15,7 +15,7 @@ const Page = () => {
                 {
                     blogData.map((item,index)=>{
                         return(
-                            <BlogCard key={index} title={item.title} author={item.author} date={item.date} content={item.content} summary={item.summary} className="col-span-1 border-b border-gray-200 p-2" />
+                            <BlogCard key={index} title={item.title} author={item.author} postDate={item.date} content={item.content} summary={item.summary} className="col-span-1 border-b border-gray-200 p-2" />
                         )
                     })
                 }

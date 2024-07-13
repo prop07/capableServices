@@ -1,7 +1,7 @@
 import React from 'react'
 import { FaUser } from 'react-icons/fa'
 
-const BlogCard = ({key, title, author, date, content, summary, className, ...props }) => {
+const BlogCard = ({key, title, author, postDate, content, summary, className, ...props }) => {
   return (
     <div key={key} className={` ${className} `}>
         <div className=" p-6 text-white bg-gray-500 rounded-lg">
@@ -10,7 +10,7 @@ const BlogCard = ({key, title, author, date, content, summary, className, ...pro
               <FaUser />
               <span className="text-sm font-medium">{author}</span>
             </div>
-            <span className="text-sm text-muted-foreground">{date}</span>
+            <span className="text-sm text-muted-foreground">{postDate}</span>
           </div>
           <h2 className="md:text-3xl text-xl font-bold mt-4">{title}</h2>
           <p className="text-lg mt-2">
