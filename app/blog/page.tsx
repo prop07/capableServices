@@ -6,9 +6,9 @@ const Page = () => {
         <div className='md:pt-16 pt-24 py-4 md:w-[70vw]  justify-center mx-auto'>
             <div className='grid md:grid-cols-2 grid-cols-1 gap-2'>
                 {
-                    blogData.map((item)=>{
+                    blogData.map((item,index)=>{
                         return(
-                            <BlogCard title={item.title} author={item.author} date={item.date} content={item.content} summary={item.summary} className="col-span-1 border-b border-gray-200 p-2" />
+                            <BlogCard key={index} title={item.title} author={item.author} date={item.date} content={item.content} summary={item.summary} className="col-span-1 border-b border-gray-200 p-2" />
                         )
                     })
                 }

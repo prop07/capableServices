@@ -1,9 +1,9 @@
 import React from 'react'
 import { FaUser } from 'react-icons/fa'
 
-const BlogCard = ({ title, author, date, content, summary, className, ...props }) => {
+const BlogCard = ({key, title, author, date, content, summary, className, ...props }) => {
   return (
-    <div className={` ${className} `}>
+    <div key={key} className={` ${className} `}>
         <div className=" p-6 text-white bg-gray-500 rounded-lg">
           <div className="flex items-center space-x-4">
             <div className="flex items-center space-x-2">
