@@ -36,7 +36,7 @@ const schema = yup.object().shape({
         .string(),
     scheduleDate: yup
         .date()
-        .min((new Date().getDate() - 1), 'Date at least today or future date.')
+        .min((new Date()), 'Date at least today or future date.')
         .required("Date is required"),
 });
 
