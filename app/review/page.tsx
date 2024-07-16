@@ -44,18 +44,14 @@ const NewsLetter = () => {
 
 
     const submit = async (data) => {
-        // Show loading notification
         const updatingToast = showLoadingNotification("Processing...");
 
         try {
-            // Simulate an API call with a timeout
             await new Promise((resolve) => setTimeout(resolve, 2000));  // Just for demonstration
 
-            // This should be your actual success call
             updatingToast.success("Submission successful!");
             console.log(data);
         } catch (error) {
-            // On error
             updatingToast.error("Something went wrong. Try again!");
         } finally {
             setChecked(false);
@@ -65,9 +61,9 @@ const NewsLetter = () => {
 
 
     return (
-        <div className="md:w-[70vw] mx-auto justify-center p-8 pt-24 md:pt-20  text-gray-900 flex  min-h-[76vh]">
-            <div className="bg-white lg:border lg:border-gray-100 lg:border-none rounded-lg flex justify-center flex-1">
-                <div className="p-8 flex items-center lg:border-l lg:border-t lg:border-b md:border-gray-100 lg:rounded-tl-lg lg:rounded-bl-lg">
+        <div className="md:w-[70vw] mx-auto  justify-center p-8 pt-24 md:pt-20  text-gray-900 flex  min-h-[76vh]">
+            <div className="bg-white  flex lg:border  lg:border-gray-100 lg:rounded-lg  justify-center flex-1">
+                <div className="py-8 lg:pl-8 flex items-center ">
                     <div className="space-y-6 ">
                         <h1 className="text-lg text-center font-bold">
                             Testimonial Form
@@ -117,7 +113,7 @@ const NewsLetter = () => {
                         fill
                         style={{ objectFit: "cover", borderTopRightRadius: "8px", borderBottomRightRadius: "8px" }}
                         alt="ac image"
-                        src="https://img.freepik.com/free-photo/close-up-heat-pump-outside-home_23-2149250243.jpg?w=1380&t=st=1719905948~exp=1719906548~hmac=187af6882534175d774bcb4d55d3a9ce88a52a7f9ded8534d7c143f57130dc82"
+                        src="https://images.unsplash.com/photo-1691351582808-329cde17ffa2?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                     />
                 </div>
             </div>
