@@ -3,7 +3,7 @@ import TextHeader from './UI/text/TextHeader'
 import Link from 'next/link'
 
 export default function HowItWorks({ category, ...props }) {
-    console.log("category", category);
+    // console.log("category", category);
     return (
         <div className="">
             <div className="container mx-auto px-2 space-y-3 ">

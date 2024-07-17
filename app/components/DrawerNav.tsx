@@ -6,9 +6,9 @@ import Button from '@mui/material/Button';
 import List from '@mui/material/List';
 import { MdOutlineKeyboardArrowLeft } from "react-icons/md";
 import { IoMdMenu } from "react-icons/io";
+import { FaBars } from "react-icons/fa6";
 import { useSwipeable } from 'react-swipeable';
 import { ServiceContext } from "../../context/ServiceProvider";
-import { FaPlus, FaMinus } from "react-icons/fa6";
 import Link from 'next/link';
 import { FaWhatsapp } from "react-icons/fa";
 import { AiOutlineFacebook } from "react-icons/ai";
@@ -94,7 +94,7 @@ const DrawerNav = ({className, ...props}) => {
             {['right'].map((anchor) => (
                 <React.Fragment key={anchor}>
                     <Button className='rounded-md' onClick={toggleDrawer(anchor, true)}>
-                        <IoMdMenu className={className} size={30} />
+                        <FaBars className={className} size={25} />
                     </Button>
                     <Drawer
                         anchor={anchor}
@@ -128,7 +128,7 @@ const SocialNav = () => {
             <AiOutlineFacebook size={25}/>
             </div>
             </Link>
-            <Link href="https://www.facebook.com/CapableService" target="_blank" passHref>
+            <Link href="mailto:capableservicehvac@gmail.com" target="_blank" passHref>
             <div className=' bg-cyan-500 hover:bg-cyan-600 flex justify-center cursor-pointer items-center h-12  w-20   duration-300 ease-in-out '>
             <FiMail size={25}/>
             </div>

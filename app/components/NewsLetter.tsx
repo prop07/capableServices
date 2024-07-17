@@ -75,7 +75,7 @@ const NewsLetter = () => {
 
 
     const submit = async (data) => {
-        console.log(data);
+        // console.log(data);
         const updatingToast = showLoadingNotification("Processing...");
         const timestamp = data.scheduleDate;
         const date = new Date(timestamp);

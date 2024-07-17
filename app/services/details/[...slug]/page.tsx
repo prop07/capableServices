@@ -8,7 +8,7 @@ const Page = ({ params }: { params: { slug: string } }) => {
 
   const [category, title] = params.slug
 
-  console.log("params", category , title);
+  // console.log("params", category , title);
   
   return (
     <div>

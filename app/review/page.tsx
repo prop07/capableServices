@@ -50,7 +50,7 @@ const NewsLetter = () => {
             await new Promise((resolve) => setTimeout(resolve, 2000));  // Just for demonstration
 
             updatingToast.success("Submission successful!");
-            console.log(data);
+            // console.log(data);
         } catch (error) {
             updatingToast.error("Something went wrong. Try again!");
         } finally {

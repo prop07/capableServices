@@ -20,7 +20,7 @@ return (
         <AiOutlineFacebook size={25}/>
         </div>
         </Link>
-        <Link href="https://www.facebook.com/CapableService" target="_blank" passHref>
+        <Link href="mailto:capableservicehvac@gmail.com" target="_blank" passHref>
         <div className=' bg-cyan-500 hover:bg-cyan-600 flex justify-center cursor-pointer items-center h-24  w-12  rounded-bl-md duration-300 ease-in-out '>
         <FiMail size={25}/>
         </div>

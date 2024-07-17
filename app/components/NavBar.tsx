@@ -26,9 +26,9 @@ const Navbar = () => {
   const pathname = usePathname();
   const serviceDetails = useContext<Services>(ServiceContext);
 
-  useEffect(() => {
-    console.log("path:", pathname)
-  }, [pathname])
+  // useEffect(() => {
+  //   console.log("path:", pathname)
+  // }, [pathname])
   
 
 
