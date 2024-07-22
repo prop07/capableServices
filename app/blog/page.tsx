@@ -11,27 +11,21 @@ export const metadata: Metadata = {
 const Page = () => {
   return (
     <div className='md:pt-16 pt-24 py-4 md:w-[70vw]  justify-center mx-auto'>
-      <div className='flex flex-col md:flex-row gap-2 '>
-        <div>
+      <div className='grid lg:grid-cols-2  gap-2 '>
           {
             blogData.map((item, index) => {
-              if (index % 2 != 0) { 
                 return (
-                  <BlogCard key={index} title={item.title} author={item.author} postDate={item.date} content={item.content} summary={item.summary} image={item.image} className="col-span-1 border-b border-gray-200 p-2" />
+                  <BlogCard key={index} id={item.id} title={item.title} author={item.author} postDate={item.date} content={item.content} summary={item.summary} image={item.image} className=" p-2" />
                 );
-              } else {
-                // Handle odd index if needed
-                return null; // or you can render something else
-              }
+            
             })
           }
-        </div>
-        <div>
+        {/* <div>
           {
             blogData.map((item, index) => {
               if (index % 2 === 0) {  
                 return (
-                  <BlogCard key={index} title={item.title} author={item.author} postDate={item.date} content={item.content} summary={item.summary} image={item.image} className="col-span-1 border-b border-gray-200 p-2" />
+                  <BlogCard key={index} id={item.id} title={item.title} author={item.author} postDate={item.date} content={item.content} summary={item.summary} image={item.image} className="col-span-1  p-2" />
                 );
               } else {
                 // Handle odd index if needed
@@ -39,7 +33,7 @@ const Page = () => {
               }
             })
           }
-        </div>
+        </div> */}
       </div>
     </div>
   )
@@ -50,6 +44,7 @@ export default Page
 
 const blogData = [
   {
+    "id":1,
     "title": "Maintaining Your HVAC System for Optimal Performance",
     "author": "John Doe",
     "date": "June 15, 2024",
@@ -74,6 +69,7 @@ const blogData = [
     "image": "https://images.unsplash.com/photo-1663602692362-80e4564384c0?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
   },
   {
+    "id":2,
     "title": "Top 10 Tips for Heating System Maintenance",
     "author": "Jane Smith",
     "date": "July 5, 2023",
@@ -118,6 +114,7 @@ const blogData = [
 
   },
   {
+    "id":3,
     "title": "How to Improve Your AC's Energy Efficiency",
     "author": "Mike Johnson",
     "date": "August 22, 2023",
@@ -151,6 +148,7 @@ const blogData = [
 
   },
   {
+    "id":4,
     "title": "Signs It's Time to Replace Your HVAC System",
     "author": "John Doe",
     "date": "September 10, 2023",

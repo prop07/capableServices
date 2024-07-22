@@ -32,8 +32,8 @@ const Footer = () => {
         <div className="lg:w-1/3">
           <div className="flex items-center justify-center w-auto sm:items-start ">
             <Link href={"/"}>
-              <p className="relative h-24 w-44 bg-white rounded-lg ">
-                <Image fill={true} style={{ objectFit: "contain" }} className="px-3" src={logo} alt="logo" />
+              <p className="relative h-14 w-28 bg-white rounded-lg">
+                <Image fill={true} style={{ objectFit: "contain" }} className="p-2" src={logo} alt="logo" />
                 {/* Logo */}
               </p>
             </Link>

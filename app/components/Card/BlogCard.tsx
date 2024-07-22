@@ -1,10 +1,11 @@
 import React from 'react'
 import { FaUser } from 'react-icons/fa'
 import Image from 'next/image'
+import Link from 'next/link'
 
-const BlogCard = ({ key, title, author, postDate, content, summary, image, className, ...props }) => {
+const BlogCard = ({ key, id, title, author, postDate, content, summary, image, className, ...props }) => {
   return (
-    <div key={key} className={`w-full max-w-3xl mx-auto mb-4 ${className}`}>
+    <div key={key}  className={`w-full max-w-3xl mx-auto ${className}`}>
       <div className="relative h-[300px] overflow-hidden rounded-lg">
         <Image
           src={image}
@@ -26,9 +27,16 @@ const BlogCard = ({ key, title, author, postDate, content, summary, image, class
           <p className="text-lg mt-2">
             {summary}
           </p>
+        <p className='mt-2'>
+          <Link href={`/blog/${id}`}>
+          <span className='hover:text-gray-200 text-sm font-semibold'>
+          Read now &rarr;
+          </span>
+          </Link>
+          </p>
         </div>
       </div>
-      <div className='mt-4 text-read' dangerouslySetInnerHTML={{ __html: content }} />
+      {/* <div className='mt-4 text-read' dangerouslySetInnerHTML={{ __html: content }} /> */}
     </div>
   )
 }

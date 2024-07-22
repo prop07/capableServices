@@ -1,8 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import banner13 from "../../image/banner1-3.png";
-import banner12 from "../../image/banner1-2.png";
-import banner from "../../image/banner.jpeg";
+import banner from "../../image/banner.png"
 
 
 import Image from "next/image";
@@ -21,11 +19,14 @@ const Banner = () => {
     <div className="absolute bottom-0 left-0 right-0 h-[0.5%] bg-gradient-to-b from-transparent to-white"></div>
   </div>
   <div className="absolute inset-0 bg-background/50 dark:bg-background/70 flex items-center justify-center p-4 text-center">
-    <div className="space-y-4 max-w-3xl">
-      <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-white">
-        CAPABLE SERVICES
+    <div className="space-y-3 max-w-3xl bg-white p-6">
+    <p className="font-extrabold md:text-4xl text-muted-foreground tracking-widest text-neutral-800">
+      CAPABLE
+      </p>
+      <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight sm:tracking-widest  text-neutral-800">
+        HVAC SERVICES
       </h1>
-      <p className="text-lg md:text-2xl text-muted-foreground text-white">
+      <p className="text-lg md:text-2xl text-muted-foreground text-read">
       Your Comfort is Our Mission.
       </p>
     </div>

@@ -33,7 +33,7 @@ const Navbar = () => {
 
 
   return (
-    <div className={`absolute w-full  justify-center  z-20 ${pathname === "/" ? "bg-none": "bg-white "} `}>
+    <div className={`absolute w-full  justify-center  z-20 bg-white  `}>
       <div className=" md:hidden flex justify-center items-center  p-2 text-white  bg-primary ">
         <span className=" flex text-sm items-center justify-center gap-1">
           Call Now: <FaPhoneAlt />
@@ -44,7 +44,7 @@ const Navbar = () => {
       <div className="flex  w-full  font-bold   lg:px-16 px-2 h-16">
         <div className="flex justify-start items-center w-3/12">
           <Link href={"/"}>
-            <p className="relative h-16 w-28">
+            <p className="relative h-10 w-28">
               <Image fill={true} style={{ objectFit: "contain"}}   src={logo} alt="logo"/>
               {/* Logo */}
             </p>
@@ -54,7 +54,7 @@ const Navbar = () => {
         <div className="md:flex hidden lg:gap-10 gap-6  w-full justify-end items-center">
           <div key={'home'}>
             <Link href={`/`} >
-              <p className={`mb-0.5  cursor-pointer text-sm capitalize ${pathname === "/"? "text-primary": " text-black "}`}>
+              <p className={`mb-0.5  cursor-pointer text-sm capitalize  ${pathname === "/"? "text-primary": " text-read "}`}>
                 home
               </p>
               <div className={`h-0.5 rounded-full ${pathname === "/"? "bg-primary": "bg-transparent"}`}></div>
@@ -62,7 +62,7 @@ const Navbar = () => {
           </div>
           <div className="group relative inline-block text-left">
             <div >
-              <div className={` cursor-pointer flex justify-center items-center text-sm  capitalize ${pathname.includes("/services")?"text-primary":(pathname === "/"? "text-white": "text-black")}`}
+              <div className={` cursor-pointer flex justify-center items-center text-sm  capitalize ${pathname.includes("/services")?"text-primary": "text-read"}`}
               >
                 <div
               className={`mb-0.5 font-bold  `}
@@ -123,7 +123,7 @@ const Navbar = () => {
           {navLink.map((item) => (
             <div key={item}>
               <Link href={`/${item.replace(/\s/g, "-").replace("/", ".")}`}>
-                <p className={`mb-0.5  cursor-pointer text-sm  capitalize ${pathname.includes(item)?"text-primary":(pathname === "/"? "text-white": "text-black")}`}>
+                <p className={`mb-0.5  cursor-pointer text-sm  capitalize ${pathname.includes(item)?"text-primary": "text-read"}`}>
                   {item}
                 </p>
               <div className={`h-0.5 rounded-full ${pathname.includes(item)? "bg-primary": "bg-transparent"}`}></div>
@@ -137,7 +137,7 @@ const Navbar = () => {
         </div>
         </div>
         <div className="md:hidden flex relative w-full justify-end items-center ">
-          <DrawerNav className={pathname==="/"? "text-white": "text-black"}/>
+          <DrawerNav className={"text-black"}/>
         </div>
       </div>
     </div>
