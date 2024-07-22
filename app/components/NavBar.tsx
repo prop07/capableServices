@@ -54,7 +54,7 @@ const Navbar = () => {
         <div className="md:flex hidden lg:gap-10 gap-6  w-full justify-end items-center">
           <div key={'home'}>
             <Link href={`/`} >
-              <p className={`mb-0.5  cursor-pointer text-sm capitalize  ${pathname === "/"? "text-primary": " text-read "}`}>
+              <p className={`mb-0.5  cursor-pointer text-sm capitalize  ${pathname === "/"? "text-primary": " text-black "}`}>
                 home
               </p>
               <div className={`h-0.5 rounded-full ${pathname === "/"? "bg-primary": "bg-transparent"}`}></div>
@@ -62,7 +62,7 @@ const Navbar = () => {
           </div>
           <div className="group relative inline-block text-left">
             <div >
-              <div className={` cursor-pointer flex justify-center items-center text-sm  capitalize ${pathname.includes("/services")?"text-primary": "text-read"}`}
+              <div className={` cursor-pointer flex justify-center items-center text-sm  capitalize ${pathname.includes("/services")?"text-primary": "text-black"}`}
               >
                 <div
               className={`mb-0.5 font-bold  `}
@@ -123,7 +123,7 @@ const Navbar = () => {
           {navLink.map((item) => (
             <div key={item}>
               <Link href={`/${item.replace(/\s/g, "-").replace("/", ".")}`}>
-                <p className={`mb-0.5  cursor-pointer text-sm  capitalize ${pathname.includes(item)?"text-primary": "text-read"}`}>
+                <p className={`mb-0.5  cursor-pointer text-sm  capitalize ${pathname.includes(item)?"text-primary": "text-black"}`}>
                   {item}
                 </p>
               <div className={`h-0.5 rounded-full ${pathname.includes(item)? "bg-primary": "bg-transparent"}`}></div>

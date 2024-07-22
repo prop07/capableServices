@@ -60,7 +60,7 @@ const Page = ({ params }: { params: { slug: string } }) => {
                 </div>
             </section>
             <div className="md:w-[70vw] mb-4  mx-auto justify-center space-y-6 ">
-                <div className="space-y-20 px-2">
+                <div className="space-y-8 sm:space-y-16 px-2">
                     {subcategory && Object.keys(subcategory).map((key, index) => (
                         index % 2 === 0 ?
                             (<div key={key} className="sm:flex ">
@@ -84,7 +84,7 @@ const Page = ({ params }: { params: { slug: string } }) => {
                                 </div>
                             </div>) :
                             (<div key={key} className="sm:flex ">
-                                <div className="relative h-[30vh] sm:hidden block w-[100vw] flex-1">
+                                <div className="relative h-[30vh] sm:hidden block  flex-1">
                                     <Image fill={true} objectFit="cover" src={subcategory[key].image} alt="image" />
                                 </div>
                                 <div className="flex-1 flex flex-col p-4 justify-center space-y-3">
