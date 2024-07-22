@@ -46,7 +46,7 @@ const coreValuesDetails = {
 
 const CoreValues = () => {
   return (
-    <div className="mt-4">
+    <div className="">
       <div className="flex mx-auto justify-center items-center w-1/2">
         <div className="flex flex-col justify-center items-center">
           <p className="lg:text-2xl text-xl text-gray-700 text-start  md:font-bold font-bold mb-0.5 uppercase ">

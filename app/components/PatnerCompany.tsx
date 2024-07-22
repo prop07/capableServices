@@ -7,7 +7,7 @@ const PatnerCompany = () => {
       <div className="grid grid-cols-1 xl:grid-cols-9 px-2  sm:mx-auto">
         {/* Centered Text */}
         <div className="col-span-full sm:col-span-4 flex justify-center items-center text-lg text-gray-700 font-bold mb-0.5 capitalize text-center">
-          Improving the Lifestyle, Comfort and Efficiency of Our Communities With These Great Partners
+        Enhancing our communities with these partners.
         </div>
 
         {/* Partners Logos */}

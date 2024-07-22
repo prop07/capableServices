@@ -5,7 +5,7 @@ import Link from "next/link";
 import { ServiceContext } from "@/context/ServiceProvider";
 import { BsArrowRight } from "react-icons/bs";
 import Loading from "@/app/loading";
-import banner from "../../../image/servicesBanner.jpeg"
+import  banner from "../../../image/services.jpg"
 
 
 type Services = {
@@ -47,10 +47,11 @@ const Page = ({ params }: { params: { slug: string } }) => {
                         className=""
                     />
                     <div className="absolute bottom-0 left-0 right-0 h-[0.5%] bg-gradient-to-b from-transparent to-white "></div>
+
                 </div>
                 <div className="absolute inset-0 bg-background/50 dark:bg-background/70 flex items-center justify-center p-2  mt-20 sm:mt-0 text-center ">
                     <div className="space-y-4 max-w-3xl">
-                        <h1 className="text-xl md:text-3xl font-bold tracking-tight text-white backdrop-blur-md p-2 rounded-md">
+                        <h1 className="text-xl md:text-4xl font-bold text-neutral-800 tracking-wide bg-white  p-6">
                             {params.slug.replace(/\./g, "/").replace(/-/g, " ").replace(/%26/g, "&")}
                         </h1>
                         {/* <p className="font-semibold text-xs sm:text-base text-white">
@@ -64,8 +65,8 @@ const Page = ({ params }: { params: { slug: string } }) => {
                     {subcategory && Object.keys(subcategory).map((key, index) => (
                         index % 2 === 0 ?
                             (<div key={key} className="sm:flex ">
-                                <div className="relative h-[30vh]  flex-1">
-                                    <Image fill={true} objectFit="cover" src={subcategory[key].image} alt="image" />
+                                <div className="relative h-[33vh]  flex-1">
+                                    <Image fill={true} objectFit="cover" className="rounded-md sm:rounded-none border border-gray-100" src={subcategory[key].image} alt="image" />
                                 </div>
                                 <div className="flex-1 flex flex-col p-4 justify-center space-y-3">
                                     <p className="text-lg font-semibold text-read">{key}</p>
@@ -84,8 +85,8 @@ const Page = ({ params }: { params: { slug: string } }) => {
                                 </div>
                             </div>) :
                             (<div key={key} className="sm:flex ">
-                                <div className="relative h-[30vh] sm:hidden block  flex-1">
-                                    <Image fill={true} objectFit="cover" src={subcategory[key].image} alt="image" />
+                                <div className="relative h-[33vh] sm:hidden block  flex-1">
+                                    <Image fill={true} objectFit="cover" className="rounded-md sm:rounded-none border border-gray-100" src={subcategory[key].image} alt="image" />
                                 </div>
                                 <div className="flex-1 flex flex-col p-4 justify-center space-y-3">
                                     <p className="text-lg font-semibold text-read">{key}</p>
@@ -102,8 +103,8 @@ const Page = ({ params }: { params: { slug: string } }) => {
                                         </p>
                                     </Link>
                                 </div>
-                                <div className="relative h-[30vh]  hidden sm:block  flex-1">
-                                    <Image fill={true} objectFit="cover" src={subcategory[key].image} alt="image" />
+                                <div className="relative h-[33vh]  hidden sm:block  flex-1">
+                                    <Image fill={true} objectFit="cover" className="rounded-md sm:rounded-none border border-gray-100" src={subcategory[key].image} alt="image" />
                                 </div>
                     </div>)
                     ))}

@@ -111,7 +111,7 @@ const InfoCard = () => {
           </div>
         </div>
         <p className='text-white text-center flex justify-center items-center'>
-          <Link className=' flex justify-center items-center ' href={"/about"} ><span className=' cursor-pointer text-white hover:text-gray-300 transition-all'>
+          <Link className=' flex justify-center items-center ' href={"/about"} ><span className=' cursor-pointer font-bold text-white hover:text-gray-300 transition-all'>
             Learn More
           </span>
             <BsArrowRight className="ml-2" size={15} /></Link>
