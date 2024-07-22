@@ -10,12 +10,6 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
-.MuiPaper-root.MuiPaper-elevation.MuiPaper-elevation16.MuiDrawer-paper.MuiDrawer-paperAnchorRight.mui-1160xiw-MuiPaper-root-MuiDrawer-paper {
-  border-top-left-radius: 12px !important;
-  border-bottom-left-radius: 12px !important ;
-  background-color: transparent !important;
-}
-
 
 .loader {
   width: 48px;
