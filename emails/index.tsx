@@ -51,7 +51,7 @@ export const ContactEmailTemplate = ({
           <Text style={confirmationCodeText}>Address: {address}</Text>
           <Text style={confirmationCodeText}>Date: {date}</Text>
           <Text style={confirmationCodeText}>Email: {email}</Text>
-          <Text style={confirmationCodeText}>Message: {message}</Text>
+          <Text style={confirmationCodeText}>{message}</Text>
         </Section>
         <Text style={textRead}>
           Note: If you have an emergency, please don't hesitate to contact us at <Link href={"tel:+888 985321475212"}>+888 985321475212
