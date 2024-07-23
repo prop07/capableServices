@@ -25,13 +25,11 @@ const NavLinks = () => {
     const pathname = usePathname();
     const serviceDetails = useContext<Services>(ServiceContext);
 
-
-
     return (
             <div className="flex lg:gap-10 gap-6  w-full justify-end items-center">
                 <div key={'home'}>
                     <Link href={`/`} >
-                        <p className={`mb-0.5  cursor-pointer text-sm capitalize text-read font-semibold `}>
+                        <p className={`mb-0.5  cursor-pointer text-sm capitalize font-semibold  ${pathname === "/"? "text-primary": " text-black "}`}>
                             home
                         </p>
                         <div className={`h-0.5 rounded-full ${pathname === "/" ? "bg-primary" : "bg-transparent"}`}></div>
@@ -42,14 +40,14 @@ const NavLinks = () => {
                         <div className={` cursor-pointer flex justify-center items-center text-sm  capitalize  `}
                         >
                             <div
-                                className={`mb-0.5 font-semibold text-read   `}
+                               className={`mb-0.5  cursor-pointer text-sm capitalize font-semibold  ${pathname.includes("/services")? "text-primary": " text-black "}`}
                                 id="dropdown-menu"
                                 aria-haspopup="true"
                             >
                                 Services
                                 <div className={`h-0.5 rounded-full ${pathname.includes("/services") ? "bg-primary" : "bg-transparent"}`}></div>
                             </div>
-                            <IoMdArrowDropleft size={20} className=" text-read" />
+                            <IoMdArrowDropleft size={20} className={`${pathname.includes("/services")? "text-primary": " text-black "}`} />
                         </div>
                         {/* First Dropdown Content */}
                         <div className="hidden group-hover:block hover:block absolute top-4 right-46 mt-2 w-60 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5" role="menu" aria-orientation="vertical" aria-labelledby="dropdown-menu">
@@ -62,7 +60,7 @@ const NavLinks = () => {
                                                 .replace(/\s/g, "-")
                                                 .replace("/", ".")}`}
                                         >
-                                            <div className=" flex items-center cursor-pointer p-2 group-hover/items:bg-primary group-hover/items:text-white  hover:bg-primary hover:text-white text-xs  text-read font-semibold transition-all  ">
+                                            <div className=" flex items-center cursor-pointer p-2 group-hover/items:bg-primary group-hover/items:text-white  hover:bg-primary hover:text-white text-xs  text-gray-800 font-semibold transition-all  ">
                                                 {serviceDetails[key1].serviceTitle}
                                             </div>
                                         </Link>
@@ -83,7 +81,7 @@ const NavLinks = () => {
                 {navLink.map((item) => (
                     <div key={item}>
                         <Link href={`/${item.replace(/\s/g, "-").replace("/", ".")}`}>
-                            <p className={`mb-0.5  cursor-pointer text-sm  capitalize text-read font-semibold  `}>
+                            <p className={`mb-0.5  cursor-pointer text-sm  capitalize font-semibold ${pathname.includes(item)?"text-primary": "text-black"}`}>
                                 {item}
                             </p>
                             <div className={`h-0.5 rounded-full ${pathname.includes(item) ? "bg-primary" : "bg-transparent"}`}></div>

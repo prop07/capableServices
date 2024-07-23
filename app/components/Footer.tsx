@@ -109,7 +109,7 @@ const Footer = () => {
           <div>
             <div className="uppercase  text-lg  ">Get in Touch</div>
             <div className="flex sm:justify-start justify-center space-x-3">
-              <Link href="https://api.whatsapp.com/send?phone=+888 985321475212" target="_blank" passHref>
+              <Link href="https://www.instagram.com/capable.hvac/" target="_blank" passHref>
                 <AiFillInstagram
                   title="instagram"
                   className="cursor-pointer bg-gradient-to-r mt-2  hover:mt-1 duration-300 ease-in-out"

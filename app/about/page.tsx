@@ -96,7 +96,7 @@ const Page = async () => {
           <div className="max-w-7xl mx-auto">
             <div className="">
               <h2 className="lg:text-2xl text-xl text-gray-700 t md:font-bold font-bold mb-0.5 uppercase text-center">Why Us?</h2>
-              <p className="h-1 w-[7%] bg-primary rounded-full mx-auto mt-2"></p>
+              <p className="h-1 w-20 bg-primary rounded-full mx-auto mt-2"></p>
             </div>
             <div className="mt-8 space-y-4 sm:space-y-0 sm:grid sm:grid-cols-2 sm:gap-x-6 sm:gap-y-8 lg:grid-cols-3">
               <div>
