@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import CoreValues from "../components/CoreValues";
 import abousUSVector from "../../image/vectors/aboutUsCard.jpg"
-import banner from "../../image/about.jpg"
+import banner from "../../image/about.webp"
 import { Metadata } from "next";
 
 
@@ -70,7 +70,7 @@ const Page = async () => {
       </section>
       {/* about  */}
       <div className="md:w-[70vw] mb-4  mx-auto justify-center space-y-6">
-        <div className="text-gray-600 body-font ">
+        {/* <div className="text-gray-600 body-font ">
           <div className=" mx-auto mt-4 flex  2xl:flex-row flex-col items-start">
             <div className="lg:flex-grow  flex flex-col md:items-start md:text-left  md:mb-0 items-center text-cente 2xl:w-1/2">
               <p className="mb-2 2xl:pl-0 pl-2 pr-2">
@@ -90,14 +90,15 @@ const Page = async () => {
               />
             </div>
           </div>
-        </div>
+        </div> */}
         <CoreValues />
-        <div className="mt-4 sm:mt-0">
+        <div className="mt-2 sm:mt-0">
           <div className="max-w-7xl mx-auto">
-            <div className="text-center">
-              <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">Why Us?</h2>
+            <div className="">
+              <h2 className="lg:text-2xl text-xl text-gray-700 t md:font-bold font-bold mb-0.5 uppercase text-center">Why Us?</h2>
+              <p className="h-1 w-[7%] bg-primary rounded-full mx-auto mt-2"></p>
             </div>
-            <div className="mt-2 space-y-4 sm:space-y-0 sm:grid sm:grid-cols-2 sm:gap-x-6 sm:gap-y-8 lg:grid-cols-3">
+            <div className="mt-8 space-y-4 sm:space-y-0 sm:grid sm:grid-cols-2 sm:gap-x-6 sm:gap-y-8 lg:grid-cols-3">
               <div>
                 <div className="flow-root bg-white rounded-lg px-6  ">
                   <div className="-mt-6">

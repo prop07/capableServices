@@ -1,6 +1,6 @@
 import Link from "next/link"
 import Image from "next/image";
-import banner from "./../image/notFound.png"
+import banner from "./../image/notFound.webp"
 
 const NotFound = () => {
     return (

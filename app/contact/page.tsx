@@ -1,5 +1,5 @@
 import Image from "next/image";
-import banner from "../../image/contact.jpg"
+import banner from "../../image/contact.webp"
 import { Metadata } from "next";
 
 export const metadata: Metadata={
