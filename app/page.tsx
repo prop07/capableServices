@@ -52,6 +52,7 @@ export default function Home() {
     <>
       <Head>
         <link rel="icon" href="/favicon.ico" />
+        <meta name="description" content={"Capable HVAC offers expert heating, cooling, and air conditioning services in New York and New Jersey. From HVAC maintenance and repair to vent cleaning and power washing, we ensure your comfort is our mission. Contact us for residential and commercial HVAC services, including emergency repairs."} />
       </Head>
       <div>
         <Banner />
@@ -63,8 +64,6 @@ export default function Home() {
         </div>
       </div>
     </>
-
-
   );
 }
 
