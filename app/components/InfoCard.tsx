@@ -17,7 +17,7 @@ const InfoCard = () => {
       </div>
       <div className=" lg:block hidden bg-black rounded-tr-md rounded-br-md   p-6 sm:p-8  ">
         <p className='text-white text-center'>Why Us ?</p>
-        <div className="flex  md:gap-0 space-y-2 space-x-2 flex-col    text-white px-4 py-8 md:justify-around justify-center items-center" >
+        <div className="flex  md:gap-0 space-y-2  flex-col    text-white px-4 py-8 md:justify-around justify-center items-center" >
           <div className="flex gap-5  ">
             <div className=" border-2 border-white h-10 w-10 flex justify-center items-center mt-2 rounded-full">
               <TiTick size={20} />
@@ -69,7 +69,7 @@ const InfoCard = () => {
       <Image fill={true} style={{ objectFit: "cover" }} src={"https://firebasestorage.googleapis.com/v0/b/capableservices-4e5f8.appspot.com/o/otherImage%2FunderAc.jpg?alt=media&token=450b4d3a-421b-44ff-a234-705224243e19"} alt="family image" />
       <div className="flex absolute inset-0 bg-black  opacity-[0.65]   md:gap-0 space-y-6  flex-col    text-white px-4 py-8 md:justify-around justify-center items-center" >
         <p className='text-white text-center'>Why Us ?</p>
-        <div className="flex  md:gap-0 space-y-4 space-x-2 flex-col    text-white  md:justify-around justify-center items-center" >
+        <div className="flex  md:gap-0 space-y-4  flex-col    text-white  md:justify-around justify-center items-center" >
           <div className="flex gap-5  ">
             <div className=" flex justify-center items-center mt-2 rounded-full">
               <FaRegCheckCircle size={30} />

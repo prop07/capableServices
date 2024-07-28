@@ -1,7 +1,8 @@
 "use client";
 import { useContext } from "react";
-import { AiFillInstagram, AiFillTwitterSquare } from "react-icons/ai";
+import { AiFillInstagram } from "react-icons/ai";
 import { FaFacebookSquare } from "react-icons/fa";
+import { IoMdMail } from "react-icons/io";
 import Link from "next/link";
 import Image from "next/image";
 import logo from "../../image/logo.png";
@@ -116,9 +117,9 @@ const Footer = () => {
                   size={30}
                 />
               </Link>
-              <Link href="https://www.facebook.com/CapableService" target="_blank" passHref>
-                <AiFillTwitterSquare
-                  title="twitter"
+              <Link href="mailto:capableservicehvac@gmail.com" target="_blank" passHref>
+                <IoMdMail
+                  title="mail"
                   className="cursor-pointer   mt-2  hover:mt-1 duration-300 ease-in-out"
                   size={30}
                 />
@@ -135,7 +136,7 @@ const Footer = () => {
         </div>
       </div>
       <div className="py-2 border-t border-gray-100 bg-primary text-white text-xs text-center ">
-        © 2010 HVAC Company Co. All rights reserved.
+        © 2010 Capable HVAC Inc.  All rights reserved.
       </div>
     </footer>
   );

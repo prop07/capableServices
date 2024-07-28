@@ -37,7 +37,7 @@ export const ContactEmailTemplate = ({
             src={`https://capable-services.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo.f170472a.png&w=1200&q=75`}
             width="120"
             height="50"
-            alt="Slack"
+            alt="logo"
           />
         </Section>
         <Heading style={h1}>Hi,{firstName}</Heading>
@@ -54,7 +54,7 @@ export const ContactEmailTemplate = ({
           <Text style={confirmationCodeText}>{message}</Text>
         </Section>
         <Text style={textRead}>
-          Note: If you have an emergency, please don't hesitate to contact us at <Link href={"tel:+888 985321475212"}>+888 985321475212
+          Note: If you have an emergency, please don't hesitate to contact us at <Link href={"tel:+1 (201) 892-3487"}>+1 (201) 892-3487
           </Link>. We're here to help!
         </Text>
         <Text style={textRead}>
@@ -63,7 +63,7 @@ export const ContactEmailTemplate = ({
         </Text>
         <Section>
           <Row style={footerLogos}>
-            <Column style={{ width: "66%" }}>
+            <Column style={{ width: "85%" }}>
             </Column>
             <Column>
               <Section>
@@ -80,23 +80,12 @@ export const ContactEmailTemplate = ({
                     </Link>
                   </Column>
                   <Column>
-                    <Link href="https://www.facebook.com/CapableService">
+                    <Link href="https://www.instagram.com/capable.hvac/">
                       <Img
                         src={`https://firebasestorage.googleapis.com/v0/b/capableservices-4e5f8.appspot.com/o/icons%2Finstagram-removebg.png?alt=media&token=0d2f8079-617f-48a2-b16d-4abe74ecf4fc`}
                         width="32"
                         height="32"
                         alt="instagram"
-                        style={socialMediaIcon}
-                      />
-                    </Link>
-                  </Column>
-                  <Column>
-                    <Link href="/">
-                      <Img
-                        src={`https://firebasestorage.googleapis.com/v0/b/capableservices-4e5f8.appspot.com/o/icons%2FtwitterIcon-removebg.png?alt=media&token=1430dca7-b6de-4314-bfb0-f644839548f1`}
-                        width="32"
-                        height="32"
-                        alt="twitter"
                         style={socialMediaIcon}
                       />
                     </Link>
@@ -134,8 +123,7 @@ export const ContactEmailTemplate = ({
             Website
           </Link>
           <Text style={footerText}>
-            ©2022 Capable Services, LLC, a HVAC company. <br />
-            USA <br />
+            ©2010 Capable HVAC Inc.  A HVAC company USA 
             <br />
             All rights reserved.
           </Text>

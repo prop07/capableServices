@@ -22,9 +22,10 @@ const schema = yup.object().shape({
         .required("Email is required."),
     phone: yup.string()
         .matches(
-            /^\+?\d{1,3}\s?\d{1,15}$/,
-            "Must be a valid phone number with an optional '+' and spaces."
+            /^[0-9\s\-\(\)\+]+$/,
+            "Must be a valid  phone number."
         )
+        .min(6, "Must be a valid  phone number.")
         .required("Phone is required."),
     address: yup
         .string()
