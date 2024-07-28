@@ -8,7 +8,6 @@ export default function HowItWorks({ category, ...props }) {
         <div className="">
             <div className="container mx-auto px-2 space-y-3 ">
                 <div className="relative    ">
-                    <div className="absolute inset-0  " />
                     {category === "System-Installation" ?
                             <div className="relative z-10 grid grid-cols-1 gap-8  py-12 sm:grid-cols-3 sm:gap-0 rounded-lg bg-white border border-gray-100 shadow-lg ">
                                 <div className="group flex flex-col items-center  space-y-4 sm:border-r sm:border-gray-200 ">
